@@ -1,0 +1,174 @@
+[
+    {
+        "id": "Canggu_Batu_Bolong",
+        "name": "Batu Bolong",
+        "gpsCoordinate": {
+            "latitude": -8.659473106203592,
+            "longitude": 115.13013523130488
+        },
+        "coastOrientation": 140,
+        "utcOffset": 8,
+        "spotBreakAreas": [
+            {
+                "strokeWidth": 4,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#881BA1E2",
+                "geopath": [
+                    {
+                        "latitude": -8.660509770667506,
+                        "longitude": 115.12899493970825
+                    },
+                    {
+                        "latitude": -8.660037274694549,
+                        "longitude": 115.12869527560608
+                    },
+                    {
+                        "latitude": -8.65891603187572,
+                        "longitude": 115.12925287842909
+                    },
+                    {
+                        "latitude": -8.660309604392049,
+                        "longitude": 115.13065795771773
+                    }
+                ]
+            },
+            {
+                "strokeWidth": 4,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#881BA1E2",
+                "geopath": [
+                    {
+                        "latitude": -8.661691326249585,
+                        "longitude": 115.1309473893718
+                    },
+                    {
+                        "latitude": -8.661456517593242,
+                        "longitude": 115.1306598768697
+                    },
+                    {
+                        "latitude": -8.660426990632965,
+                        "longitude": 115.13080335130158
+                    },
+                    {
+                        "latitude": -8.66120126484653,
+                        "longitude": 115.1317984508768
+                    }
+                ]
+            },
+            {
+                "strokeWidth": 2,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#ff7f50",
+                "geopath": [
+                    {
+                        "latitude": -8.660675189074007,
+                        "longitude": 115.13134478480698
+                    },
+                    {
+                        "latitude": -8.660490901091457,
+                        "longitude": 115.13160630019208
+                    },
+                    {
+                        "latitude": -8.660591662877255,
+                        "longitude": 115.13177393825947
+                    },
+                    {
+                        "latitude": -8.660834949446217,
+                        "longitude": 115.13152650447202
+                    }
+                ]
+            }
+        ],
+        "providersOptions": [
+            {},
+            {},
+            {}
+        ]
+    },
+    {
+        "id": "Canggu_Old_Man",
+        "name": "Old Man",
+        "gpsCoordinate": {
+            "latitude": -8.661807544474287,
+            "longitude": 115.13064011255182
+        },
+        "coastOrientation": 140,
+        "utcOffset": 8,
+        "spotBreakAreas": [
+            {
+                "strokeWidth": 4,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#881BA1E2",
+                "geopath": [
+                    {
+                        "latitude": -8.660509770667506,
+                        "longitude": 115.12899493970825
+                    },
+                    {
+                        "latitude": -8.660037274694549,
+                        "longitude": 115.12869527560608
+                    },
+                    {
+                        "latitude": -8.65891603187572,
+                        "longitude": 115.12925287842909
+                    },
+                    {
+                        "latitude": -8.660309604392049,
+                        "longitude": 115.13065795771773
+                    }
+                ]
+            },
+            {
+                "strokeWidth": 4,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#881BA1E2",
+                "geopath": [
+                    {
+                        "latitude": -8.661691326249585,
+                        "longitude": 115.1309473893718
+                    },
+                    {
+                        "latitude": -8.661456517593242,
+                        "longitude": 115.1306598768697
+                    },
+                    {
+                        "latitude": -8.660426990632965,
+                        "longitude": 115.13080335130158
+                    },
+                    {
+                        "latitude": -8.66120126484653,
+                        "longitude": 115.1317984508768
+                    }
+                ]
+            },
+            {
+                "strokeWidth": 2,
+                "strokeColor": "#FFFFFF",
+                "fillColor": "#ff7f50",
+                "geopath": [
+                    {
+                        "latitude": -8.660675189074007,
+                        "longitude": 115.13134478480698
+                    },
+                    {
+                        "latitude": -8.660490901091457,
+                        "longitude": 115.13160630019208
+                    },
+                    {
+                        "latitude": -8.660591662877255,
+                        "longitude": 115.13177393825947
+                    },
+                    {
+                        "latitude": -8.660834949446217,
+                        "longitude": 115.13152650447202
+                    }
+                ]
+            }
+        ],
+        "providersOptions": [
+            {},
+            {},
+            {}
+        ]
+    }
+]

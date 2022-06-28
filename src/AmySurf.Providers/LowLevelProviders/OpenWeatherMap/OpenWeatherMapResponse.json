@@ -1,0 +1,1789 @@
+﻿//{
+//  "lat": -8.72,
+//  "lon": 115.17,
+//  "timezone": "Asia/Makassar",
+//  "timezone_offset": 28800,
+//  "current": {
+//    "dt": 1604073600,
+//    "sunrise": 1604094631,
+//    "sunset": 1604139311,
+//    "temp": 300.39,
+//    "feels_like": 304.41,
+//    "pressure": 1011,
+//    "humidity": 85,
+//    "dew_point": 297.65,
+//    "uvi": 14.45,
+//    "clouds": 91,
+//    "wind_speed": 2.99,
+//    "wind_deg": 142,
+//    "weather": [
+//      {
+//        "id": 500,
+//        "main": "Rain",
+//        "description": "light rain",
+//        "icon": "10n"
+//      }
+//    ],
+//    "rain": { "1h": 0.44 }
+//  },
+//  "hourly": [
+//    {
+//      "dt": 1604016000,
+//      "temp": 300.29,
+//      "feels_like": 304.27,
+//      "pressure": 1012,
+//      "humidity": 79,
+//      "dew_point": 296.33,
+//      "clouds": 87,
+//      "wind_speed": 1.95,
+//      "wind_deg": 50,
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04d"
+//        }
+//      ]
+//    },
+//    {
+//      "dt": 1604019600,
+//      "temp": 300.76,
+//      "feels_like": 305.05,
+//      "pressure": 1012,
+//      "humidity": 76,
+//      "dew_point": 296.15,
+//      "clouds": 99,
+//      "wind_speed": 1.35,
+//      "wind_deg": 47,
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04d"
+//        }
+//      ]
+//    },
+//    {
+//      "dt": 1604023200,
+//      "temp": 301.14,
+//      "feels_like": 305.58,
+//      "pressure": 1012,
+//      "humidity": 74,
+//      "dew_point": 296.07,
+//      "clouds": 85,
+//      "wind_speed": 1.08,
+//      "wind_deg": 161,
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04d"
+//        }
+//      ]
+//    },
+//    {
+//      "dt": 1604026800,
+//      "temp": 301.38,
+//      "feels_like": 304.78,
+//      "pressure": 1012,
+//      "humidity": 74,
+//      "dew_point": 296.3,
+//      "clouds": 70,
+//      "wind_speed": 2.75,
+//      "wind_deg": 153,
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04d"
+//        }
+//      ]
+//    },
+//    {
+//      "dt": 1604030400,
+//      "temp": 301.67,
+//      "feels_like": 304.76,
+//      "pressure": 1011,
+//      "humidity": 74,
+//      "dew_point": 296.58,
+//      "clouds": 56,
+//      "wind_speed": 3.42,
+//      "wind_deg": 149,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.2 }
+//    },
+//    {
+//      "dt": 1604034000,
+//      "temp": 301.71,
+//      "feels_like": 304.34,
+//      "pressure": 1010,
+//      "humidity": 76,
+//      "dew_point": 297.06,
+//      "clouds": 61,
+//      "wind_speed": 4.48,
+//      "wind_deg": 143,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.47 }
+//    },
+//    {
+//      "dt": 1604037600,
+//      "temp": 301.59,
+//      "feels_like": 303.97,
+//      "pressure": 1010,
+//      "humidity": 77,
+//      "dew_point": 297.16,
+//      "clouds": 66,
+//      "wind_speed": 4.91,
+//      "wind_deg": 132,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.59 }
+//    },
+//    {
+//      "dt": 1604041200,
+//      "temp": 301.49,
+//      "feels_like": 303.87,
+//      "pressure": 1009,
+//      "humidity": 78,
+//      "dew_point": 297.28,
+//      "clouds": 31,
+//      "wind_speed": 5.01,
+//      "wind_deg": 131,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.18 }
+//    },
+//    {
+//      "dt": 1604044800,
+//      "temp": 301.34,
+//      "feels_like": 303.92,
+//      "pressure": 1008,
+//      "humidity": 79,
+//      "dew_point": 297.35,
+//      "clouds": 40,
+//      "wind_speed": 4.79,
+//      "wind_deg": 130,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.74 }
+//    },
+//    {
+//      "dt": 1604048400,
+//      "temp": 301.16,
+//      "feels_like": 303.49,
+//      "pressure": 1008,
+//      "humidity": 80,
+//      "dew_point": 297.38,
+//      "clouds": 32,
+//      "wind_speed": 5.17,
+//      "wind_deg": 129,
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 1.52 }
+//    },
+//    {
+//      "dt": 1604052000,
+//      "temp": 301.04,
+//      "feels_like": 304.18,
+//      "pressure": 1009,
+//      "humidity": 83,
+//      "dew_point": 297.88,
+//      "clouds": 45,
+//      "wind_speed": 4.45,
+//      "wind_deg": 115,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 0.58 }
+//    },
+//    {
+//      "dt": 1604055600,
+//      "temp": 300.87,
+//      "feels_like": 304.18,
+//      "pressure": 1010,
+//      "humidity": 84,
+//      "dew_point": 297.92,
+//      "clouds": 52,
+//      "wind_speed": 4.24,
+//      "wind_deg": 114,
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04n"
+//        }
+//      ]
+//    },
+//    {
+//      "dt": 1604059200,
+//      "temp": 300.67,
+//      "feels_like": 304.05,
+//      "pressure": 1011,
+//      "humidity": 86,
+//      "dew_point": 298.12,
+//      "clouds": 58,
+//      "wind_speed": 4.31,
+//      "wind_deg": 142,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.17 }
+//    },
+//    {
+//      "dt": 1604062800,
+//      "temp": 300.62,
+//      "feels_like": 303.78,
+//      "pressure": 1012,
+//      "humidity": 86,
+//      "dew_point": 298.07,
+//      "clouds": 97,
+//      "wind_speed": 4.58,
+//      "wind_deg": 146,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.28 }
+//    },
+//    {
+//      "dt": 1604066400,
+//      "temp": 300.51,
+//      "feels_like": 303.87,
+//      "pressure": 1012,
+//      "humidity": 86,
+//      "dew_point": 297.96,
+//      "clouds": 95,
+//      "wind_speed": 4.2,
+//      "wind_deg": 142,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.28 }
+//    },
+//    {
+//      "dt": 1604070000,
+//      "temp": 300.47,
+//      "feels_like": 304.41,
+//      "pressure": 1011,
+//      "humidity": 86,
+//      "dew_point": 297.92,
+//      "clouds": 96,
+//      "wind_speed": 3.34,
+//      "wind_deg": 141,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.29 }
+//    },
+//    {
+//      "dt": 1604073600,
+//      "temp": 300.39,
+//      "feels_like": 304.41,
+//      "pressure": 1011,
+//      "humidity": 85,
+//      "dew_point": 297.65,
+//      "clouds": 91,
+//      "wind_speed": 2.99,
+//      "wind_deg": 142,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.44 }
+//    },
+//    {
+//      "dt": 1604077200,
+//      "temp": 300.35,
+//      "feels_like": 304.23,
+//      "pressure": 1010,
+//      "humidity": 85,
+//      "dew_point": 297.61,
+//      "clouds": 83,
+//      "wind_speed": 3.15,
+//      "wind_deg": 144,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.19 }
+//    },
+//    {
+//      "dt": 1604080800,
+//      "temp": 300.31,
+//      "feels_like": 304.55,
+//      "pressure": 1009,
+//      "humidity": 85,
+//      "dew_point": 297.57,
+//      "clouds": 86,
+//      "wind_speed": 2.6,
+//      "wind_deg": 121,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.15 }
+//    },
+//    {
+//      "dt": 1604084400,
+//      "temp": 300.25,
+//      "feels_like": 304.46,
+//      "pressure": 1009,
+//      "humidity": 85,
+//      "dew_point": 297.51,
+//      "clouds": 100,
+//      "wind_speed": 2.6,
+//      "wind_deg": 129,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.26 }
+//    },
+//    {
+//      "dt": 1604088000,
+//      "temp": 300.25,
+//      "feels_like": 303.83,
+//      "pressure": 1009,
+//      "humidity": 85,
+//      "dew_point": 297.51,
+//      "clouds": 95,
+//      "wind_speed": 3.5,
+//      "wind_deg": 132,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 0.26 }
+//    },
+//    {
+//      "dt": 1604091600,
+//      "temp": 300.12,
+//      "feels_like": 303.08,
+//      "pressure": 1009,
+//      "humidity": 84,
+//      "dew_point": 297.18,
+//      "clouds": 94,
+//      "wind_speed": 4.11,
+//      "wind_deg": 136,
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "rain": { "1h": 1 }
+//    },
+//    {
+//      "dt": 1604095200,
+//      "temp": 300.08,
+//      "feels_like": 303.04,
+//      "pressure": 1010,
+//      "humidity": 82,
+//      "dew_point": 296.74,
+//      "clouds": 95,
+//      "wind_speed": 3.74,
+//      "wind_deg": 133,
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 2.56 }
+//    },
+//    {
+//      "dt": 1604098800,
+//      "temp": 299.77,
+//      "feels_like": 303.67,
+//      "pressure": 1011,
+//      "humidity": 80,
+//      "dew_point": 296.03,
+//      "clouds": 96,
+//      "wind_speed": 1.82,
+//      "wind_deg": 78,
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "rain": { "1h": 2.48 }
+//    }
+//  ]
+//}
+
+
+//{
+//  "cod": "200",
+//  "message": 0,
+//  "cnt": 40,
+//  "list": [
+//    {
+//      "dt": 1604113200,
+//      "main": {
+//        "temp": 298.3,
+//        "feels_like": 302.84,
+//        "temp_min": 297.72,
+//        "temp_max": 298.3,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1012,
+//        "humidity": 87,
+//        "temp_kf": 0.58
+//      },
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 98 },
+//      "wind": {
+//        "speed": 0.87,
+//        "deg": 337
+//      },
+//      "visibility": 10000,
+//      "pop": 1,
+//      "rain": { "3h": 3.26 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-10-31 03:00:00"
+//    },
+//    {
+//      "dt": 1604124000,
+//      "main": {
+//        "temp": 298.22,
+//        "feels_like": 301.29,
+//        "temp_min": 298.05,
+//        "temp_max": 298.22,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 85,
+//        "temp_kf": 0.17
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 99 },
+//      "wind": {
+//        "speed": 2.61,
+//        "deg": 45
+//      },
+//      "visibility": 10000,
+//      "pop": 1,
+//      "rain": { "3h": 0.55 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-10-31 06:00:00"
+//    },
+//    {
+//      "dt": 1604134800,
+//      "main": {
+//        "temp": 299.02,
+//        "feels_like": 299.67,
+//        "temp_min": 299.02,
+//        "temp_max": 299.03,
+//        "pressure": 1008,
+//        "sea_level": 1008,
+//        "grnd_level": 1008,
+//        "humidity": 79,
+//        "temp_kf": -0.01
+//      },
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04d"
+//        }
+//      ],
+//      "clouds": { "all": 100 },
+//      "wind": {
+//        "speed": 5.74,
+//        "deg": 86
+//      },
+//      "visibility": 10000,
+//      "pop": 0.02,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-10-31 09:00:00"
+//    },
+//    {
+//      "dt": 1604145600,
+//      "main": {
+//        "temp": 299.25,
+//        "feels_like": 300.56,
+//        "temp_min": 299.25,
+//        "temp_max": 299.25,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1010,
+//        "humidity": 79,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 100 },
+//      "wind": {
+//        "speed": 4.97,
+//        "deg": 93
+//      },
+//      "visibility": 10000,
+//      "pop": 0,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-10-31 12:00:00"
+//    },
+//    {
+//      "dt": 1604156400,
+//      "main": {
+//        "temp": 299.1,
+//        "feels_like": 301.84,
+//        "temp_min": 299.1,
+//        "temp_max": 299.1,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 75,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 70 },
+//      "wind": {
+//        "speed": 2.18,
+//        "deg": 66
+//      },
+//      "visibility": 10000,
+//      "pop": 0,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-10-31 15:00:00"
+//    },
+//    {
+//      "dt": 1604167200,
+//      "main": {
+//        "temp": 298.33,
+//        "feels_like": 300.89,
+//        "temp_min": 298.33,
+//        "temp_max": 298.33,
+//        "pressure": 1009,
+//        "sea_level": 1009,
+//        "grnd_level": 1008,
+//        "humidity": 75,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 62 },
+//      "wind": {
+//        "speed": 1.92,
+//        "deg": 308
+//      },
+//      "visibility": 10000,
+//      "pop": 0,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-10-31 18:00:00"
+//    },
+//    {
+//      "dt": 1604178000,
+//      "main": {
+//        "temp": 298.56,
+//        "feels_like": 301.54,
+//        "temp_min": 298.56,
+//        "temp_max": 298.56,
+//        "pressure": 1009,
+//        "sea_level": 1009,
+//        "grnd_level": 1008,
+//        "humidity": 73,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 801,
+//          "main": "Clouds",
+//          "description": "few clouds",
+//          "icon": "02n"
+//        }
+//      ],
+//      "clouds": { "all": 22 },
+//      "wind": {
+//        "speed": 1.17,
+//        "deg": 317
+//      },
+//      "visibility": 10000,
+//      "pop": 0.01,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-10-31 21:00:00"
+//    },
+//    {
+//      "dt": 1604188800,
+//      "main": {
+//        "temp": 299.2,
+//        "feels_like": 301.68,
+//        "temp_min": 299.2,
+//        "temp_max": 299.2,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 69,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 801,
+//          "main": "Clouds",
+//          "description": "few clouds",
+//          "icon": "02d"
+//        }
+//      ],
+//      "clouds": { "all": 11 },
+//      "wind": {
+//        "speed": 1.68,
+//        "deg": 341
+//      },
+//      "visibility": 10000,
+//      "pop": 0.01,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-01 00:00:00"
+//    },
+//    {
+//      "dt": 1604199600,
+//      "main": {
+//        "temp": 300.06,
+//        "feels_like": 302.22,
+//        "temp_min": 300.06,
+//        "temp_max": 300.06,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 70,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 800,
+//          "main": "Clear",
+//          "description": "clear sky",
+//          "icon": "01d"
+//        }
+//      ],
+//      "clouds": { "all": 0 },
+//      "wind": {
+//        "speed": 2.87,
+//        "deg": 200
+//      },
+//      "visibility": 10000,
+//      "pop": 0.08,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-01 03:00:00"
+//    },
+//    {
+//      "dt": 1604210400,
+//      "main": {
+//        "temp": 300.79,
+//        "feels_like": 302.61,
+//        "temp_min": 300.79,
+//        "temp_max": 300.79,
+//        "pressure": 1008,
+//        "sea_level": 1008,
+//        "grnd_level": 1008,
+//        "humidity": 70,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 800,
+//          "main": "Clear",
+//          "description": "clear sky",
+//          "icon": "01d"
+//        }
+//      ],
+//      "clouds": { "all": 1 },
+//      "wind": {
+//        "speed": 3.86,
+//        "deg": 142
+//      },
+//      "visibility": 10000,
+//      "pop": 0.24,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-01 06:00:00"
+//    },
+//    {
+//      "dt": 1604221200,
+//      "main": {
+//        "temp": 300.67,
+//        "feels_like": 302.33,
+//        "temp_min": 300.67,
+//        "temp_max": 300.67,
+//        "pressure": 1008,
+//        "sea_level": 1008,
+//        "grnd_level": 1008,
+//        "humidity": 73,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 800,
+//          "main": "Clear",
+//          "description": "clear sky",
+//          "icon": "01d"
+//        }
+//      ],
+//      "clouds": { "all": 6 },
+//      "wind": {
+//        "speed": 4.53,
+//        "deg": 139
+//      },
+//      "visibility": 10000,
+//      "pop": 0.3,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-01 09:00:00"
+//    },
+//    {
+//      "dt": 1604232000,
+//      "main": {
+//        "temp": 300.14,
+//        "feels_like": 302.55,
+//        "temp_min": 300.14,
+//        "temp_max": 300.14,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1011,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 800,
+//          "main": "Clear",
+//          "description": "clear sky",
+//          "icon": "01n"
+//        }
+//      ],
+//      "clouds": { "all": 5 },
+//      "wind": {
+//        "speed": 3.73,
+//        "deg": 136
+//      },
+//      "visibility": 10000,
+//      "pop": 0.18,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-01 12:00:00"
+//    },
+//    {
+//      "dt": 1604242800,
+//      "main": {
+//        "temp": 300,
+//        "feels_like": 302.87,
+//        "temp_min": 300,
+//        "temp_max": 300,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 78,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 46 },
+//      "wind": {
+//        "speed": 3.14,
+//        "deg": 112
+//      },
+//      "visibility": 10000,
+//      "pop": 0.24,
+//      "rain": { "3h": 0.28 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-01 15:00:00"
+//    },
+//    {
+//      "dt": 1604253600,
+//      "main": {
+//        "temp": 299.75,
+//        "feels_like": 302.6,
+//        "temp_min": 299.75,
+//        "temp_max": 299.75,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 78,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 59 },
+//      "wind": {
+//        "speed": 2.98,
+//        "deg": 118
+//      },
+//      "visibility": 10000,
+//      "pop": 0.2,
+//      "rain": { "3h": 0.14 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-01 18:00:00"
+//    },
+//    {
+//      "dt": 1604264400,
+//      "main": {
+//        "temp": 299.66,
+//        "feels_like": 302.78,
+//        "temp_min": 299.66,
+//        "temp_max": 299.66,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 59 },
+//      "wind": {
+//        "speed": 2.36,
+//        "deg": 116
+//      },
+//      "visibility": 10000,
+//      "pop": 0.04,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-01 21:00:00"
+//    },
+//    {
+//      "dt": 1604275200,
+//      "main": {
+//        "temp": 300.26,
+//        "feels_like": 303.08,
+//        "temp_min": 300.26,
+//        "temp_max": 300.26,
+//        "pressure": 1013,
+//        "sea_level": 1013,
+//        "grnd_level": 1012,
+//        "humidity": 75,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 802,
+//          "main": "Clouds",
+//          "description": "scattered clouds",
+//          "icon": "03d"
+//        }
+//      ],
+//      "clouds": { "all": 40 },
+//      "wind": {
+//        "speed": 2.9,
+//        "deg": 113
+//      },
+//      "visibility": 10000,
+//      "pop": 0.05,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-02 00:00:00"
+//    },
+//    {
+//      "dt": 1604286000,
+//      "main": {
+//        "temp": 300.94,
+//        "feels_like": 303.1,
+//        "temp_min": 300.94,
+//        "temp_max": 300.94,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1012,
+//        "humidity": 74,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 800,
+//          "main": "Clear",
+//          "description": "clear sky",
+//          "icon": "01d"
+//        }
+//      ],
+//      "clouds": { "all": 9 },
+//      "wind": {
+//        "speed": 4.19,
+//        "deg": 137
+//      },
+//      "visibility": 10000,
+//      "pop": 0.33,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-02 03:00:00"
+//    },
+//    {
+//      "dt": 1604296800,
+//      "main": {
+//        "temp": 300.72,
+//        "feels_like": 302.71,
+//        "temp_min": 300.72,
+//        "temp_max": 300.72,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1010,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 15 },
+//      "wind": {
+//        "speed": 4.78,
+//        "deg": 144
+//      },
+//      "visibility": 10000,
+//      "pop": 0.63,
+//      "rain": { "3h": 0.87 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-02 06:00:00"
+//    },
+//    {
+//      "dt": 1604307600,
+//      "main": {
+//        "temp": 300.47,
+//        "feels_like": 303.02,
+//        "temp_min": 300.47,
+//        "temp_max": 300.47,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 78,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 26 },
+//      "wind": {
+//        "speed": 3.96,
+//        "deg": 142
+//      },
+//      "visibility": 10000,
+//      "pop": 0.76,
+//      "rain": { "3h": 3.58 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-02 09:00:00"
+//    },
+//    {
+//      "dt": 1604318400,
+//      "main": {
+//        "temp": 300.21,
+//        "feels_like": 303.36,
+//        "temp_min": 300.21,
+//        "temp_max": 300.21,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1012,
+//        "humidity": 80,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 25 },
+//      "wind": {
+//        "speed": 3.24,
+//        "deg": 110
+//      },
+//      "visibility": 10000,
+//      "pop": 0.91,
+//      "rain": { "3h": 1.1 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-02 12:00:00"
+//    },
+//    {
+//      "dt": 1604329200,
+//      "main": {
+//        "temp": 300.08,
+//        "feels_like": 303.46,
+//        "temp_min": 300.08,
+//        "temp_max": 300.08,
+//        "pressure": 1013,
+//        "sea_level": 1013,
+//        "grnd_level": 1012,
+//        "humidity": 80,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 80 },
+//      "wind": {
+//        "speed": 2.8,
+//        "deg": 105
+//      },
+//      "visibility": 10000,
+//      "pop": 0.58,
+//      "rain": { "3h": 0.14 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-02 15:00:00"
+//    },
+//    {
+//      "dt": 1604340000,
+//      "main": {
+//        "temp": 299.65,
+//        "feels_like": 303.38,
+//        "temp_min": 299.65,
+//        "temp_max": 299.65,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 80,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 45 },
+//      "wind": {
+//        "speed": 1.98,
+//        "deg": 91
+//      },
+//      "visibility": 10000,
+//      "pop": 0.55,
+//      "rain": { "3h": 0.74 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-02 18:00:00"
+//    },
+//    {
+//      "dt": 1604350800,
+//      "main": {
+//        "temp": 299.76,
+//        "feels_like": 303.3,
+//        "temp_min": 299.76,
+//        "temp_max": 299.76,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 79,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 67 },
+//      "wind": {
+//        "speed": 2.17,
+//        "deg": 107
+//      },
+//      "visibility": 10000,
+//      "pop": 0.29,
+//      "rain": { "3h": 0.19 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-02 21:00:00"
+//    },
+//    {
+//      "dt": 1604361600,
+//      "main": {
+//        "temp": 300.46,
+//        "feels_like": 303.86,
+//        "temp_min": 300.46,
+//        "temp_max": 300.46,
+//        "pressure": 1014,
+//        "sea_level": 1014,
+//        "grnd_level": 1013,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 64 },
+//      "wind": {
+//        "speed": 2.56,
+//        "deg": 103
+//      },
+//      "visibility": 10000,
+//      "pop": 0.28,
+//      "rain": { "3h": 0.17 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-03 00:00:00"
+//    },
+//    {
+//      "dt": 1604372400,
+//      "main": {
+//        "temp": 301.36,
+//        "feels_like": 303.78,
+//        "temp_min": 301.36,
+//        "temp_max": 301.36,
+//        "pressure": 1013,
+//        "sea_level": 1013,
+//        "grnd_level": 1012,
+//        "humidity": 74,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04d"
+//        }
+//      ],
+//      "clouds": { "all": 68 },
+//      "wind": {
+//        "speed": 4.13,
+//        "deg": 123
+//      },
+//      "visibility": 10000,
+//      "pop": 0.03,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-03 03:00:00"
+//    },
+//    {
+//      "dt": 1604383200,
+//      "main": {
+//        "temp": 301.54,
+//        "feels_like": 303.59,
+//        "temp_min": 301.54,
+//        "temp_max": 301.54,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1010,
+//        "humidity": 76,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 803,
+//          "main": "Clouds",
+//          "description": "broken clouds",
+//          "icon": "04d"
+//        }
+//      ],
+//      "clouds": { "all": 79 },
+//      "wind": {
+//        "speed": 5.16,
+//        "deg": 132
+//      },
+//      "visibility": 10000,
+//      "pop": 0.17,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-03 06:00:00"
+//    },
+//    {
+//      "dt": 1604394000,
+//      "main": {
+//        "temp": 301.29,
+//        "feels_like": 303.78,
+//        "temp_min": 301.29,
+//        "temp_max": 301.29,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 802,
+//          "main": "Clouds",
+//          "description": "scattered clouds",
+//          "icon": "03d"
+//        }
+//      ],
+//      "clouds": { "all": 32 },
+//      "wind": {
+//        "speed": 4.52,
+//        "deg": 141
+//      },
+//      "visibility": 10000,
+//      "pop": 0.33,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-03 09:00:00"
+//    },
+//    {
+//      "dt": 1604404800,
+//      "main": {
+//        "temp": 300.38,
+//        "feels_like": 303.53,
+//        "temp_min": 300.38,
+//        "temp_max": 300.38,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 82,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 41 },
+//      "wind": {
+//        "speed": 3.71,
+//        "deg": 119
+//      },
+//      "visibility": 10000,
+//      "pop": 0.58,
+//      "rain": { "3h": 1.33 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-03 12:00:00"
+//    },
+//    {
+//      "dt": 1604415600,
+//      "main": {
+//        "temp": 300.22,
+//        "feels_like": 303.5,
+//        "temp_min": 300.22,
+//        "temp_max": 300.22,
+//        "pressure": 1013,
+//        "sea_level": 1013,
+//        "grnd_level": 1012,
+//        "humidity": 80,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 100 },
+//      "wind": {
+//        "speed": 3.06,
+//        "deg": 111
+//      },
+//      "visibility": 10000,
+//      "pop": 0.73,
+//      "rain": { "3h": 1.1 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-03 15:00:00"
+//    },
+//    {
+//      "dt": 1604426400,
+//      "main": {
+//        "temp": 300.04,
+//        "feels_like": 303.6,
+//        "temp_min": 300.04,
+//        "temp_max": 300.04,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 78,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 100 },
+//      "wind": {
+//        "speed": 2.18,
+//        "deg": 90
+//      },
+//      "visibility": 10000,
+//      "pop": 0.66,
+//      "rain": { "3h": 0.17 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-03 18:00:00"
+//    },
+//    {
+//      "dt": 1604437200,
+//      "main": {
+//        "temp": 299.49,
+//        "feels_like": 303.32,
+//        "temp_min": 299.49,
+//        "temp_max": 299.49,
+//        "pressure": 1011,
+//        "sea_level": 1011,
+//        "grnd_level": 1010,
+//        "humidity": 81,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 99 },
+//      "wind": {
+//        "speed": 1.87,
+//        "deg": 66
+//      },
+//      "visibility": 10000,
+//      "pop": 0.12,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-03 21:00:00"
+//    },
+//    {
+//      "dt": 1604448000,
+//      "main": {
+//        "temp": 299.98,
+//        "feels_like": 304,
+//        "temp_min": 299.98,
+//        "temp_max": 299.98,
+//        "pressure": 1013,
+//        "sea_level": 1013,
+//        "grnd_level": 1012,
+//        "humidity": 80,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 99 },
+//      "wind": {
+//        "speed": 1.81,
+//        "deg": 92
+//      },
+//      "visibility": 10000,
+//      "pop": 0.39,
+//      "rain": { "3h": 0.37 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-04 00:00:00"
+//    },
+//    {
+//      "dt": 1604458800,
+//      "main": {
+//        "temp": 301.65,
+//        "feels_like": 304.4,
+//        "temp_min": 301.65,
+//        "temp_max": 301.65,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 74,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04d"
+//        }
+//      ],
+//      "clouds": { "all": 100 },
+//      "wind": {
+//        "speed": 3.89,
+//        "deg": 124
+//      },
+//      "visibility": 10000,
+//      "pop": 0.44,
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-04 03:00:00"
+//    },
+//    {
+//      "dt": 1604469600,
+//      "main": {
+//        "temp": 301.57,
+//        "feels_like": 304.06,
+//        "temp_min": 301.57,
+//        "temp_max": 301.57,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1010,
+//        "humidity": 77,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 71 },
+//      "wind": {
+//        "speed": 4.75,
+//        "deg": 132
+//      },
+//      "visibility": 10000,
+//      "pop": 0.57,
+//      "rain": { "3h": 0.58 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-04 06:00:00"
+//    },
+//    {
+//      "dt": 1604480400,
+//      "main": {
+//        "temp": 300.98,
+//        "feels_like": 304.32,
+//        "temp_min": 300.98,
+//        "temp_max": 300.98,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 79,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 501,
+//          "main": "Rain",
+//          "description": "moderate rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 46 },
+//      "wind": {
+//        "speed": 3.41,
+//        "deg": 125
+//      },
+//      "visibility": 10000,
+//      "pop": 0.96,
+//      "rain": { "3h": 4.53 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-04 09:00:00"
+//    },
+//    {
+//      "dt": 1604491200,
+//      "main": {
+//        "temp": 300.66,
+//        "feels_like": 303.2,
+//        "temp_min": 300.66,
+//        "temp_max": 300.66,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 81,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 70 },
+//      "wind": {
+//        "speed": 4.64,
+//        "deg": 121
+//      },
+//      "visibility": 10000,
+//      "pop": 0.86,
+//      "rain": { "3h": 2.11 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-04 12:00:00"
+//    },
+//    {
+//      "dt": 1604502000,
+//      "main": {
+//        "temp": 300.56,
+//        "feels_like": 302.67,
+//        "temp_min": 300.56,
+//        "temp_max": 300.56,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 83,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 804,
+//          "main": "Clouds",
+//          "description": "overcast clouds",
+//          "icon": "04n"
+//        }
+//      ],
+//      "clouds": { "all": 95 },
+//      "wind": {
+//        "speed": 5.52,
+//        "deg": 121
+//      },
+//      "visibility": 10000,
+//      "pop": 0.07,
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-04 15:00:00"
+//    },
+//    {
+//      "dt": 1604512800,
+//      "main": {
+//        "temp": 300.23,
+//        "feels_like": 302.6,
+//        "temp_min": 300.23,
+//        "temp_max": 300.23,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 83,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 98 },
+//      "wind": {
+//        "speed": 4.87,
+//        "deg": 119
+//      },
+//      "visibility": 10000,
+//      "pop": 0.24,
+//      "rain": { "3h": 0.14 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-04 18:00:00"
+//    },
+//    {
+//      "dt": 1604523600,
+//      "main": {
+//        "temp": 300.1,
+//        "feels_like": 303.11,
+//        "temp_min": 300.1,
+//        "temp_max": 300.1,
+//        "pressure": 1010,
+//        "sea_level": 1010,
+//        "grnd_level": 1009,
+//        "humidity": 84,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10n"
+//        }
+//      ],
+//      "clouds": { "all": 97 },
+//      "wind": {
+//        "speed": 4.02,
+//        "deg": 121
+//      },
+//      "visibility": 10000,
+//      "pop": 0.33,
+//      "rain": { "3h": 0.22 },
+//      "sys": { "pod": "n" },
+//      "dt_txt": "2020-11-04 21:00:00"
+//    },
+//    {
+//      "dt": 1604534400,
+//      "main": {
+//        "temp": 300.53,
+//        "feels_like": 303.31,
+//        "temp_min": 300.53,
+//        "temp_max": 300.53,
+//        "pressure": 1012,
+//        "sea_level": 1012,
+//        "grnd_level": 1011,
+//        "humidity": 83,
+//        "temp_kf": 0
+//      },
+//      "weather": [
+//        {
+//          "id": 500,
+//          "main": "Rain",
+//          "description": "light rain",
+//          "icon": "10d"
+//        }
+//      ],
+//      "clouds": { "all": 89 },
+//      "wind": {
+//        "speed": 4.54,
+//        "deg": 124
+//      },
+//      "visibility": 10000,
+//      "pop": 0.25,
+//      "rain": { "3h": 0.18 },
+//      "sys": { "pod": "d" },
+//      "dt_txt": "2020-11-05 00:00:00"
+//    }
+//  ],
+//  "city": {
+//    "id": 1639002,
+//    "name": "Kuta",
+//    "coord": {
+//      "lat": -8.7233,
+//      "lon": 115.1723
+//    },
+//    "country": "ID",
+//    "population": 0,
+//    "timezone": 28800,
+//    "sunrise": 1604094631,
+//    "sunset": 1604139311
+//  }
+//}

@@ -1,0 +1,4 @@
+http://localhost:5001/api/forecast/surf?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
+http://localhost:5001/api/forecast/energy?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
+http://localhost:5001/api/forecast/weather?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
+http://localhost:5001/api/forecast/spots

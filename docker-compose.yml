@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  amysurf:
+    container_name: amysurf
+    network_mode: host
+    build:
+      context: src
+      network: host
+      dockerfile: Dockerfile
+      args:
+        DOTNET_SDK_IMAGE: ${DOTNET_SDK_IMAGE:-}
+        RUNTIME: ${AMYSURF_RUNTIME:-}
+        RUNTIME_IMAGE: ${AMYSURF_RUNTIME_IMAGE:-}
+    image: ${AMYSURF_IMAGE:-}
+    restart: unless-stopped
+    # ports:
+    #   - "5000:5009"
+    environment:
+      ASPNETCORE_URLS: "http://*:${AMYSURF_PORT:-5009}"
+      Logging__LogLevel__Microsoft: Warning
+      Logging__LogLevel__CompressedStaticFiles: Warning
+      AMYSURF_SERVICE_URL: "https://amysurf.freejungle.net"
+      # AMYSURF_BASEURL: "${AMYSURF_BASEURL:-http://0.0.0.0:5005}"
+      BackgroundPullingInterval: "3600"
+      TimeOutHttpRequestSec: "15"
+      TimeBeforeRetryUriSec: "60"
+      # BaseDataDirectory": "/home/amysurf",
+      # WebProxyAddress": "http://localhost:9090",
+
+    volumes:
+      - ${AMYSURF_HOME:-amysurf}:/home/amysurf
+volumes:
+  amysurf:

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "newLine": "lf",
+    "jsx": "react",
+    "target": "es2021",
+    "strict": true,
+    "lib": [
+      "ES2021",
+      "DOM",
+      "WebWorker"
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "typescript-eslint"
+      }
+    ]
+  }
+}

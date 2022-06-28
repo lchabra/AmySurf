@@ -1,0 +1,1822 @@
+﻿{
+  "associated": {
+    "units": {
+      "temperature": "C",
+      "tideHeight": "M",
+      "swellHeight": "M",
+      "waveHeight": "M",
+      "windSpeed": "KPH"
+    },
+    "utcOffset": 8,
+    "weatherIconPath": "https://wa.cdn-surfline.com/quiver/0.6.2/weathericons"
+  },
+  "units": {
+    "temperature": "C",
+    "tideHeight": "M",
+    "swellHeight": "M",
+    "waveHeight": "M",
+    "windSpeed": "KPH"
+  },
+  "utcOffset": 8,
+  "data": {
+    "sunriseSunsetTimes": [
+      {
+        "midnight": 1600704000,
+        "sunrise": 1600726221,
+        "sunset": 1600769804
+      },
+      {
+        "midnight": 1600790400,
+        "sunrise": 1600812585,
+        "sunset": 1600856197
+      },
+      {
+        "midnight": 1600876800,
+        "sunrise": 1600898949,
+        "sunset": 1600942589
+      },
+      {
+        "midnight": 1600963200,
+        "sunrise": 1600985313,
+        "sunset": 1601028982
+      }
+    ],
+    "tideLocation": {
+      "name": "Canggu",
+      "min": -0.2,
+      "max": 3.03,
+      "lon": 115.125,
+      "lat": -8.6649,
+      "mean": 1.4
+    },
+    "forecasts": [
+      {
+        "timestamp": 1600704000,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 10.7,
+          "direction": 24.52
+        },
+        "surf": {
+          "min": 0.99,
+          "max": 1.3
+        },
+        "swells": [
+          {
+            "height": 0.82,
+            "direction": 216.56,
+            "directionMin": 212.34,
+            "period": 15
+          },
+          {
+            "height": 0.46,
+            "direction": 188.44,
+            "directionMin": 181.41,
+            "period": 5
+          },
+          {
+            "height": 0.73,
+            "direction": 230.63,
+            "directionMin": 227.11,
+            "period": 12
+          },
+          {
+            "height": 0.49,
+            "direction": 142.03,
+            "directionMin": 131.48,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600714800,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 6.83,
+          "direction": 49.34
+        },
+        "surf": {
+          "min": 1.13,
+          "max": 1.35
+        },
+        "swells": [
+          {
+            "height": 0.95,
+            "direction": 215.16,
+            "directionMin": 210.94,
+            "period": 15
+          },
+          {
+            "height": 0.67,
+            "direction": 188.44,
+            "directionMin": 180,
+            "period": 6
+          },
+          {
+            "height": 0.73,
+            "direction": 230.63,
+            "directionMin": 227.11,
+            "period": 12
+          },
+          {
+            "height": 0.43,
+            "direction": 133.59,
+            "directionMin": 125.86,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600725600,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 12.84,
+          "direction": 104.56
+        },
+        "surf": {
+          "min": 1.13,
+          "max": 1.35
+        },
+        "swells": [
+          {
+            "height": 0.95,
+            "direction": 215.16,
+            "directionMin": 210.94,
+            "period": 15
+          },
+          {
+            "height": 0.67,
+            "direction": 188.44,
+            "directionMin": 180,
+            "period": 6
+          },
+          {
+            "height": 0.73,
+            "direction": 230.63,
+            "directionMin": 227.11,
+            "period": 12
+          },
+          {
+            "height": 0.43,
+            "direction": 133.59,
+            "directionMin": 125.86,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600736400,
+        "weather": {
+          "temperature": 26,
+          "condition": "OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 20.41,
+          "direction": 134.31
+        },
+        "surf": {
+          "min": 1.24,
+          "max": 1.48
+        },
+        "swells": [
+          {
+            "height": 1.25,
+            "direction": 219.38,
+            "directionMin": 213.75,
+            "period": 15
+          },
+          {
+            "height": 0.76,
+            "direction": 191.25,
+            "directionMin": 181.41,
+            "period": 6
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0.49,
+            "direction": 133.59,
+            "directionMin": 124.45,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600747200,
+        "weather": {
+          "temperature": 27,
+          "condition": "PARTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 20.88,
+          "direction": 136.84
+        },
+        "surf": {
+          "min": 1.24,
+          "max": 1.48
+        },
+        "swells": [
+          {
+            "height": 1.25,
+            "direction": 219.38,
+            "directionMin": 213.75,
+            "period": 15
+          },
+          {
+            "height": 0.76,
+            "direction": 191.25,
+            "directionMin": 181.41,
+            "period": 6
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0.49,
+            "direction": 133.59,
+            "directionMin": 124.45,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600758000,
+        "weather": {
+          "temperature": 27,
+          "condition": "MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 19.75,
+          "direction": 140.99
+        },
+        "surf": {
+          "min": 1.24,
+          "max": 1.49
+        },
+        "swells": [
+          {
+            "height": 1.28,
+            "direction": 216.56,
+            "directionMin": 210.94,
+            "period": 14
+          },
+          {
+            "height": 0.82,
+            "direction": 188.44,
+            "directionMin": 177.19,
+            "period": 7
+          },
+          {
+            "height": 0.27,
+            "direction": 195.47,
+            "directionMin": 195.47,
+            "period": 8
+          },
+          {
+            "height": 0.37,
+            "direction": 122.34,
+            "directionMin": 114.61,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600768800,
+        "weather": {
+          "temperature": 26,
+          "condition": "OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 15.05,
+          "direction": 142.81
+        },
+        "surf": {
+          "min": 1.24,
+          "max": 1.49
+        },
+        "swells": [
+          {
+            "height": 1.28,
+            "direction": 216.56,
+            "directionMin": 210.94,
+            "period": 14
+          },
+          {
+            "height": 0.82,
+            "direction": 188.44,
+            "directionMin": 177.19,
+            "period": 7
+          },
+          {
+            "height": 0.27,
+            "direction": 195.47,
+            "directionMin": 195.47,
+            "period": 8
+          },
+          {
+            "height": 0.37,
+            "direction": 122.34,
+            "directionMin": 114.61,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600779600,
+        "weather": {
+          "temperature": 26,
+          "condition": "NIGHT_OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 11.4,
+          "direction": 138.84
+        },
+        "surf": {
+          "min": 1.27,
+          "max": 1.57
+        },
+        "swells": [
+          {
+            "height": 1.34,
+            "direction": 216.56,
+            "directionMin": 210.94,
+            "period": 14
+          },
+          {
+            "height": 0.95,
+            "direction": 192.66,
+            "directionMin": 184.92,
+            "period": 8
+          },
+          {
+            "height": 0.12,
+            "direction": 140.63,
+            "directionMin": 127.27,
+            "period": 3
+          },
+          {
+            "height": 0.27,
+            "direction": 119.53,
+            "directionMin": 113.2,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600790400,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 11.19,
+          "direction": 121.05
+        },
+        "surf": {
+          "min": 1.27,
+          "max": 1.57
+        },
+        "swells": [
+          {
+            "height": 1.34,
+            "direction": 216.56,
+            "directionMin": 210.94,
+            "period": 14
+          },
+          {
+            "height": 0.95,
+            "direction": 192.66,
+            "directionMin": 184.92,
+            "period": 8
+          },
+          {
+            "height": 0.12,
+            "direction": 140.63,
+            "directionMin": 127.27,
+            "period": 3
+          },
+          {
+            "height": 0.27,
+            "direction": 119.53,
+            "directionMin": 113.2,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600801200,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 8.34,
+          "direction": 97.69
+        },
+        "surf": {
+          "min": 1.28,
+          "max": 1.58
+        },
+        "swells": [
+          {
+            "height": 1.71,
+            "direction": 208.13,
+            "directionMin": 199.69,
+            "period": 12
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0.09,
+            "direction": 151.88,
+            "directionMin": 145.55,
+            "period": 3
+          },
+          {
+            "height": 0.15,
+            "direction": 112.5,
+            "directionMin": 108.98,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600812000,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLEAR_NO_RAIN"
+        },
+        "wind": {
+          "speed": 8.68,
+          "direction": 57.54
+        },
+        "surf": {
+          "min": 1.28,
+          "max": 1.58
+        },
+        "swells": [
+          {
+            "height": 1.71,
+            "direction": 208.13,
+            "directionMin": 199.69,
+            "period": 12
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0.09,
+            "direction": 151.88,
+            "directionMin": 145.55,
+            "period": 3
+          },
+          {
+            "height": 0.15,
+            "direction": 112.5,
+            "directionMin": 108.98,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600822800,
+        "weather": {
+          "temperature": 27,
+          "condition": "CLEAR_NO_RAIN"
+        },
+        "wind": {
+          "speed": 9.34,
+          "direction": 112.12
+        },
+        "surf": {
+          "min": 1.35,
+          "max": 1.49
+        },
+        "swells": [
+          {
+            "height": 1.68,
+            "direction": 208.13,
+            "directionMin": 201.09,
+            "period": 12
+          },
+          {
+            "height": 0.12,
+            "direction": 137.81,
+            "directionMin": 130.08,
+            "period": 2
+          },
+          {
+            "height": 0.18,
+            "direction": 136.41,
+            "directionMin": 123.75,
+            "period": 4
+          },
+          {
+            "height": 0.09,
+            "direction": 125.16,
+            "directionMin": 118.13,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600833600,
+        "weather": {
+          "temperature": 28,
+          "condition": "PARTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 19.24,
+          "direction": 143.57
+        },
+        "surf": {
+          "min": 1.35,
+          "max": 1.49
+        },
+        "swells": [
+          {
+            "height": 1.68,
+            "direction": 208.13,
+            "directionMin": 201.09,
+            "period": 12
+          },
+          {
+            "height": 0.12,
+            "direction": 137.81,
+            "directionMin": 130.08,
+            "period": 2
+          },
+          {
+            "height": 0.18,
+            "direction": 136.41,
+            "directionMin": 123.75,
+            "period": 4
+          },
+          {
+            "height": 0.09,
+            "direction": 125.16,
+            "directionMin": 118.13,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600844400,
+        "weather": {
+          "temperature": 28,
+          "condition": "CLEAR_NO_RAIN"
+        },
+        "wind": {
+          "speed": 18.94,
+          "direction": 139.99
+        },
+        "surf": {
+          "min": 1.26,
+          "max": 1.4
+        },
+        "swells": [
+          {
+            "height": 1.62,
+            "direction": 208.13,
+            "directionMin": 200.39,
+            "period": 12
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 128.67,
+            "period": 3
+          },
+          {
+            "height": 0.15,
+            "direction": 133.59,
+            "directionMin": 125.86,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600855200,
+        "weather": {
+          "temperature": 26,
+          "condition": "OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 14.4,
+          "direction": 133.68
+        },
+        "surf": {
+          "min": 1.26,
+          "max": 1.4
+        },
+        "swells": [
+          {
+            "height": 1.62,
+            "direction": 208.13,
+            "directionMin": 200.39,
+            "period": 12
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 128.67,
+            "period": 3
+          },
+          {
+            "height": 0.15,
+            "direction": 133.59,
+            "directionMin": 125.86,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600866000,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 9.94,
+          "direction": 120.31
+        },
+        "surf": {
+          "min": 1.02,
+          "max": 1.32
+        },
+        "swells": [
+          {
+            "height": 1.52,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 12
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 128.67,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600876800,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 3.79,
+          "direction": 109.41
+        },
+        "surf": {
+          "min": 1.02,
+          "max": 1.32
+        },
+        "swells": [
+          {
+            "height": 1.52,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 12
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 128.67,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600887600,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 3.43,
+          "direction": 337.83
+        },
+        "surf": {
+          "min": 0.93,
+          "max": 1.23
+        },
+        "swells": [
+          {
+            "height": 1.43,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 11
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 129.38,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600898400,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 4.9,
+          "direction": 12.16
+        },
+        "surf": {
+          "min": 0.93,
+          "max": 1.23
+        },
+        "swells": [
+          {
+            "height": 1.43,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 11
+          },
+          {
+            "height": 0.09,
+            "direction": 135,
+            "directionMin": 129.38,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600909200,
+        "weather": {
+          "temperature": 27,
+          "condition": "MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 5.51,
+          "direction": 126.77
+        },
+        "surf": {
+          "min": 1.04,
+          "max": 1.1
+        },
+        "swells": [
+          {
+            "height": 1.34,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 11
+          },
+          {
+            "height": 0.12,
+            "direction": 139.22,
+            "directionMin": 133.59,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600920000,
+        "weather": {
+          "temperature": 28,
+          "condition": "MOSTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 16.65,
+          "direction": 159.15
+        },
+        "surf": {
+          "min": 1.04,
+          "max": 1.1
+        },
+        "swells": [
+          {
+            "height": 1.34,
+            "direction": 206.72,
+            "directionMin": 198.98,
+            "period": 11
+          },
+          {
+            "height": 0.12,
+            "direction": 139.22,
+            "directionMin": 133.59,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600930800,
+        "weather": {
+          "temperature": 28,
+          "condition": "OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 17.9,
+          "direction": 160.37
+        },
+        "surf": {
+          "min": 0.7,
+          "max": 1.01
+        },
+        "swells": [
+          {
+            "height": 1.25,
+            "direction": 205.31,
+            "directionMin": 196.88,
+            "period": 11
+          },
+          {
+            "height": 0.06,
+            "direction": 130.78,
+            "directionMin": 127.27,
+            "period": 4
+          },
+          {
+            "height": 0.06,
+            "direction": 150.47,
+            "directionMin": 150.47,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600941600,
+        "weather": {
+          "temperature": 26,
+          "condition": "OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 14.77,
+          "direction": 142.69
+        },
+        "surf": {
+          "min": 0.7,
+          "max": 1.01
+        },
+        "swells": [
+          {
+            "height": 1.25,
+            "direction": 205.31,
+            "directionMin": 196.88,
+            "period": 11
+          },
+          {
+            "height": 0.06,
+            "direction": 130.78,
+            "directionMin": 127.27,
+            "period": 4
+          },
+          {
+            "height": 0.06,
+            "direction": 150.47,
+            "directionMin": 150.47,
+            "period": 3
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600952400,
+        "weather": {
+          "temperature": 26,
+          "condition": "NIGHT_PARTLY_CLOUDY_NO_RAIN"
+        },
+        "wind": {
+          "speed": 12.39,
+          "direction": 125.86
+        },
+        "surf": {
+          "min": 0.63,
+          "max": 0.94
+        },
+        "swells": [
+          {
+            "height": 1.19,
+            "direction": 205.31,
+            "directionMin": 196.17,
+            "period": 11
+          },
+          {
+            "height": 0.09,
+            "direction": 130.78,
+            "directionMin": 127.27,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      },
+      {
+        "timestamp": 1600963200,
+        "weather": {
+          "temperature": 25,
+          "condition": "NIGHT_OVERCAST_NO_RAIN"
+        },
+        "wind": {
+          "speed": 10.89,
+          "direction": 120.47
+        },
+        "surf": {
+          "min": 0.63,
+          "max": 0.94
+        },
+        "swells": [
+          {
+            "height": 1.19,
+            "direction": 205.31,
+            "directionMin": 196.17,
+            "period": 11
+          },
+          {
+            "height": 0.09,
+            "direction": 130.78,
+            "directionMin": 127.27,
+            "period": 4
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          },
+          {
+            "height": 0,
+            "direction": 0,
+            "directionMin": 0,
+            "period": 0
+          }
+        ]
+      }
+    ],
+    "tides": [
+      {
+        "timestamp": 1600700400,
+        "type": "NORMAL",
+        "height": 2
+      },
+      {
+        "timestamp": 1600704000,
+        "type": "NORMAL",
+        "height": 2.51
+      },
+      {
+        "timestamp": 1600707600,
+        "type": "NORMAL",
+        "height": 2.81
+      },
+      {
+        "timestamp": 1600709400,
+        "type": "HIGH",
+        "height": 2.84
+      },
+      {
+        "timestamp": 1600711200,
+        "type": "NORMAL",
+        "height": 2.8
+      },
+      {
+        "timestamp": 1600714800,
+        "type": "NORMAL",
+        "height": 2.48
+      },
+      {
+        "timestamp": 1600718400,
+        "type": "NORMAL",
+        "height": 1.92
+      },
+      {
+        "timestamp": 1600722000,
+        "type": "NORMAL",
+        "height": 1.27
+      },
+      {
+        "timestamp": 1600725600,
+        "type": "NORMAL",
+        "height": 0.67
+      },
+      {
+        "timestamp": 1600729200,
+        "type": "NORMAL",
+        "height": 0.25
+      },
+      {
+        "timestamp": 1600732680,
+        "type": "LOW",
+        "height": 0.1
+      },
+      {
+        "timestamp": 1600732800,
+        "type": "NORMAL",
+        "height": 0.1
+      },
+      {
+        "timestamp": 1600736400,
+        "type": "NORMAL",
+        "height": 0.28
+      },
+      {
+        "timestamp": 1600740000,
+        "type": "NORMAL",
+        "height": 0.71
+      },
+      {
+        "timestamp": 1600743600,
+        "type": "NORMAL",
+        "height": 1.26
+      },
+      {
+        "timestamp": 1600747200,
+        "type": "NORMAL",
+        "height": 1.78
+      },
+      {
+        "timestamp": 1600750800,
+        "type": "NORMAL",
+        "height": 2.13
+      },
+      {
+        "timestamp": 1600754400,
+        "type": "HIGH",
+        "height": 2.26
+      },
+      {
+        "timestamp": 1600758000,
+        "type": "NORMAL",
+        "height": 2.12
+      },
+      {
+        "timestamp": 1600761600,
+        "type": "NORMAL",
+        "height": 1.76
+      },
+      {
+        "timestamp": 1600765200,
+        "type": "NORMAL",
+        "height": 1.3
+      },
+      {
+        "timestamp": 1600768800,
+        "type": "NORMAL",
+        "height": 0.85
+      },
+      {
+        "timestamp": 1600772400,
+        "type": "NORMAL",
+        "height": 0.54
+      },
+      {
+        "timestamp": 1600775340,
+        "type": "LOW",
+        "height": 0.45
+      },
+      {
+        "timestamp": 1600776000,
+        "type": "NORMAL",
+        "height": 0.46
+      },
+      {
+        "timestamp": 1600779600,
+        "type": "NORMAL",
+        "height": 0.65
+      },
+      {
+        "timestamp": 1600783200,
+        "type": "NORMAL",
+        "height": 1.09
+      },
+      {
+        "timestamp": 1600786800,
+        "type": "NORMAL",
+        "height": 1.66
+      },
+      {
+        "timestamp": 1600790400,
+        "type": "NORMAL",
+        "height": 2.18
+      },
+      {
+        "timestamp": 1600794000,
+        "type": "NORMAL",
+        "height": 2.56
+      },
+      {
+        "timestamp": 1600797600,
+        "type": "NORMAL",
+        "height": 2.71
+      },
+      {
+        "timestamp": 1600797900,
+        "type": "HIGH",
+        "height": 2.71
+      },
+      {
+        "timestamp": 1600801200,
+        "type": "NORMAL",
+        "height": 2.59
+      },
+      {
+        "timestamp": 1600804800,
+        "type": "NORMAL",
+        "height": 2.22
+      },
+      {
+        "timestamp": 1600808400,
+        "type": "NORMAL",
+        "height": 1.68
+      },
+      {
+        "timestamp": 1600812000,
+        "type": "NORMAL",
+        "height": 1.11
+      },
+      {
+        "timestamp": 1600815600,
+        "type": "NORMAL",
+        "height": 0.63
+      },
+      {
+        "timestamp": 1600819200,
+        "type": "NORMAL",
+        "height": 0.34
+      },
+      {
+        "timestamp": 1600821600,
+        "type": "LOW",
+        "height": 0.29
+      },
+      {
+        "timestamp": 1600822800,
+        "type": "NORMAL",
+        "height": 0.3
+      },
+      {
+        "timestamp": 1600826400,
+        "type": "NORMAL",
+        "height": 0.52
+      },
+      {
+        "timestamp": 1600830000,
+        "type": "NORMAL",
+        "height": 0.92
+      },
+      {
+        "timestamp": 1600833600,
+        "type": "NORMAL",
+        "height": 1.36
+      },
+      {
+        "timestamp": 1600837200,
+        "type": "NORMAL",
+        "height": 1.73
+      },
+      {
+        "timestamp": 1600840800,
+        "type": "NORMAL",
+        "height": 1.96
+      },
+      {
+        "timestamp": 1600843260,
+        "type": "HIGH",
+        "height": 2
+      },
+      {
+        "timestamp": 1600844400,
+        "type": "NORMAL",
+        "height": 1.99
+      },
+      {
+        "timestamp": 1600848000,
+        "type": "NORMAL",
+        "height": 1.82
+      },
+      {
+        "timestamp": 1600851600,
+        "type": "NORMAL",
+        "height": 1.49
+      },
+      {
+        "timestamp": 1600855200,
+        "type": "NORMAL",
+        "height": 1.13
+      },
+      {
+        "timestamp": 1600858800,
+        "type": "NORMAL",
+        "height": 0.83
+      },
+      {
+        "timestamp": 1600862400,
+        "type": "NORMAL",
+        "height": 0.67
+      },
+      {
+        "timestamp": 1600863600,
+        "type": "LOW",
+        "height": 0.66
+      },
+      {
+        "timestamp": 1600866000,
+        "type": "NORMAL",
+        "height": 0.71
+      },
+      {
+        "timestamp": 1600869600,
+        "type": "NORMAL",
+        "height": 0.96
+      },
+      {
+        "timestamp": 1600873200,
+        "type": "NORMAL",
+        "height": 1.37
+      },
+      {
+        "timestamp": 1600876800,
+        "type": "NORMAL",
+        "height": 1.83
+      },
+      {
+        "timestamp": 1600880400,
+        "type": "NORMAL",
+        "height": 2.21
+      },
+      {
+        "timestamp": 1600884000,
+        "type": "NORMAL",
+        "height": 2.44
+      },
+      {
+        "timestamp": 1600886640,
+        "type": "HIGH",
+        "height": 2.5
+      },
+      {
+        "timestamp": 1600887600,
+        "type": "NORMAL",
+        "height": 2.49
+      },
+      {
+        "timestamp": 1600891200,
+        "type": "NORMAL",
+        "height": 2.32
+      },
+      {
+        "timestamp": 1600894800,
+        "type": "NORMAL",
+        "height": 1.96
+      },
+      {
+        "timestamp": 1600898400,
+        "type": "NORMAL",
+        "height": 1.51
+      },
+      {
+        "timestamp": 1600902000,
+        "type": "NORMAL",
+        "height": 1.08
+      },
+      {
+        "timestamp": 1600905600,
+        "type": "NORMAL",
+        "height": 0.74
+      },
+      {
+        "timestamp": 1600909200,
+        "type": "NORMAL",
+        "height": 0.55
+      },
+      {
+        "timestamp": 1600910880,
+        "type": "LOW",
+        "height": 0.53
+      },
+      {
+        "timestamp": 1600912800,
+        "type": "NORMAL",
+        "height": 0.56
+      },
+      {
+        "timestamp": 1600916400,
+        "type": "NORMAL",
+        "height": 0.76
+      },
+      {
+        "timestamp": 1600920000,
+        "type": "NORMAL",
+        "height": 1.06
+      },
+      {
+        "timestamp": 1600923600,
+        "type": "NORMAL",
+        "height": 1.36
+      },
+      {
+        "timestamp": 1600927200,
+        "type": "NORMAL",
+        "height": 1.6
+      },
+      {
+        "timestamp": 1600930800,
+        "type": "NORMAL",
+        "height": 1.72
+      },
+      {
+        "timestamp": 1600932480,
+        "type": "HIGH",
+        "height": 1.74
+      },
+      {
+        "timestamp": 1600934400,
+        "type": "NORMAL",
+        "height": 1.71
+      },
+      {
+        "timestamp": 1600938000,
+        "type": "NORMAL",
+        "height": 1.57
+      },
+      {
+        "timestamp": 1600941600,
+        "type": "NORMAL",
+        "height": 1.33
+      },
+      {
+        "timestamp": 1600945200,
+        "type": "NORMAL",
+        "height": 1.1
+      },
+      {
+        "timestamp": 1600948800,
+        "type": "NORMAL",
+        "height": 0.94
+      },
+      {
+        "timestamp": 1600952040,
+        "type": "LOW",
+        "height": 0.89
+      },
+      {
+        "timestamp": 1600952400,
+        "type": "NORMAL",
+        "height": 0.89
+      },
+      {
+        "timestamp": 1600956000,
+        "type": "NORMAL",
+        "height": 0.98
+      },
+      {
+        "timestamp": 1600959600,
+        "type": "NORMAL",
+        "height": 1.21
+      },
+      {
+        "timestamp": 1600963200,
+        "type": "NORMAL",
+        "height": 1.52
+      },
+      {
+        "timestamp": 1600966800,
+        "type": "NORMAL",
+        "height": 1.84
+      },
+      {
+        "timestamp": 1600970400,
+        "type": "NORMAL",
+        "height": 2.09
+      },
+      {
+        "timestamp": 1600974000,
+        "type": "NORMAL",
+        "height": 2.21
+      }
+    ]
+  }
+}

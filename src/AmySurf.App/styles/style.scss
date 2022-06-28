@@ -1,0 +1,38 @@
+// xxs xs sm md lg xl xxl
+@import "./theme.scss";
+
+// @include media-breakpoint-only(xs) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(0.2rem);
+//     }
+// }
+
+// @include media-breakpoint-only(sm) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(0.8rem);
+//     }
+// }
+
+// @include media-breakpoint-only(md) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(0.9rem);
+//     }
+// }
+
+// @include media-breakpoint-only(lg) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(1rem);
+//     }
+// }
+
+// @include media-breakpoint-only(xl) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(1.1rem);
+//     }
+// }
+
+// @include media-breakpoint-only(xxl) {
+//     .font-size-auto {
+//         font-size: rfs-fluid-value(2.2rem);
+//     }
+// }

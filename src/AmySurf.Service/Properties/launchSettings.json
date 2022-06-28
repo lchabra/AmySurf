@@ -1,0 +1,41 @@
+{
+    "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iis": {
+            "applicationUrl": "http://localhost/AmySurf.Service",
+            "sslPort": 0
+        },
+        "iisExpress": {
+            "applicationUrl": "http://localhost:63226",
+            "sslPort": 0
+        }
+    },
+    "profiles": {
+        "IIS Express": {
+            "commandName": "IISExpress",
+            "launchBrowser": true,
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        "AmySurf.Service": {
+            "commandName": "Project",
+            "environmentVariables": {
+                "ASPNETCORE_URLS": "http://0.0.0.0:5001",
+                "ASPNETCORE_ENVIRONMENT": "Production",
+                "TimeBeforeRetryUriSec": "3",
+                "TimeOutHttpRequestSec": "3",
+                "BackgroundPullingInterval": "3600"
+            },
+            "dotnetRunMessages": "true",
+            "applicationUrl": "http://localhost:5001"
+        },
+        "Docker": {
+            "commandName": "Docker",
+            "launchBrowser": true,
+            "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+            "publishAllPorts": true
+        }
+    }
+}

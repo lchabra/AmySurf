@@ -1,0 +1,33 @@
+﻿using AmySurf.Models;
+using AmySurf.Service.Logging;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AmySurf.Service.Controllers
+{
+    [ApiController]
+    public class ErrorController : ControllerBase
+    {
+        private readonly ILogger _logger;
+
+        public ErrorController(ILogger logger)
+        {
+            _logger = logger;
+        }
+
+        [Route("/error")]
+        public IActionResult Error()
+        {
+            var context = HttpContext.Features.Get<IExceptionHandlerFeature>();
+
+            Log.ApiControllerError(_logger, context?.Error.Message ?? "Error message is missing");
+
+            return Problem(title: context?.Error.Message);
+        }
+    }
+}

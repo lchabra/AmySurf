@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/.cache/
+**/.parcel-cache/
+**/out/
+
+.vscode
+Dockerfile
+docker-compose.yml
+.gitignore
+.dockerignore
+.env
