@@ -6,19 +6,15 @@ import ForecastPageTitle from "../components/ForecastPageTitle"
 import { MapSpot } from "../components/MapSpot"
 import { FtPageTitleHeightEm, minMapSizeEm } from "../contexts/useStyle"
 import ForecastDetailAdaptiveView from "../components/ForecastDetailAdaptiveView"
-import PageTitle from "../components/PagesTitles"
-import { useForecastsApi } from "../contexts/useForecasts"
 
-export default function ForecastPage(): JSX.Element {
+export default function ForecastPage(): React.JSX.Element {
     const user = useUser()
     const styles = getForecastPageStyles(user.userSettings.mapSize)
-    const forecastApi = useForecastsApi()
 
     return (
-        <Stack className="w-100">
+        <Stack className={`w-100`}>
             <Container fluid className='p-0 '>
-                {!(forecastApi.data?.spotForecasts?.spot !== undefined) && <PageTitle title="Forecast" />}
-                {forecastApi.data?.spotForecasts?.spot !== undefined && <ForecastPageTitle spot={forecastApi.data.spotForecasts.spot} />}
+                <ForecastPageTitle />
             </Container>
 
             {user.userSettings.mapSize !== MapSize.Disable &&

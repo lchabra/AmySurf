@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useForecastsApi } from '../contexts/useForecasts'
 import { useForecastSummary } from '../contexts/useForecastSummary'
-import { orangeColor, useAppStyle } from '../contexts/useStyle'
+import { useAppStyle } from '../contexts/useStyle'
 import { useUser } from '../contexts/useUser'
 import { Button, ButtonGroup, Container, Dropdown, DropdownButton, PigeonMap, PigeonMapMarker } from '../core-ui/ui'
 import { MapSize } from '../models/modelsApp'
-import { getGradiantBackgroundClassName, getTextColorClassName } from '../styles/theme'
-import { WindSwellCompas } from './WindSwellCompas'
+import { SwellArrows } from './Compass'
 
 const defaultMapZoomOut = 2
 const defaultMapZoomIn = 14
@@ -18,20 +17,22 @@ export type SpotCoordinate = {
     longitude: number
 }
 
-export function MapSpot(): JSX.Element {
+export function MapSpot(): React.JSX.Element {
     const user = useUser()
+    const appStyle = useAppStyle()
     const forecastsApi = useForecastsApi()
     const forecastSummary = useForecastSummary()
 
     const spots = forecastsApi.data?.spots ?? []
     const selectedSpot = spots.find(s => s.name === user.userSettings.spotName)
-    const mapPosition: [number, number] = [selectedSpot?.gpsCoordinate.latitude ?? defaultMapPosition[0], selectedSpot?.gpsCoordinate.longitude ?? defaultMapPosition[1]]
+    const spotGpsCoordinate: [number, number] = [selectedSpot?.gpsCoordinate.latitude ?? defaultMapPosition[0], selectedSpot?.gpsCoordinate.longitude ?? defaultMapPosition[1]]
 
-    const [center, setCenter] = useState(mapPosition)
+    const [center, setCenter] = useState(spotGpsCoordinate)
     const [zoom, setZoom] = useState(selectedSpot === undefined ? defaultMapZoomOut : defaultMapZoomIn)
+    const [swellVisible, setSwellVisible] = useState(true)
 
     useEffect(() => {
-        setCenter(mapPosition)
+        setCenter(spotGpsCoordinate)
         setZoom(selectedSpot !== undefined ? defaultMapZoomIn : defaultMapZoomOut)
     }, [selectedSpot])
 
@@ -54,9 +55,13 @@ export function MapSpot(): JSX.Element {
 
                         return (
                             <PigeonMapMarker
-                                onClick={() => { user.saveAppSettings({ ...user.userSettings, spotName: spot.name }) }}
+                                onClick={() => {
+                                    spot.name === user.userSettings.spotName ?
+                                        setCenter(spotGpsCoordinate) :
+                                        user.saveAppSettings({ ...user.userSettings, spotName: spot.name })
+                                }}
                                 key={'map-marker-' + spot.name}
-                                color={selectedSpot?.name === spot.name ? 'green' : isFavorite ? orangeColor : 'black'}
+                                color={selectedSpot?.name === spot.name ? 'green' : isFavorite ? appStyle.colorValues.themeTone : 'black'}
                                 width={40}
                                 anchor={[spot.gpsCoordinate.latitude, spot.gpsCoordinate.longitude]}
                             />
@@ -65,28 +70,35 @@ export function MapSpot(): JSX.Element {
 
             </PigeonMap>
 
-            <MapButtonGroup onGoToGmapClicked={() => goToGmapClicked(mapPosition[0], mapPosition[1])} />
-            <MapSizeDropdown onCenterMapClicked={() => setCenter(mapPosition)} />
+            <MapButtonGroup onGoToGmapClicked={() => goToGmapClicked(spotGpsCoordinate[0], spotGpsCoordinate[1])} />
+            <MapActionsButtons
+                swellVisible={swellVisible}
+                onCenterMapClicked={() => {
+                    setZoom(defaultMapZoomIn)
+                    setCenter(spotGpsCoordinate)
+                }}
+                onSwellVisibilityClicked={() => { setSwellVisible(!swellVisible) }}
+            />
 
             {
+                swellVisible &&
                 forecastSummary.selectedForecast &&
                 <div style={{ opacity: '80%' }} className='pe-none position-absolute top-50 start-50 translate-middle'>
-                    <WindSwellCompas data={forecastSummary.selectedForecast} />
+                    <SwellArrows data={forecastSummary.selectedForecast} />
                 </div>
             }
 
         </Container >
-
     )
 }
 
-function MapButtonGroup(props: { onGoToGmapClicked: () => void }): JSX.Element {
+function MapButtonGroup(props: { onGoToGmapClicked: () => void }): React.JSX.Element {
     const appStyle = useAppStyle()
 
     return (
         <Button
-            variant={`theme-${appStyle.theme}-secondary`}
-            className='position-absolute top-0 start-0'
+            variant={`${appStyle.classNames.fadedColor}`}
+            className={`border-${appStyle.classNames.toneColor} position-absolute top-0 start-0`}
             size='sm'
             onClick={props.onGoToGmapClicked}
         >
@@ -95,55 +107,76 @@ function MapButtonGroup(props: { onGoToGmapClicked: () => void }): JSX.Element {
     )
 }
 
-function MapSizeDropdown(props: { onCenterMapClicked: () => void }): JSX.Element {
+function MapActionsButtons(props: { swellVisible: boolean, onCenterMapClicked: () => void, onSwellVisibilityClicked: () => void }): React.JSX.Element {
     const user = useUser()
     const appStyle = useAppStyle()
-    const bgColor = getGradiantBackgroundClassName(appStyle.theme)
 
     return (
-        <ButtonGroup vertical className='position-absolute top-0 end-0'>
+        <ButtonGroup vertical className={`border-${appStyle.classNames.toneColor} position-absolute top-0 end-0`}>
             <Button
-                variant={`theme-${appStyle.theme}-secondary`}
-                className=''
+                className={`border border-${appStyle.classNames.toneColor}`}
+                variant={`${appStyle.classNames.fadedColor}`}
                 size='sm'
                 onClick={props.onCenterMapClicked}
             >
-                Center
+                Re-Center
             </Button>
 
             <DropdownButton
-                variant={`theme-${appStyle.theme}-secondary`}
-                size='sm' as={ButtonGroup}
+                className={`border border-${appStyle.classNames.toneColor}`}
+                variant={`${appStyle.classNames.fadedColor}`}
+                size='sm'
+                as={ButtonGroup}
                 title="Size"
-                className='border-top '
                 onSelect={(eventKey: any) => user.saveAppSettings({ ...user.userSettings, mapSize: eventKey as MapSize })}
             >
-
-                <div className={`${bgColor}`}>
+                <div className={`border border-${appStyle.classNames.toneColor} bg-${appStyle.classNames.mainColor} bg-gradient`}>
                     <MapSizeDropdownItem mapSize={MapSize.Disable} />
                     <MapSizeDropdownItem mapSize={MapSize.Small} />
                     <MapSizeDropdownItem mapSize={MapSize.Medium} />
                     <MapSizeDropdownItem mapSize={MapSize.Fullscreen} />
                 </div>
-
             </DropdownButton>
-        </ButtonGroup>
 
+            <Button
+                className={`border border-${appStyle.classNames.toneColor}`}
+                variant={`${appStyle.classNames.fadedColor}`}
+                size='sm'
+                onClick={() => props.onSwellVisibilityClicked()}
+            >
+                {props.swellVisible ? 'Hide Swell' : 'Show Swell'}
+            </Button>
+
+        </ButtonGroup>
     )
 }
+
 
 function MapSizeDropdownItem(props: { mapSize: MapSize }) {
     const user = useUser()
     const appStyle = useAppStyle()
+
+    const [textHoverState, setTextHoverState] = useState(false)
+
     const isActive = user.userSettings.mapSize === props.mapSize
-    const textColor = isActive ? 'text-dark' : getTextColorClassName(appStyle.theme)
+
+    const classNameText = isActive
+        ? `text-${appStyle.classNames.toneContrastColor}`
+        : textHoverState
+            ? `text-${appStyle.classNames.toneContrastColor}`
+            : `text-${appStyle.classNames.mainContrastColor}`
+
+    const styleBackgroundColor = (isActive || textHoverState) ? appStyle.colorValues.themeTone : ''
 
     return (
         <Dropdown.Item
+            onPointerEnter={() => setTextHoverState(true)}
+            onPointerLeave={() => setTextHoverState(false)}
+            style={{ backgroundColor: styleBackgroundColor }}
             active={isActive}
             eventKey={props.mapSize}
         >
-            <span className={`${textColor}`}>
+            <span className={classNameText}>
                 {props.mapSize}
             </span>
         </Dropdown.Item>

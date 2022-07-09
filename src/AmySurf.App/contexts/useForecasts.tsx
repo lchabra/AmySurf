@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { AppForecastsData, IForecastApi } from "../models/modelsApp"
+import getSurfForecastResponse from "../mock/getSurfForecastResponse.json";
+import getEnergyForecastResponse from "../mock/getEnergyForecastResponse.json";
+import getWeatherForecastResponse from "../mock/getWeatherForecastResponse.json";
+import getSpotsResponse from "../mock/getSpotsResponse.json";
+import { AppForecastsData, IForecastApi, User } from "../models/modelsApp"
 import { GetEnergyForecastResponse, GetSurfForecastResponse, GetWeatherForecastResponse, Spot } from '../models/modelsForecasts';
 import { useUser } from './useUser';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -79,7 +83,9 @@ function _useForecastApi(): IForecastApi {
                     setIsSurfLoading(true)
                     const response: FetchResponse<GetSurfForecastResponse> = await tryFetchUrl<GetSurfForecastResponse>(urlSurf, fetchTimerTimeoutMsBase);
 
+                    // TODO:
                     if (response.data) {
+                        // console.log(response.data)
                         setSurfForecast(response.data)
                         if (!isForecastFresh(new Date(response.data.timestamp), user.userSettings.refreshIntervalMinutes)) {
                             setErrorHelper('Forecasts', new Error('old forecasts'))
@@ -119,14 +125,13 @@ function _useForecastApi(): IForecastApi {
         fetchSpots();
         fetchData()
 
-    }, [dateLastRefresh, user.userSettings.spotName]);
+    }, [dateLastRefresh, user.userSettings.spotName, user.userSettings.serverUrl]);
 
     // Refresh the appForecastData
     useEffect(() => {
         const selectedSpot = spots?.find(spot => spot.name === user.userSettings.spotName)
         const appForecastData = getAppForecastsData(user.userSettings, errors ?? [], selectedSpot, spots, surfForecast, weatherForecast, energyForecast)
         setAppForecastData(appForecastData)
-
         //TODO: Fix: some settings triger change for nothing (theme...)
     }, [user.userSettings, errors, spots, surfForecast, weatherForecast, energyForecast]);
 
@@ -158,7 +163,8 @@ function _useForecastApi(): IForecastApi {
             else { setDateLastRefresh(new Date()) }
         },
         data: appForecastData,
-        // nowForecast: nowForecast,
+        // data: getMockData(user),
+        mockData: getMockData(user),
         isSurfLoading: isSurfLoading,
         isSpotsLoading: isSpotsLoading
     }
@@ -171,4 +177,17 @@ function _useForecastApi(): IForecastApi {
 function getErrorMessage(error: unknown): string {
     if (error instanceof Error) return error.message
     return String(error)
+}
+
+function getMockData(user: User): AppForecastsData | undefined {
+    let surfForecastResponse: GetSurfForecastResponse = getSurfForecastResponse
+    let energyForecastResponse: GetEnergyForecastResponse = getEnergyForecastResponse
+    let weatherForecastResponse: GetWeatherForecastResponse = getWeatherForecastResponse
+    let spots: Spot[] = getSpotsResponse
+
+    const selectedSpot = spots[0]
+
+    const appForecastData = getAppForecastsData(user.userSettings, [], selectedSpot, spots, surfForecastResponse, weatherForecastResponse, energyForecastResponse)
+
+    return appForecastData
 }

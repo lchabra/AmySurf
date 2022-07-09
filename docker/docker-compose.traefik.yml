@@ -1,0 +1,8 @@
+services:
+  amysurf:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${AMYSURF_DOCKER_NAME:?err}.rule=${AMYSURF_TRAEFIK_RULE:?err}"
+      # - "traefik.http.routers.${AMYSURF_DOCKER_NAME:?err}.rule=${AMYSURF_TRAEFIK_RULE:?err} || ClientIP(`192.168.1.115`) || ClientIP(`192.168.1.102`)"
+      - "traefik.http.routers.${AMYSURF_DOCKER_NAME}.tls.certresolver=acmehttpchallenge"
+      - "traefik.http.services.${AMYSURF_DOCKER_NAME}.loadbalancer.server.port=${AMYSURF_ASPNETCORE_PORTS:?err}"

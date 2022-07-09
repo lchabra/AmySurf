@@ -2,7 +2,7 @@ import React from "react";
 import { useUser } from "../contexts/useUser";
 import { Container, Form, Stack } from "../core-ui/ui";
 
-export function ForecastDurationCheck(): JSX.Element {
+export function ForecastDurationCheck(): React.JSX.Element {
     return (
         <Container>
             <Stack gap={2} direction="horizontal">
@@ -15,7 +15,7 @@ export function ForecastDurationCheck(): JSX.Element {
     );
 }
 
-function DurationCheck(props: { duration: number }): JSX.Element {
+function DurationCheck(props: { duration: number }): React.JSX.Element {
     const user = useUser();
 
     return (

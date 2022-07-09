@@ -3,10 +3,12 @@ import React from 'react'
 import Home from '../assets/images/dashboard.svg'
 import Settings from '../assets/images/settings.svg'
 import Search from '../assets/images/search.svg'
+import Map from '../assets/images/map.svg'
 
 import ExpandLess from '../assets/images/expand_less.svg'
 import ExpandMore from '../assets/images/expand_more.svg'
 import Remove from '../assets/images/remove.svg'
+import XCircle from '../assets/images/x-circle.svg'
 
 import Star from '../assets/images/star.svg'
 import StarFill from '../assets/images/star-fill.svg'
@@ -34,6 +36,9 @@ import Sunrise from '../assets/images/Sunrise.png'
 import Sunset from '../assets/images/Sunset.png'
 
 import Air from '../assets/images/forecastType/air.svg'
+import ArrowSkinnyDown from '../assets/images/arrow-skinny-down.svg'
+import ArrowSkinnyUp from '../assets/images/arrow-skinny-up.svg'
+
 import Bolt from '../assets/images/forecastType/bolt.svg'
 import Clock from '../assets/images/forecastType/clock.svg'
 import Cloudy from '../assets/images/forecastType/cloudy.svg'
@@ -71,10 +76,12 @@ export const SunsetIcon = (props: ImagesProps) => <img src={Sunset} style={props
 export const HomeIcon = (props: ImagesProps) => <Home style={props} />
 export const SettingsIcon = (props: ImagesProps) => <Settings style={props} />
 export const SearchIcon = (props: ImagesProps) => <Search style={props} />
+export const MapIcon = (props: ImagesProps) => <Map style={props} />
 
 export const ExpandLessIcon = (props: ImagesProps) => <ExpandLess style={props} />
 export const ExpandMoreIcon = (props: ImagesProps) => <ExpandMore style={props} />
 export const RemoveIcon = (props: ImagesProps) => <Remove style={props} />
+export const XCircleIcon = (props: ImagesProps) => <XCircle style={props} />
 
 export const StarIcon = (props: ImagesProps) => <Star style={props} />
 export const StarFillIcon = (props: ImagesProps) => <StarFill style={props} />
@@ -84,6 +91,8 @@ export const BookmarkAddedIcon = (props: ImagesProps) => <BookmarkAdded style={p
 export const ErrorIcon = (props: ImagesProps) => <Error style={props} />
 export const ReportProblemIcon = (props: ImagesProps) => <ReportProblem style={props} />
 
+export const ArrowSkinnyIconDown = (props: IconProps) => <ArrowSkinnyDown style={props} />
+export const ArrowSkinnyIconUp = (props: IconProps) => <ArrowSkinnyUp style={props} />
 export const AirIcon = (props: IconProps) => <Air style={props} />
 export const BoltIcon = (props: IconProps) => <Bolt style={props} />
 export const ClockIcon = (props: IconProps) => <Clock style={props} />

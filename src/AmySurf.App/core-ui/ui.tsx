@@ -6,6 +6,7 @@ import Alert from 'react-bootstrap/Alert'
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Card from 'react-bootstrap/Card'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -41,6 +42,7 @@ export {
     Dropdown,
     Badge,
     ToggleButton,
+    ToggleButtonGroup,
     Button,
     Card,
     // StyledButton as Button,

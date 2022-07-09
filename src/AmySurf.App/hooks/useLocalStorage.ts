@@ -1,5 +1,5 @@
 // https://usehooks-typescript.com/react-hook/use-local-storage
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 type SetValue<T> = Dispatch<SetStateAction<T>>
 export type Value<T> = T | null
@@ -19,21 +19,21 @@ export function useReadLocalStorage<T>(key: string): Value<T> {
     }
 }
 
-export default function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
+export default function useLocalStorage<T>(key: string, initialValue: T | (() => T)): [T, SetValue<T>] {
     // Get from local storage then
     // parse stored json or return initialValue
     const readValue = (): T => {
         // Prevent build error "window is undefined" but keep keep working
         if (typeof window === 'undefined') {
-            return initialValue
+            return initializeLocalStorageValue<T>(key, initialValue)
         }
 
         try {
             const item = window.localStorage.getItem(key)
-            return item ? (JSON.parse(item) as T) : initialValue
+            return item ? (JSON.parse(item) as T) : initializeLocalStorageValue<T>(key, initialValue)
         } catch (error) {
             console.warn(`Error reading localStorage key “${key}”:`, error)
-            return initialValue
+            return initializeLocalStorageValue<T>(key, initialValue)
         }
     }
 
@@ -66,11 +66,13 @@ export default function useLocalStorage<T>(key: string, initialValue: T): [T, Se
         }
     }
 
-    useEffect(() => {
-        setStoredValue(readValue())
-    }, [])
-
     return [storedValue, setValue]
+}
+
+function initializeLocalStorageValue<T>(key: string, initialValue: T | (() => T)): T {
+    const value = typeof (initialValue) === 'function' ? (initialValue as Function)() : initialValue
+    setLocalStorageValue(key, value)
+    return value
 }
 
 function setLocalStorageValue(key: string, value: unknown | null) {

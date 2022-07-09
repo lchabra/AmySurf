@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 
-export function IconOrientated(props: { data: IconOrientatedData }): JSX.Element {
+export function IconOrientated(props: { data: IconOrientatedData }): React.JSX.Element {
     const styles = getStyles(props.data.orientation)
 
     return (
@@ -8,8 +8,8 @@ export function IconOrientated(props: { data: IconOrientatedData }): JSX.Element
             <div>
                 {props.data.icon}
             </div>
-            <div className='text-light position-absolute top-50 start-50 translate-middle'>
-                <div style={styles.textWrapper}>
+            <div className='text-light text-nowrap position-absolute top-50 start-50 translate-middle'>
+                <div className='fs-6' style={styles.textWrapper}>
                     {props.data.label}
                 </div>
             </div>
@@ -39,5 +39,5 @@ function getStyles(orientation: number): Record<string, CSSProperties> {
 export type IconOrientatedData = {
     label: string,
     orientation: number,
-    icon: JSX.Element
+    icon: React.JSX.Element
 }

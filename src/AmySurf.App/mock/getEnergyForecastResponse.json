@@ -1,303 +1,875 @@
 {
-    "timeStamp": "2022-02-17T02:23:41.2539133Z",
+    "timeStamp": "2022-08-08T04:08:10.7979679Z",
     "forecast": {
-        "spotId": "Canggu_Batu_Bolong",
+        "spotId": "Bali_Pererenan",
         "hourlyForecasts": [
             {
-                "dateTime": "2022-02-15T21:00:00Z",
-                "energy": 553
+                "dateTime": "2022-08-05T16:00:00Z",
+                "energy": 2363
             },
             {
-                "dateTime": "2022-02-15T22:00:00Z",
-                "energy": 555
+                "dateTime": "2022-08-05T17:00:00Z",
+                "energy": 2266
             },
             {
-                "dateTime": "2022-02-15T23:00:00Z",
-                "energy": 558
+                "dateTime": "2022-08-05T18:00:00Z",
+                "energy": 2169
             },
             {
-                "dateTime": "2022-02-16T00:00:00Z",
-                "energy": 561
+                "dateTime": "2022-08-05T19:00:00Z",
+                "energy": 2105
             },
             {
-                "dateTime": "2022-02-16T01:00:00Z",
-                "energy": 563
+                "dateTime": "2022-08-05T20:00:00Z",
+                "energy": 2041
             },
             {
-                "dateTime": "2022-02-16T02:00:00Z",
-                "energy": 566
+                "dateTime": "2022-08-05T21:00:00Z",
+                "energy": 1977
             },
             {
-                "dateTime": "2022-02-16T03:00:00Z",
-                "energy": 569
+                "dateTime": "2022-08-05T22:00:00Z",
+                "energy": 1952
             },
             {
-                "dateTime": "2022-02-16T04:00:00Z",
-                "energy": 566
+                "dateTime": "2022-08-05T23:00:00Z",
+                "energy": 1927
             },
             {
-                "dateTime": "2022-02-16T05:00:00Z",
-                "energy": 563
+                "dateTime": "2022-08-06T00:00:00Z",
+                "energy": 1902
             },
             {
-                "dateTime": "2022-02-16T06:00:00Z",
-                "energy": 561
+                "dateTime": "2022-08-06T01:00:00Z",
+                "energy": 1842
             },
             {
-                "dateTime": "2022-02-16T07:00:00Z",
-                "energy": 529
+                "dateTime": "2022-08-06T02:00:00Z",
+                "energy": 1782
             },
             {
-                "dateTime": "2022-02-16T08:00:00Z",
-                "energy": 497
+                "dateTime": "2022-08-06T03:00:00Z",
+                "energy": 1723
             },
             {
-                "dateTime": "2022-02-16T09:00:00Z",
-                "energy": 465
+                "dateTime": "2022-08-06T04:00:00Z",
+                "energy": 1706
             },
             {
-                "dateTime": "2022-02-16T10:00:00Z",
-                "energy": 441
+                "dateTime": "2022-08-06T05:00:00Z",
+                "energy": 1690
             },
             {
-                "dateTime": "2022-02-16T11:00:00Z",
-                "energy": 418
+                "dateTime": "2022-08-06T06:00:00Z",
+                "energy": 1674
             },
             {
-                "dateTime": "2022-02-16T12:00:00Z",
-                "energy": 395
+                "dateTime": "2022-08-06T07:00:00Z",
+                "energy": 1622
             },
             {
-                "dateTime": "2022-02-16T13:00:00Z",
-                "energy": 371
+                "dateTime": "2022-08-06T08:00:00Z",
+                "energy": 1570
             },
             {
-                "dateTime": "2022-02-16T14:00:00Z",
-                "energy": 348
+                "dateTime": "2022-08-06T09:00:00Z",
+                "energy": 1519
             },
             {
-                "dateTime": "2022-02-16T15:00:00Z",
-                "energy": 325
+                "dateTime": "2022-08-06T10:00:00Z",
+                "energy": 1461
             },
             {
-                "dateTime": "2022-02-16T16:00:00Z",
-                "energy": 321
+                "dateTime": "2022-08-06T11:00:00Z",
+                "energy": 1403
             },
             {
-                "dateTime": "2022-02-16T17:00:00Z",
-                "energy": 317
+                "dateTime": "2022-08-06T12:00:00Z",
+                "energy": 1346
             },
             {
-                "dateTime": "2022-02-16T18:00:00Z",
-                "energy": 314
+                "dateTime": "2022-08-06T13:00:00Z",
+                "energy": 1322
             },
             {
-                "dateTime": "2022-02-16T19:00:00Z",
-                "energy": 312
+                "dateTime": "2022-08-06T14:00:00Z",
+                "energy": 1298
             },
             {
-                "dateTime": "2022-02-16T20:00:00Z",
-                "energy": 310
+                "dateTime": "2022-08-06T15:00:00Z",
+                "energy": 1274
             },
             {
-                "dateTime": "2022-02-16T21:00:00Z",
-                "energy": 309
+                "dateTime": "2022-08-06T16:00:00Z",
+                "energy": 1267
             },
             {
-                "dateTime": "2022-02-16T22:00:00Z",
-                "energy": 283
+                "dateTime": "2022-08-06T17:00:00Z",
+                "energy": 1261
             },
             {
-                "dateTime": "2022-02-16T23:00:00Z",
-                "energy": 258
+                "dateTime": "2022-08-06T18:00:00Z",
+                "energy": 1255
             },
             {
-                "dateTime": "2022-02-17T00:00:00Z",
-                "energy": 233
+                "dateTime": "2022-08-06T19:00:00Z",
+                "energy": 1240
             },
             {
-                "dateTime": "2022-02-17T01:00:00Z",
-                "energy": 232
+                "dateTime": "2022-08-06T20:00:00Z",
+                "energy": 1225
             },
             {
-                "dateTime": "2022-02-17T02:00:00Z",
-                "energy": 231
+                "dateTime": "2022-08-06T21:00:00Z",
+                "energy": 1211
             },
             {
-                "dateTime": "2022-02-17T03:00:00Z",
-                "energy": 230
+                "dateTime": "2022-08-06T22:00:00Z",
+                "energy": 1166
             },
             {
-                "dateTime": "2022-02-17T04:00:00Z",
-                "energy": 227
+                "dateTime": "2022-08-06T23:00:00Z",
+                "energy": 1121
             },
             {
-                "dateTime": "2022-02-17T05:00:00Z",
-                "energy": 224
+                "dateTime": "2022-08-07T00:00:00Z",
+                "energy": 1077
             },
             {
-                "dateTime": "2022-02-17T06:00:00Z",
-                "energy": 222
+                "dateTime": "2022-08-07T01:00:00Z",
+                "energy": 1030
             },
             {
-                "dateTime": "2022-02-17T07:00:00Z",
-                "energy": 235
+                "dateTime": "2022-08-07T02:00:00Z",
+                "energy": 984
             },
             {
-                "dateTime": "2022-02-17T08:00:00Z",
-                "energy": 248
+                "dateTime": "2022-08-07T03:00:00Z",
+                "energy": 938
             },
             {
-                "dateTime": "2022-02-17T09:00:00Z",
-                "energy": 261
+                "dateTime": "2022-08-07T04:00:00Z",
+                "energy": 887
             },
             {
-                "dateTime": "2022-02-17T10:00:00Z",
-                "energy": 209
+                "dateTime": "2022-08-07T05:00:00Z",
+                "energy": 837
             },
             {
-                "dateTime": "2022-02-17T11:00:00Z",
-                "energy": 157
+                "dateTime": "2022-08-07T06:00:00Z",
+                "energy": 787
             },
             {
-                "dateTime": "2022-02-17T12:00:00Z",
-                "energy": 105
+                "dateTime": "2022-08-07T07:00:00Z",
+                "energy": 736
             },
             {
-                "dateTime": "2022-02-17T13:00:00Z",
-                "energy": 115
+                "dateTime": "2022-08-07T08:00:00Z",
+                "energy": 685
             },
             {
-                "dateTime": "2022-02-17T14:00:00Z",
-                "energy": 125
+                "dateTime": "2022-08-07T09:00:00Z",
+                "energy": 634
             },
             {
-                "dateTime": "2022-02-17T15:00:00Z",
-                "energy": 135
+                "dateTime": "2022-08-07T10:00:00Z",
+                "energy": 605
             },
             {
-                "dateTime": "2022-02-17T16:00:00Z",
-                "energy": 140
+                "dateTime": "2022-08-07T11:00:00Z",
+                "energy": 576
             },
             {
-                "dateTime": "2022-02-17T17:00:00Z",
-                "energy": 145
+                "dateTime": "2022-08-07T12:00:00Z",
+                "energy": 548
             },
             {
-                "dateTime": "2022-02-17T18:00:00Z",
-                "energy": 150
+                "dateTime": "2022-08-07T13:00:00Z",
+                "energy": 524
             },
             {
-                "dateTime": "2022-02-17T19:00:00Z",
-                "energy": 166
+                "dateTime": "2022-08-07T14:00:00Z",
+                "energy": 500
             },
             {
-                "dateTime": "2022-02-17T20:00:00Z",
-                "energy": 182
-            },
-            {
-                "dateTime": "2022-02-17T21:00:00Z",
-                "energy": 199
-            },
-            {
-                "dateTime": "2022-02-17T22:00:00Z",
-                "energy": 188
-            },
-            {
-                "dateTime": "2022-02-17T23:00:00Z",
-                "energy": 177
-            },
-            {
-                "dateTime": "2022-02-18T00:00:00Z",
-                "energy": 167
-            },
-            {
-                "dateTime": "2022-02-18T01:00:00Z",
-                "energy": 165
-            },
-            {
-                "dateTime": "2022-02-18T02:00:00Z",
-                "energy": 163
-            },
-            {
-                "dateTime": "2022-02-18T03:00:00Z",
-                "energy": 161
-            },
-            {
-                "dateTime": "2022-02-18T04:00:00Z",
-                "energy": 248
-            },
-            {
-                "dateTime": "2022-02-18T05:00:00Z",
-                "energy": 336
-            },
-            {
-                "dateTime": "2022-02-18T06:00:00Z",
-                "energy": 424
-            },
-            {
-                "dateTime": "2022-02-18T07:00:00Z",
-                "energy": 408
-            },
-            {
-                "dateTime": "2022-02-18T08:00:00Z",
-                "energy": 392
-            },
-            {
-                "dateTime": "2022-02-18T09:00:00Z",
-                "energy": 377
-            },
-            {
-                "dateTime": "2022-02-18T10:00:00Z",
-                "energy": 406
-            },
-            {
-                "dateTime": "2022-02-18T11:00:00Z",
-                "energy": 435
-            },
-            {
-                "dateTime": "2022-02-18T12:00:00Z",
-                "energy": 464
-            },
-            {
-                "dateTime": "2022-02-18T13:00:00Z",
+                "dateTime": "2022-08-07T15:00:00Z",
                 "energy": 477
             },
             {
-                "dateTime": "2022-02-18T14:00:00Z",
-                "energy": 490
+                "dateTime": "2022-08-07T16:00:00Z",
+                "energy": 0
             },
             {
-                "dateTime": "2022-02-18T15:00:00Z",
-                "energy": 503
+                "dateTime": "2022-08-07T17:00:00Z",
+                "energy": 100
             },
             {
-                "dateTime": "2022-02-18T16:00:00Z",
-                "energy": 588
+                "dateTime": "2022-08-07T18:00:00Z",
+                "energy": 200
             },
             {
-                "dateTime": "2022-02-18T17:00:00Z",
-                "energy": 673
+                "dateTime": "2022-08-07T19:00:00Z",
+                "energy": 300
             },
             {
-                "dateTime": "2022-02-18T18:00:00Z",
-                "energy": 759
+                "dateTime": "2022-08-07T20:00:00Z",
+                "energy": 400
             },
             {
-                "dateTime": "2022-02-18T19:00:00Z",
-                "energy": 775
+                "dateTime": "2022-08-07T21:00:00Z",
+                "energy": 500
             },
             {
-                "dateTime": "2022-02-18T20:00:00Z",
-                "energy": 791
+                "dateTime": "2022-08-07T22:00:00Z",
+                "energy": 600
             },
             {
-                "dateTime": "2022-02-18T21:00:00Z",
-                "energy": 808
+                "dateTime": "2022-08-07T23:00:00Z",
+                "energy": 700
             },
             {
-                "dateTime": "2022-02-18T22:00:00Z",
-                "energy": 821
+                "dateTime": "2022-08-08T00:00:00Z",
+                "energy": 800
+            },
+            {
+                "dateTime": "2022-08-08T01:00:00Z",
+                "energy": 900
+            },
+            {
+                "dateTime": "2022-08-08T02:00:00Z",
+                "energy": 1000
+            },
+            {
+                "dateTime": "2022-08-08T03:00:00Z",
+                "energy": 1100
+            },
+            {
+                "dateTime": "2022-08-08T04:00:00Z",
+                "energy": 1200
+            },
+            {
+                "dateTime": "2022-08-08T05:00:00Z",
+                "energy": 1300
+            },
+            {
+                "dateTime": "2022-08-08T06:00:00Z",
+                "energy": 1400
+            },
+            {
+                "dateTime": "2022-08-08T07:00:00Z",
+                "energy": 536
+            },
+            {
+                "dateTime": "2022-08-08T08:00:00Z",
+                "energy": 569
+            },
+            {
+                "dateTime": "2022-08-08T09:00:00Z",
+                "energy": 602
+            },
+            {
+                "dateTime": "2022-08-08T10:00:00Z",
+                "energy": 711
+            },
+            {
+                "dateTime": "2022-08-08T11:00:00Z",
+                "energy": 820
+            },
+            {
+                "dateTime": "2022-08-08T12:00:00Z",
+                "energy": 929
+            },
+            {
+                "dateTime": "2022-08-08T13:00:00Z",
+                "energy": 1032
+            },
+            {
+                "dateTime": "2022-08-08T14:00:00Z",
+                "energy": 1135
+            },
+            {
+                "dateTime": "2022-08-08T15:00:00Z",
+                "energy": 1239
+            },
+            {
+                "dateTime": "2022-08-08T16:00:00Z",
+                "energy": 1213
+            },
+            {
+                "dateTime": "2022-08-08T17:00:00Z",
+                "energy": 1188
+            },
+            {
+                "dateTime": "2022-08-08T18:00:00Z",
+                "energy": 1163
+            },
+            {
+                "dateTime": "2022-08-08T19:00:00Z",
+                "energy": 1152
+            },
+            {
+                "dateTime": "2022-08-08T20:00:00Z",
+                "energy": 1142
+            },
+            {
+                "dateTime": "2022-08-08T21:00:00Z",
+                "energy": 1132
+            },
+            {
+                "dateTime": "2022-08-08T22:00:00Z",
+                "energy": 1112
+            },
+            {
+                "dateTime": "2022-08-08T23:00:00Z",
+                "energy": 1093
+            },
+            {
+                "dateTime": "2022-08-09T00:00:00Z",
+                "energy": 1074
+            },
+            {
+                "dateTime": "2022-08-09T01:00:00Z",
+                "energy": 1112
+            },
+            {
+                "dateTime": "2022-08-09T02:00:00Z",
+                "energy": 1151
+            },
+            {
+                "dateTime": "2022-08-09T03:00:00Z",
+                "energy": 1190
+            },
+            {
+                "dateTime": "2022-08-09T04:00:00Z",
+                "energy": 1184
+            },
+            {
+                "dateTime": "2022-08-09T05:00:00Z",
+                "energy": 1179
+            },
+            {
+                "dateTime": "2022-08-09T06:00:00Z",
+                "energy": 1174
+            },
+            {
+                "dateTime": "2022-08-09T07:00:00Z",
+                "energy": 1174
+            },
+            {
+                "dateTime": "2022-08-09T08:00:00Z",
+                "energy": 1174
+            },
+            {
+                "dateTime": "2022-08-09T09:00:00Z",
+                "energy": 1174
+            },
+            {
+                "dateTime": "2022-08-09T10:00:00Z",
+                "energy": 1168
+            },
+            {
+                "dateTime": "2022-08-09T11:00:00Z",
+                "energy": 1163
+            },
+            {
+                "dateTime": "2022-08-09T12:00:00Z",
+                "energy": 1158
+            },
+            {
+                "dateTime": "2022-08-09T13:00:00Z",
+                "energy": 1158
+            },
+            {
+                "dateTime": "2022-08-09T14:00:00Z",
+                "energy": 1158
+            },
+            {
+                "dateTime": "2022-08-09T15:00:00Z",
+                "energy": 1158
+            },
+            {
+                "dateTime": "2022-08-09T16:00:00Z",
+                "energy": 1169
+            },
+            {
+                "dateTime": "2022-08-09T17:00:00Z",
+                "energy": 1180
+            },
+            {
+                "dateTime": "2022-08-09T18:00:00Z",
+                "energy": 1191
+            },
+            {
+                "dateTime": "2022-08-09T19:00:00Z",
+                "energy": 1191
+            },
+            {
+                "dateTime": "2022-08-09T20:00:00Z",
+                "energy": 1191
+            },
+            {
+                "dateTime": "2022-08-09T21:00:00Z",
+                "energy": 1191
+            },
+            {
+                "dateTime": "2022-08-09T22:00:00Z",
+                "energy": 1099
+            },
+            {
+                "dateTime": "2022-08-09T23:00:00Z",
+                "energy": 1007
+            },
+            {
+                "dateTime": "2022-08-10T00:00:00Z",
+                "energy": 915
+            },
+            {
+                "dateTime": "2022-08-10T01:00:00Z",
+                "energy": 888
+            },
+            {
+                "dateTime": "2022-08-10T02:00:00Z",
+                "energy": 861
+            },
+            {
+                "dateTime": "2022-08-10T03:00:00Z",
+                "energy": 834
+            },
+            {
+                "dateTime": "2022-08-10T04:00:00Z",
+                "energy": 789
+            },
+            {
+                "dateTime": "2022-08-10T05:00:00Z",
+                "energy": 745
+            },
+            {
+                "dateTime": "2022-08-10T06:00:00Z",
+                "energy": 701
+            },
+            {
+                "dateTime": "2022-08-10T07:00:00Z",
+                "energy": 691
+            },
+            {
+                "dateTime": "2022-08-10T08:00:00Z",
+                "energy": 681
+            },
+            {
+                "dateTime": "2022-08-10T09:00:00Z",
+                "energy": 671
+            },
+            {
+                "dateTime": "2022-08-10T10:00:00Z",
+                "energy": 695
+            },
+            {
+                "dateTime": "2022-08-10T11:00:00Z",
+                "energy": 719
+            },
+            {
+                "dateTime": "2022-08-10T12:00:00Z",
+                "energy": 743
+            },
+            {
+                "dateTime": "2022-08-10T13:00:00Z",
+                "energy": 657
+            },
+            {
+                "dateTime": "2022-08-10T14:00:00Z",
+                "energy": 572
+            },
+            {
+                "dateTime": "2022-08-10T15:00:00Z",
+                "energy": 487
+            },
+            {
+                "dateTime": "2022-08-10T16:00:00Z",
+                "energy": 925
+            },
+            {
+                "dateTime": "2022-08-10T17:00:00Z",
+                "energy": 1364
+            },
+            {
+                "dateTime": "2022-08-10T18:00:00Z",
+                "energy": 1803
+            },
+            {
+                "dateTime": "2022-08-10T19:00:00Z",
+                "energy": 1854
+            },
+            {
+                "dateTime": "2022-08-10T20:00:00Z",
+                "energy": 1905
+            },
+            {
+                "dateTime": "2022-08-10T21:00:00Z",
+                "energy": 1956
+            },
+            {
+                "dateTime": "2022-08-10T22:00:00Z",
+                "energy": 1940
+            },
+            {
+                "dateTime": "2022-08-10T23:00:00Z",
+                "energy": 1924
+            },
+            {
+                "dateTime": "2022-08-11T00:00:00Z",
+                "energy": 1908
+            },
+            {
+                "dateTime": "2022-08-11T01:00:00Z",
+                "energy": 1968
+            },
+            {
+                "dateTime": "2022-08-11T02:00:00Z",
+                "energy": 2028
+            },
+            {
+                "dateTime": "2022-08-11T03:00:00Z",
+                "energy": 2088
+            },
+            {
+                "dateTime": "2022-08-11T04:00:00Z",
+                "energy": 2056
+            },
+            {
+                "dateTime": "2022-08-11T05:00:00Z",
+                "energy": 2024
+            },
+            {
+                "dateTime": "2022-08-11T06:00:00Z",
+                "energy": 1992
+            },
+            {
+                "dateTime": "2022-08-11T07:00:00Z",
+                "energy": 1983
+            },
+            {
+                "dateTime": "2022-08-11T08:00:00Z",
+                "energy": 1974
+            },
+            {
+                "dateTime": "2022-08-11T09:00:00Z",
+                "energy": 1965
+            },
+            {
+                "dateTime": "2022-08-11T10:00:00Z",
+                "energy": 1624
+            },
+            {
+                "dateTime": "2022-08-11T11:00:00Z",
+                "energy": 1284
+            },
+            {
+                "dateTime": "2022-08-11T12:00:00Z",
+                "energy": 944
+            },
+            {
+                "dateTime": "2022-08-11T13:00:00Z",
+                "energy": 1082
+            },
+            {
+                "dateTime": "2022-08-11T14:00:00Z",
+                "energy": 1221
+            },
+            {
+                "dateTime": "2022-08-11T15:00:00Z",
+                "energy": 1360
+            },
+            {
+                "dateTime": "2022-08-11T16:00:00Z",
+                "energy": 1382
+            },
+            {
+                "dateTime": "2022-08-11T17:00:00Z",
+                "energy": 1405
+            },
+            {
+                "dateTime": "2022-08-11T18:00:00Z",
+                "energy": 1428
+            },
+            {
+                "dateTime": "2022-08-11T19:00:00Z",
+                "energy": 1366
+            },
+            {
+                "dateTime": "2022-08-11T20:00:00Z",
+                "energy": 1304
+            },
+            {
+                "dateTime": "2022-08-11T21:00:00Z",
+                "energy": 1243
+            },
+            {
+                "dateTime": "2022-08-11T22:00:00Z",
+                "energy": 1066
+            },
+            {
+                "dateTime": "2022-08-11T23:00:00Z",
+                "energy": 889
+            },
+            {
+                "dateTime": "2022-08-12T00:00:00Z",
+                "energy": 713
+            },
+            {
+                "dateTime": "2022-08-12T01:00:00Z",
+                "energy": 704
+            },
+            {
+                "dateTime": "2022-08-12T02:00:00Z",
+                "energy": 696
+            },
+            {
+                "dateTime": "2022-08-12T03:00:00Z",
+                "energy": 688
+            },
+            {
+                "dateTime": "2022-08-12T04:00:00Z",
+                "energy": 699
+            },
+            {
+                "dateTime": "2022-08-12T05:00:00Z",
+                "energy": 710
+            },
+            {
+                "dateTime": "2022-08-12T06:00:00Z",
+                "energy": 721
+            },
+            {
+                "dateTime": "2022-08-12T07:00:00Z",
+                "energy": 699
+            },
+            {
+                "dateTime": "2022-08-12T08:00:00Z",
+                "energy": 677
+            },
+            {
+                "dateTime": "2022-08-12T09:00:00Z",
+                "energy": 656
+            },
+            {
+                "dateTime": "2022-08-12T10:00:00Z",
+                "energy": 623
+            },
+            {
+                "dateTime": "2022-08-12T11:00:00Z",
+                "energy": 590
+            },
+            {
+                "dateTime": "2022-08-12T12:00:00Z",
+                "energy": 557
+            },
+            {
+                "dateTime": "2022-08-12T13:00:00Z",
+                "energy": 574
+            },
+            {
+                "dateTime": "2022-08-12T14:00:00Z",
+                "energy": 591
+            },
+            {
+                "dateTime": "2022-08-12T15:00:00Z",
+                "energy": 608
+            },
+            {
+                "dateTime": "2022-08-12T16:00:00Z",
+                "energy": 506
+            },
+            {
+                "dateTime": "2022-08-12T17:00:00Z",
+                "energy": 404
+            },
+            {
+                "dateTime": "2022-08-12T18:00:00Z",
+                "energy": 303
+            },
+            {
+                "dateTime": "2022-08-12T19:00:00Z",
+                "energy": 304
+            },
+            {
+                "dateTime": "2022-08-12T20:00:00Z",
+                "energy": 306
+            },
+            {
+                "dateTime": "2022-08-12T21:00:00Z",
+                "energy": 308
+            },
+            {
+                "dateTime": "2022-08-12T22:00:00Z",
+                "energy": 279
+            },
+            {
+                "dateTime": "2022-08-12T23:00:00Z",
+                "energy": 250
+            },
+            {
+                "dateTime": "2022-08-13T00:00:00Z",
+                "energy": 221
+            },
+            {
+                "dateTime": "2022-08-13T01:00:00Z",
+                "energy": 226
+            },
+            {
+                "dateTime": "2022-08-13T02:00:00Z",
+                "energy": 231
+            },
+            {
+                "dateTime": "2022-08-13T03:00:00Z",
+                "energy": 237
+            },
+            {
+                "dateTime": "2022-08-13T04:00:00Z",
+                "energy": 226
+            },
+            {
+                "dateTime": "2022-08-13T05:00:00Z",
+                "energy": 216
+            },
+            {
+                "dateTime": "2022-08-13T06:00:00Z",
+                "energy": 206
+            },
+            {
+                "dateTime": "2022-08-13T07:00:00Z",
+                "energy": 198
+            },
+            {
+                "dateTime": "2022-08-13T08:00:00Z",
+                "energy": 190
+            },
+            {
+                "dateTime": "2022-08-13T09:00:00Z",
+                "energy": 183
+            },
+            {
+                "dateTime": "2022-08-13T10:00:00Z",
+                "energy": 170
+            },
+            {
+                "dateTime": "2022-08-13T11:00:00Z",
+                "energy": 157
+            },
+            {
+                "dateTime": "2022-08-13T12:00:00Z",
+                "energy": 144
+            },
+            {
+                "dateTime": "2022-08-13T13:00:00Z",
+                "energy": 138
+            },
+            {
+                "dateTime": "2022-08-13T14:00:00Z",
+                "energy": 132
+            },
+            {
+                "dateTime": "2022-08-13T15:00:00Z",
+                "energy": 126
+            },
+            {
+                "dateTime": "2022-08-13T16:00:00Z",
+                "energy": 128
+            },
+            {
+                "dateTime": "2022-08-13T17:00:00Z",
+                "energy": 130
+            },
+            {
+                "dateTime": "2022-08-13T18:00:00Z",
+                "energy": 133
+            },
+            {
+                "dateTime": "2022-08-13T19:00:00Z",
+                "energy": 170
+            },
+            {
+                "dateTime": "2022-08-13T20:00:00Z",
+                "energy": 207
+            },
+            {
+                "dateTime": "2022-08-13T21:00:00Z",
+                "energy": 245
+            },
+            {
+                "dateTime": "2022-08-13T22:00:00Z",
+                "energy": 229
+            },
+            {
+                "dateTime": "2022-08-13T23:00:00Z",
+                "energy": 213
+            },
+            {
+                "dateTime": "2022-08-14T00:00:00Z",
+                "energy": 197
+            },
+            {
+                "dateTime": "2022-08-14T01:00:00Z",
+                "energy": 200
+            },
+            {
+                "dateTime": "2022-08-14T02:00:00Z",
+                "energy": 204
+            },
+            {
+                "dateTime": "2022-08-14T03:00:00Z",
+                "energy": 208
+            },
+            {
+                "dateTime": "2022-08-14T04:00:00Z",
+                "energy": 220
+            },
+            {
+                "dateTime": "2022-08-14T05:00:00Z",
+                "energy": 232
+            },
+            {
+                "dateTime": "2022-08-14T06:00:00Z",
+                "energy": 245
+            },
+            {
+                "dateTime": "2022-08-14T07:00:00Z",
+                "energy": 329
+            },
+            {
+                "dateTime": "2022-08-14T08:00:00Z",
+                "energy": 414
+            },
+            {
+                "dateTime": "2022-08-14T09:00:00Z",
+                "energy": 499
+            },
+            {
+                "dateTime": "2022-08-14T10:00:00Z",
+                "energy": 518
+            },
+            {
+                "dateTime": "2022-08-14T11:00:00Z",
+                "energy": 538
+            },
+            {
+                "dateTime": "2022-08-14T12:00:00Z",
+                "energy": 558
+            },
+            {
+                "dateTime": "2022-08-14T13:00:00Z",
+                "energy": 624
+            },
+            {
+                "dateTime": "2022-08-14T14:00:00Z",
+                "energy": 690
+            },
+            {
+                "dateTime": "2022-08-14T15:00:00Z",
+                "energy": 757
+            },
+            {
+                "dateTime": "2022-08-14T16:00:00Z",
+                "energy": 726
             }
         ]
     }

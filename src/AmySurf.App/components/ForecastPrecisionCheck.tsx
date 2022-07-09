@@ -2,7 +2,7 @@ import React from "react";
 import { useUser } from "../contexts/useUser";
 import { Container, Form, Stack } from "../core-ui/ui";
 
-export function ForecastPrecisionCheck(): JSX.Element {
+export function ForecastPrecisionCheck(): React.JSX.Element {
     return (
         <Container>
             <Stack gap={2} direction="horizontal">
@@ -15,7 +15,7 @@ export function ForecastPrecisionCheck(): JSX.Element {
     );
 }
 
-function IntervalCheck(props: { interval: number }): JSX.Element {
+function IntervalCheck(props: { interval: number }): React.JSX.Element {
     const user = useUser();
 
     return (

@@ -1,9 +1,8 @@
 import React, { ReactNode, useState } from "react";
-import { getBorderFaded, ThemeColor } from "../styles/theme";
-import { Accordion, Stack } from "../core-ui/ui";
+import { bookmarkIconHeightRem, useAppStyle } from "../contexts/useStyle";
 import { ExpandLessIcon, ExpandMoreIcon } from "../core-ui/icons";
+import { Accordion, Stack } from "../core-ui/ui";
 import useLocalStorage from "../hooks/useLocalStorage";
-import { bookmarkIconHeightRem, darkOrangeColor, orangeColor, useAppStyle } from "../contexts/useStyle";
 
 type Props = {
     title: string
@@ -14,7 +13,7 @@ type Props = {
     saveExpandedState?: boolean
 }
 
-export default function ExpandableStack(props: Props): JSX.Element {
+export default function ExpandableStack(props: Props): React.JSX.Element {
     const appStyle = useAppStyle()
 
     const [expanded, setExpanded] = props.saveExpandedState === false ?
@@ -22,25 +21,25 @@ export default function ExpandableStack(props: Props): JSX.Element {
         useLocalStorage(`settingsGroup-${props.uniqueLocalStorageKey}`, props.defaultExpand ?? true)
 
     return (
-        <div className={`pb-3 border-top ${getBorderFaded(appStyle.theme)}`}>
+        <div className={`pb-3 border-top border-${appStyle.classNames.fadedColor}`}>
             <Stack
                 direction='horizontal'
                 onClick={() => props.disableExpand ? null : setExpanded(!expanded)}
             >
-                <span className="fs-1 flex-grow-1">
+                <span className="fs-5 fw-semibold flex-grow-1">
                     {props.title}
                 </span>
 
                 {!props.disableExpand && expanded &&
                     <ExpandLessIcon
                         height={bookmarkIconHeightRem + 'rem'}
-                        fill={appStyle.theme === ThemeColor.light ? darkOrangeColor : orangeColor}
+                        fill={appStyle.colorValues.themeTone}
                     />
                 }
                 {!props.disableExpand && !expanded &&
                     <ExpandMoreIcon
                         height={bookmarkIconHeightRem + 'rem'}
-                        fill={appStyle.theme === ThemeColor.light ? darkOrangeColor : orangeColor}
+                        fill={appStyle.colorValues.themeTone}
                     />
                 }
             </Stack>
@@ -50,7 +49,7 @@ export default function ExpandableStack(props: Props): JSX.Element {
 }
 
 // Use Accordion Component instead?
-export function AccordionComponent(props: { title: string, children: React.PropsWithChildren<ReactNode> }): JSX.Element {
+export function AccordionComponent(props: { title: string, children: React.PropsWithChildren<ReactNode> }): React.JSX.Element {
     return (
         <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0">

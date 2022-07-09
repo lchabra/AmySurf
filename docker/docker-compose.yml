@@ -1,0 +1,35 @@
+services:
+  amysurf:
+    container_name: "${AMYSURF_DOCKER_NAME:-amysurf}"
+    build:
+      context: ../src
+      network: host
+      dockerfile: Dockerfile
+      args:
+        DOTNET_SDK_IMAGE: ${DOTNET_SDK_IMAGE:-}
+        RUNTIME: ${AMYSURF_RUNTIME:-}
+        RUNTIME_IMAGE: ${AMYSURF_RUNTIME_IMAGE:-}
+    image: ${AMYSURF_IMAGE:-}
+    restart: unless-stopped
+    user: "${AMYSURF_UID:?err}:${AMYSURF_GID:?err}"
+    # network_mode: host
+    ports:
+      - "${AMYSURF_ASPNETCORE_PORTS:-5009}:${AMYSURF_ASPNETCORE_PORTS:-5009}"
+    environment:
+      ASPNETCORE_URLS: "http://*:${AMYSURF_ASPNETCORE_PORTS:-5009}"
+      Logging__LogLevel__Microsoft: Warning
+      Logging__LogLevel__CompressedStaticFiles: Warning
+      AMYSURF_SERVICE_URL: "${AMYSURF_SERVICE_URL:-http://localhost:${AMYSURF_ASPNETCORE_PORTS:-5009}}"
+      AMYSURF_SHOW_SERVER_SETTING: "${SHOW_SERVER_SETTING:-false}"
+      AMYSURF_SHOW_ERRORS_DETAILS: "${AMYSURF_SHOW_ERRORS_DETAILS:-false}"
+      PollingInterval: "${POLLING_INTERVAL:-01:00:00}"
+      HttpClient__TimeOut: "${HTTPCLIENT_TIMEOUT:-00:00:15}"
+      HttpClient__RetryInterval: "${HTTPCLIENT_RETRY_INTERVAL:-00:00:10}"
+      WebProxyAddress: "${WEB_PROXY_ADDRESS:-}"
+      DataSubDirectory: "${AMYSURF_DATA_SUB_DIR:-main}"
+      OPENWEATHERMAP_API_KEY: ${OPENWEATHERMAP_API_KEY:-}
+
+    volumes:
+      - $AMYSURF_HOME:/app/.amysurf
+# volumes:
+#   amysurf-data:

@@ -1,8 +1,21 @@
-// TODO: clean theme related code, (think it like many themes color are available, user can choose one)
+$font-size-base: 1rem;
+// Custom
+$tone-orange: #f2a900;
+$tone-orange-dark: #C18700;
 
-$orangeTheme: #f2a900;
-$light-theme-secondary-color: #d6d6d6;
+// Dark-gray
+$theme-dark-gray: #243b4b;
+$theme-dark-gray-faded: #203543;
+$theme-dark-gray-selected: #1c2f3c;
+
+// Light-gray
+$theme-light-gray: #d6d6d6;
+$theme-light-gray-faded: #cccccc;
+$theme-light-gray-selected: #c0c0c0;
+
+//TODO: Delete
 $dark-theme-secondary-color: #315166;
+// "dark-blue-geen": linear-gradient(0deg, #2a596b, 0%, #f33270, 100%),
 
 //Colors
 $blue: #0d6efd;
@@ -31,7 +44,7 @@ $primary: $blue;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
-$warning: $orangeTheme;
+$warning: $tone-orange;
 // $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
@@ -46,72 +59,238 @@ $theme-colors: (
     "danger": $danger,
     "light": $light,
     "dark": $dark,
-    "theme-light-secondary": $light-theme-secondary-color,
-    "theme-dark-secondary": $dark-theme-secondary-color,
-    "theme-orange": $orangeTheme,
+
+    // Tone colors
+    "tone-orange": $tone-orange,
+    "tone-orange-dark": $tone-orange-dark,
+
+    // Dark-gray
+    "theme-dark-gray": $theme-dark-gray,
+    "theme-dark-gray-faded": $theme-dark-gray-faded,
+    "theme-dark-gray-selected": $theme-dark-gray-selected,
+
+    // Light-gray
+    "theme-light-gray": $theme-light-gray,
+    "theme-light-gray-faded": $theme-light-gray-faded,
+    "theme-light-gray-selected": $theme-light-gray-selected,
 );
 
 // Component
 $form-check-input-checked-color: #315166;
-$form-check-input-checked-bg-color: $orangeTheme;
+$form-check-input-checked-bg-color: $tone-orange;
 $form-range-track-bg: #a1a1a1;
 $form-range-track-height: .2rem;
-$form-range-thumb-bg: $orangeTheme;
+$form-range-thumb-bg: $tone-orange;
 $form-range-thumb-border: 1px solid #000000;
-$btn-link-color: $orangeTheme;
-$btn-link-hover-color: $orangeTheme;
+$btn-link-color: $tone-orange;
+$btn-link-hover-color: $tone-orange;
 
 // $input-group-addon-color: $orangeColor;
 // $input-group-addon-bg: $orangeColor;
 
 $dropdown-padding-y: .0;
-$dropdown-link-active-bg: $orangeTheme;
-$dropdown-border-color: $orangeTheme;
-$dropdown-border-width: .1rem;
+// $dropdown-link-active-bg: $tone-orange;
+// $dropdown-border-color: $tone-orange;
+// $dropdown-border-width: .1rem;
+
 
 // Gradients background image
 @mixin gradient-directional($deg, $start-color, $end-color, $start-percent, $end-percent) {
     background-image: linear-gradient($deg, $start-color $start-percent, $end-color $end-percent);
 }
 
-.bg-grad-page-light {
-    @include gradient-directional(0deg, #d6d6d6, #ffffff, 0%, 100%);
-}
-
-.bg-grad-page-dark {
-    @include gradient-directional(0deg, #2a596b, #243b4b, 0%, 100%);
-}
-
-.bg-grad-nav-light {
-    @include gradient-directional(180deg, #d6d6d6, #ffffff, 0%, 100%);
-}
-
-.bg-grad-nav-dark {
-    @include gradient-directional(180deg, #2a596b, #243b4b, 0%, 100%);
-}
-
-.bg-selected-light {
-    background-color: #d1d1d1;
-}
-
-.bg-selected-dark {
-    background-color: #4f626e;
-}
-
-.text-theme-light {
-    color: #000000;
-}
-
-.text-theme-dark {
-    color: #ffffff;
-}
-
-.bg-theme-secondary-light {
-    background-color: $light-theme-secondary-color;
-}
-
-.bg-theme-secondary-dark {
-    background-color: $dark-theme-secondary-color;
+.example-custom-gradient {
+    @include gradient-directional(180deg, $theme-dark-gray, $theme-dark-gray-faded, 0%, 100%);
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// Gradients colors
+$blue-0: #a9bfe4;
+$blue-1: #4a939d;
+$blue-2: #5590ed;
+$blue-3: #3a61a1;
+
+$green-1: #5fc27d;
+$green-2: #52a76c;
+$green-3: #328b32;
+
+$orange-1: #c98520;
+
+$red-1: #cb2020;
+$red-2: #a70003;
+$red-3: #7e0024;
+
+$black-1: #1b0c10;
+$transparent: rgba(255, 255, 255, 0.000);
+
+
+
+// ClassNames Gradients
+.grid-cell-blue-0 {
+    color: color-contrast($blue-0);
+    background: $blue-0;
+}
+
+.grid-cell-blue-1 {
+    color: color-contrast($blue-1);
+    background: $blue-1;
+}
+
+.grid-cell-blue-2 {
+    color: color-contrast($blue-2);
+    background: $blue-2;
+}
+
+.grid-cell-blue-3 {
+    color: color-contrast($blue-3);
+    background: $blue-3;
+}
+
+.grid-cell-green-1 {
+    color: color-contrast($green-1);
+    background: $green-1;
+}
+
+.grid-cell-green-2 {
+    color: color-contrast($green-2);
+    background: $green-2;
+}
+
+.grid-cell-green-3 {
+    color: color-contrast($green-3);
+    background: $green-3;
+}
+
+.grid-cell-orange-1 {
+    color: color-contrast($orange-1);
+    background: $orange-1;
+}
+
+.grid-cell-red-1 {
+    color: color-contrast($red-1);
+    background: $red-1;
+}
+
+.grid-cell-red-2 {
+    color: color-contrast($red-2);
+    background: $red-2;
+}
+
+.grid-cell-red-3 {
+    color: color-contrast($red-3);
+    background: $red-3;
+}
+
+.grid-cell-black-1 {
+    color: color-contrast($black-1);
+    background: $black-1;
+}
+
+// ----------------------------------------------
+.grid-cell-light-gray {
+    color: color-contrast($theme-light-gray);
+    background: $theme-light-gray;
+}
+
+.grid-cell-dark-gray {
+    color: color-contrast($theme-dark-gray);
+    background: $theme-dark-gray;
+}
+
+.grid-cell-transparent {
+    background: $transparent;
+}
+
+// Gray
+.grid-cell-gray-1 {
+    color: color-contrast($gray-100);
+    background: $gray-100;
+}
+
+.grid-cell-gray-2 {
+    color: color-contrast($gray-200);
+    background: $gray-200;
+}
+
+.grid-cell-gray-3 {
+    color: color-contrast($gray-300);
+    background: $gray-300;
+}
+
+.grid-cell-gray-4 {
+    color: color-contrast($gray-400);
+    background: $gray-400;
+}
+
+.grid-cell-gray-5 {
+    color: color-contrast($gray-500);
+    background: $gray-500;
+}
+
+.grid-cell-gray-6 {
+    color: color-contrast($gray-600);
+    background: $gray-600;
+}
+
+.grid-cell-gray-7 {
+    color: color-contrast($gray-700);
+    background: $gray-700;
+}
+
+.grid-cell-gray-8 {
+    color: color-contrast($gray-800);
+    background: $gray-800;
+}
+
+.grid-cell-gray-9 {
+    color: color-contrast($gray-900);
+    background: $gray-900;
+}
+
+// blue
+.grid-cell-blue-100 {
+    color: color-contrast($blue-100);
+    background: $blue-100;
+}
+
+.grid-cell-blue-200 {
+    color: color-contrast($blue-200);
+    background: $blue-200;
+}
+
+.grid-cell-blue-300 {
+    color: color-contrast($blue-300);
+    background: $blue-300;
+}
+
+.grid-cell-blue-400 {
+    color: color-contrast($blue-400);
+    background: $blue-400;
+}
+
+.grid-cell-blue-500 {
+    color: color-contrast($blue-500);
+    background: $blue-500;
+}
+
+.grid-cell-blue-600 {
+    color: color-contrast($blue-600);
+    background: $blue-600;
+}
+
+.grid-cell-blue-700 {
+    color: color-contrast($blue-700);
+    background: $blue-700;
+}
+
+.grid-cell-blue-800 {
+    color: color-contrast($blue-800);
+    background: $blue-800;
+}
+
+.grid-cell-blue-900 {
+    color: color-contrast($blue-900);
+    background: $blue-900;
+}

@@ -3,7 +3,7 @@ import { useForecastsApi } from '../contexts/useForecasts'
 import { useUser } from '../contexts/useUser'
 import { Button, Form, Stack } from '../core-ui/ui'
 
-export default function DevPage(): JSX.Element {
+export default function DevPage(): React.JSX.Element {
     const user = useUser()
     const forecastsApi = useForecastsApi()
     const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]

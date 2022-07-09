@@ -2,11 +2,9 @@ import React from 'react';
 import { useForecastsApi } from '../contexts/useForecasts';
 import { useUser } from '../contexts/useUser';
 import { Form } from '../core-ui/ui';
-import { getTextColorClassName } from '../styles/theme';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { RoutePath } from '../models/modelsApp';
 import { useAppStyle } from '../contexts/useStyle';
-
 
 export function SpotSelectForm() {
     const user = useUser()
@@ -20,10 +18,9 @@ export function SpotSelectForm() {
         <>
             <Form.Select
                 style={{ opacity: spotsAvailables ? '' : '50%' }}
-                placeholder="Select a spot"
                 disabled={forecastsApi.data?.spots === undefined || forecastsApi.data.spots.length === 0}
-                onChange={(e) => {
-                    user.saveAppSettings({ ...user.userSettings, spotName: e.target.value });
+                onChange={(e: any) => {
+                    user.saveAppSettings({ ...user.userSettings, spotName: e.target.value })
                     if (e.target.value !== '') navigate(RoutePath.Forecasts);
                 }}
                 value={user.userSettings.spotName}
@@ -35,13 +32,13 @@ export function SpotSelectForm() {
             {noSpotSelected &&
                 <Form.Text>
                     {spotsAvailables &&
-                        <span className={`${getTextColorClassName(appStyle.theme)}`}>
+                        <span className={`text-${appStyle.classNames.toneColor}`}>
                             Please select a spot.
                         </span>}
                 </Form.Text>}
 
             {!spotsAvailables &&
-                <span className={`${getTextColorClassName(appStyle.theme)}`}>
+                <span className={`text-${appStyle.classNames.toneColor}`}>
                     Spots not available.
                 </span>}
         </>

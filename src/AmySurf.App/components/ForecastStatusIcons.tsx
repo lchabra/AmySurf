@@ -1,10 +1,10 @@
 import React, { CSSProperties } from 'react';
-import { Spinner } from '../core-ui/ui';
-import { getBorderFaded } from '../styles/theme';
 import { useForecastsApi } from '../contexts/useForecasts';
 import { forecastDaySummaryHeightEm, sunSetRiseIconHeightRem, useAppStyle } from '../contexts/useStyle';
 import { ReportProblemIcon } from '../core-ui/icons';
+import { Spinner } from '../core-ui/ui';
 
+// Not used yet.
 export function ForecastStatusIcons(props: { handleShowErrors: () => void; }) {
     const forecastsApi = useForecastsApi()
     const appStyle = useAppStyle()
@@ -14,7 +14,7 @@ export function ForecastStatusIcons(props: { handleShowErrors: () => void; }) {
     return (
 
         <div
-            className={`d-flex justify-content-center align-items-center border-end border-start border-bottom ${getBorderFaded(appStyle.theme)}`}
+            className={`d-flex justify-content-center align-items-center border-end border-start border-bottom border-${appStyle.classNames.fadedColor}`}
             style={styles.statusIcon}
         >
             {forecastsApi.isSurfLoading && <Spinner size='sm' animation={'border'} />}
@@ -23,7 +23,7 @@ export function ForecastStatusIcons(props: { handleShowErrors: () => void; }) {
     )
 }
 
-function ProblemIcon(props: { handleShowErrorsClick: () => void }): JSX.Element | null {
+function ProblemIcon(props: { handleShowErrorsClick: () => void }): React.JSX.Element | null {
     const forecastsApi = useForecastsApi()
     const hasError = forecastsApi.data?.errors !== undefined && forecastsApi.data.errors.length > 0
 

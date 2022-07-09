@@ -1,6 +1,6 @@
 import { isSameDay } from 'date-fns'
 import React from 'react'
-import { hourlyCollectionWidth, sunSetRiseIconHeightRem } from '../contexts/useStyle'
+import { rowWidthEm, summaryForecastCN, sunSetRiseIconHeightRem } from '../contexts/useStyle'
 import { SunriseIcon, SunsetIcon } from '../core-ui/icons'
 import { Container, OverlayTrigger, Tooltip } from '../core-ui/ui'
 import { formatEEEEd, formatTimeLong } from '../helpers/dt'
@@ -14,8 +14,10 @@ export type SummaryForecastPageData = {
 export default function SummaryForecastPage(props: { data: SummaryForecastPageData }) {
     const styles = getStyles(props.data.dates.length)
 
+    const wrapperClassName = `h-100 d-flex align-items-center ${summaryForecastCN}`
+
     return (
-        <div style={styles.wrapper} className='h-100 d-flex border-bottom text-center align-items-center justify-content-center'>
+        <div style={styles.wrapper} className={wrapperClassName}>
             {
                 props.data.dates.length <= 2 &&
                 <SummaryShort data={props.data} />
@@ -33,27 +35,31 @@ export default function SummaryForecastPage(props: { data: SummaryForecastPageDa
     )
 }
 
-function SummaryLong(props: { data: SummaryForecastPageData }): JSX.Element {
+function SummaryLong(props: { data: SummaryForecastPageData }): React.JSX.Element {
     return (
-        <Container fluid className='p-0 d-flex justify-content-center'>
-            {getDatesTitleLong(props.data.dates)}
-
-            <SunsetIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
-            {getSunSetRiseTime(props.data.sunriseTimes)}
-
+        <Container fluid className=''>
+            <span>
+                {getDatesTitleLong(props.data.dates)}
+            </span>
             <SunriseIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
-            {getSunSetRiseTime(props.data.sunsetTimes)}
+            <span>
+                {getSunSetRiseTime(props.data.sunriseTimes)}
+            </span>
+            <SunsetIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
+            <span>
+                {getSunSetRiseTime(props.data.sunsetTimes)}
+            </span>
         </Container>
     )
 }
 
-function SummaryMedium(props: { data: SummaryForecastPageData }): JSX.Element {
-    return <h6 className='m-0'>
+function SummaryMedium(props: { data: SummaryForecastPageData }): React.JSX.Element {
+    return <span className=''>
         {getDatesTitleLong(props.data.dates)}
-    </h6>
+    </span>
 }
 
-function SummaryShort(props: { data: SummaryForecastPageData }): JSX.Element {
+function SummaryShort(props: { data: SummaryForecastPageData }): React.JSX.Element {
     return (
         <OverlayTrigger
             // trigger={['click']}
@@ -74,8 +80,8 @@ function SummaryShort(props: { data: SummaryForecastPageData }): JSX.Element {
 function getStyles(amountHourlyForecast: number) {
     return {
         wrapper: {
-            minWidth: (amountHourlyForecast * hourlyCollectionWidth) + 'rem',
-            width: (amountHourlyForecast * hourlyCollectionWidth) + 'rem',
+            minWidth: (amountHourlyForecast * rowWidthEm) + 'rem',
+            width: (amountHourlyForecast * rowWidthEm) + 'rem',
         }
     }
 }

@@ -3,7 +3,7 @@ import { useUser } from '../contexts/useUser'
 import { Container, Form, Stack } from '../core-ui/ui'
 import useLocalStorage from '../hooks/useLocalStorage'
 
-export default function FontSizeSetting(): JSX.Element {
+export default function FontSizeSetting(): React.JSX.Element {
     const user = useUser()
     const [isFontCustom, setIsFontCustom] = useLocalStorage<boolean>('isFontCustom', false)
 

@@ -1,9 +1,8 @@
-import React, { useMemo } from "react"
-import { UserSettings, DefaultUser, IUser, User } from "../models/modelsApp"
+import React, { useMemo } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { DefaultUser, IUser, User, UserSettings } from "../models/modelsApp";
 
 const UserContext = React.createContext<IUser | null>(null);
-
 // Context Provider
 export function UserProvider(props: { children: React.ReactNode }) {
     const user = _useUser()

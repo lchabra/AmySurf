@@ -3,7 +3,7 @@ import { Container, Form } from "../core-ui/ui"
 import { useUser } from "../contexts/useUser"
 import { MapSize } from "../models/modelsApp"
 
-export default function VisibilityMapCheck(): JSX.Element {
+export default function VisibilityMapCheck(): React.JSX.Element {
     const availablesMapSize = Object.values(MapSize)
     const user = useUser()
 

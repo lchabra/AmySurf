@@ -1,36 +1,39 @@
-import React from 'react'
-import { bookmarkIconHeightRem, darkOrangeColor, orangeColor, useAppStyle } from '../contexts/useStyle';
+import React, { useState } from 'react'
+import { bookmarkIconHeightRem, useAppStyle } from '../contexts/useStyle';
 import { useUser } from '../contexts/useUser';
 import { BookmarkAddedIcon, BookmarkIcon } from '../core-ui/icons';
 import { IUser } from '../models/modelsApp';
 import { Spot } from '../models/modelsForecasts';
-import { ThemeColor } from '../styles/theme';
 
 export default function FavoriteStarSpot(props: { data: Spot; }) {
     const user = useUser()
     const appStyle = useAppStyle()
     const isFavorite = user.userSettings.favoriteSpots.filter(spot => spot.id === props.data.id).length > 0;
 
+    const [isHoverState, setHoverState] = useState(false)
+
     return (
-        <div onClick={() => handleFavoriteClick(isFavorite, user, props.data)}>
+        <div
+            onPointerEnter={() => setHoverState(true)}
+            onPointerLeave={() => setHoverState(false)}
+            onClick={() => handleFavoriteClick(isFavorite, user, props.data)}
+        >
             {
                 isFavorite &&
                 <BookmarkAddedIcon
-                    // stroke={getIconStrokeColor(appStyle.theme)}
-                    // strokeOpacity={iconStrokeOpacityRem + 'rem'}
-                    // strokeWidth={iconStrokeWidthRem + 'rem'}
+                    mixBlendMode={isHoverState ? 'difference' : 'normal'}
                     height={bookmarkIconHeightRem + 'rem'}
                     width={bookmarkIconHeightRem + 'rem'}
-                    fill={appStyle.theme === ThemeColor.light ? darkOrangeColor : orangeColor}
+                    fill={appStyle.colorValues.themeTone}
                 />
             }
             {
                 !isFavorite &&
                 <BookmarkIcon
+                    mixBlendMode={isHoverState ? 'difference' : 'normal'}
                     height={bookmarkIconHeightRem + 'rem'}
                     width={bookmarkIconHeightRem + 'rem'}
-                    fill={appStyle.theme === ThemeColor.light ? darkOrangeColor : orangeColor}
-                // fill={getThemeColorWhenSelected(appStyle.theme, isFavorite)}
+                    fill={appStyle.colorValues.themeTone}
                 />
             }
         </div>

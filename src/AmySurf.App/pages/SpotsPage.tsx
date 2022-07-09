@@ -9,9 +9,9 @@ import ExpandableStack from '../components/ExpandableStack'
 import { SpotsListStack } from '../components/SpotsListStack'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import { LimitedWidthContainer } from '../components/LimitedWidthContainer'
-import PageTitle from '../components/PagesTitles'
+import PageTitle from '../components/PageTitle'
 
-export default function SpotsPage(): JSX.Element {
+export default function SpotsPage(): React.JSX.Element {
 
     return (
         <Stack>

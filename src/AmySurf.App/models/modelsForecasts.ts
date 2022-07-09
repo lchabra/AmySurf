@@ -19,11 +19,14 @@ export type HourlySurf = {
     primarySwellDirection: number
     secondarySwellPeriod: number
     secondarySwellDirection: number
+    longestSwellPeriod: number
+    longestSwellDirection: number
     windDirection: number
     windSpeed: number
     tideHeight: number
     tideHeightPercent: number
     tideType: number
+    isTideRising: boolean
 }
 // #endregion
 

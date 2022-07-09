@@ -29,7 +29,7 @@ function _useForecastSummary(): IForecastsSummary {
 
     // Update visitedSpots
     useEffect(() => {
-        const selectedSpot = forecastsApi.data?.spotForecasts?.spot
+        const selectedSpot = forecastsApi.data?.spotForecast?.spot
         if (selectedSpot === undefined) { return }
 
         const isNewVisitedSpot = visitedSpots.findIndex(s => s.id === selectedSpot.id) === -1
@@ -46,23 +46,31 @@ function _useForecastSummary(): IForecastsSummary {
             }
         }
 
-    }, [forecastsApi.data?.spotForecasts?.spot.name])
+    }, [forecastsApi.data?.spotForecast?.spot.name])
 
     // selectedForecast is set to spotNow when the spot changed
     useMemo(() => {
-        if (forecastsApi.data?.spotForecasts !== undefined) {
-            const spotNow = getDateSpotNow(forecastsApi.data?.spotForecasts?.spot.utcOffset)
+        if (forecastsApi.data?.spotForecast === undefined) {
+            setSelectedForecast(undefined)
+        }
+        else {
+            const spotNow = getDateSpotNow(forecastsApi.data?.spotForecast?.spot.utcOffset)
             const nearestRoundHourSpotNow = roundToNearestMinutes(spotNow, 30)
-            const nowHourly: HourlyForecast | undefined = forecastsApi.data?.spotForecasts?.data.find(f => isSameHour(f.dateTime, nearestRoundHourSpotNow))
+            const nowHourly: HourlyForecast | undefined = forecastsApi.data?.spotForecast?.data.find(f => isSameHour(f.dateTime, nearestRoundHourSpotNow))
             setSelectedForecast(nowHourly)
         }
-    }, [forecastsApi.data?.spotForecasts?.spot])
+    }, [forecastsApi.data?.spotForecast?.spot])
 
     return {
         selectedForecast: getSelectedForecast(selectedForecast),
         visitedSpots: visitedSpots,
         setSelectedForecast: (value: HourlyForecast) => {
-            setSelectedForecast(value)
+            setSelectedForecast(prevValue => {
+                if (prevValue?.dateTime !== value.dateTime) {
+                    return { ...value };
+                }
+                return undefined;
+            })
             return value
         },
         setVisitedSpots: (value: Spot[]) => {

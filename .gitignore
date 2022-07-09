@@ -2,10 +2,15 @@ node_modules/
 dist/
 .parcel-cache/
 .cache/
+.mono/
 obj/
 bin/
 .vscode/
 .vs/
+src/AmySurf.Service/.amysurf
+src/AmySurf.App/*.env
+
+.amysurf
 
 # Build results
 [Dd]ebug/
@@ -42,3 +47,11 @@ project.fragment.lock.json
 artifacts/
 src/AmySurf.Service/Properties
 src/AmySurf.Service/out
+.env
+
+
+# Exclude all .env files from the entire project
+*.env
+
+# Ensure .env files in any subdirectory are also excluded
+**/*.env

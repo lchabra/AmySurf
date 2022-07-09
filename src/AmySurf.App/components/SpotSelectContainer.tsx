@@ -4,7 +4,7 @@ import { SpotSelectForm } from "./SpotSelectForm";
 import { useUser } from '../contexts/useUser';
 import { Container } from '../core-ui/ui';
 
-export function SpotSelectContainer(): JSX.Element {
+export function SpotSelectContainer(): React.JSX.Element {
     const user = useUser();
     const isSpotSelected = user.userSettings.spotName !== '';
 

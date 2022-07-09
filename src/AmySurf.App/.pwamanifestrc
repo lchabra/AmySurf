@@ -1,7 +1,7 @@
 {
     "name": "AmySurf",
     "description": "An global weather forecast tool",
-    "shortName": "AMS",
+    "shortName": "AmySurf",
     "startURL": "./forecasts",
     "theme": "#000000",
     "generateIconOptions": {

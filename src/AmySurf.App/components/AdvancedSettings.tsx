@@ -1,12 +1,10 @@
 import React, { useState } from "react"
-import { Button, Container, Form, Modal, Stack } from "../core-ui/ui"
-import { useUser } from "../contexts/useUser"
-import { DefaultAppStyle, DefaultUserSettings } from "../models/modelsApp"
-import { getGradiantBackgroundClassName, getTextColorClassName, getBorderFaded } from "../styles/theme"
 import { useAppStyle } from "../contexts/useStyle"
+import { useUser } from "../contexts/useUser"
+import { Button, Container, Form, Modal, Stack } from "../core-ui/ui"
+import { DefaultUserSettings } from "../models/modelsApp"
 
-export default function AdvancedSettings(): JSX.Element {
-    const user = useUser()
+export default function AdvancedSettings(): React.JSX.Element {
     const [showResetModal, setShowResetModal] = useState(false)
 
     const handleCloseErrors = () => setShowResetModal(false);
@@ -15,15 +13,10 @@ export default function AdvancedSettings(): JSX.Element {
     return (
         <Container>
             <Stack direction='vertical'>
-                <Form.Label>Server address (blank for default)</Form.Label>
-                <Form.Control
-                    placeholder={DefaultUserSettings.serverUrl}
-                    value={user.userSettings.serverUrl}
-                    onChange={(e) => {
-                        if (e.target.value === '') return user.saveAppSettings({ ...user.userSettings, serverUrl: DefaultUserSettings.serverUrl })
-                        else user.saveAppSettings({ ...user.userSettings, serverUrl: e.target.value })
-                    }}
-                />
+                {
+                    process.env.AMYSURF_SHOW_SERVER_SETTING &&
+                    <ServerAddressForm />
+                }
 
                 <Form.Label className="mt-2">Restore all default settings</Form.Label>
                 <Button variant="warning" onClick={handleShowErrors}>Restore default</Button>
@@ -34,23 +27,35 @@ export default function AdvancedSettings(): JSX.Element {
     )
 }
 
-function ResetSettingsModal(props: { title: string, showModal: boolean, handleCloseModal: () => void }): JSX.Element {
+function ServerAddressForm(): React.JSX.Element {
     const user = useUser()
-    const appStyle = useAppStyle()
+    return (
+        <>
+            <Form.Label>Server address (blank for default)</Form.Label>
+            <Form.Control
+                placeholder={DefaultUserSettings.serverUrl}
+                value={user.userSettings.serverUrl}
+                onChange={(e: any) => {
+                    if (e.target.value === '') return user.saveAppSettings({ ...user.userSettings, serverUrl: DefaultUserSettings.serverUrl })
+                    else user.saveAppSettings({ ...user.userSettings, serverUrl: e.target.value })
+                }}
+            />
+        </>
+    )
+}
 
-    const backgroundColor = getGradiantBackgroundClassName(appStyle.theme)
-    const textColor = getTextColorClassName(appStyle.theme)
-    const colorClassName = `${backgroundColor} ${textColor}`
+function ResetSettingsModal(props: { title: string, showModal: boolean, handleCloseModal: () => void }): React.JSX.Element {
+    const appStyle = useAppStyle()
+    const user = useUser()
 
     return (
         <Modal
             centered
             show={props.showModal}
             onHide={props.handleCloseModal}
-            animation={false}
         >
-            <div className={`${colorClassName}`} >
-                <Modal.Header className={`${getBorderFaded(appStyle.theme)}`}>
+            <div className={`text-bg-${appStyle.classNames.mainColor} bg-gradient`} >
+                <Modal.Header className={`border-${appStyle.classNames.fadedColor}`}>
                     <Modal.Title className='w-100 text-center'>
                         {props.title}
                     </Modal.Title>
@@ -64,7 +69,6 @@ function ResetSettingsModal(props: { title: string, showModal: boolean, handleCl
                     >
                         Cancel
                     </Button>
-
                     <Button
                         onClick={() => {
                             user.saveAppSettings({
@@ -72,13 +76,10 @@ function ResetSettingsModal(props: { title: string, showModal: boolean, handleCl
                                 favoriteSpots: user.userSettings.favoriteSpots,
                                 spotName: user.userSettings.spotName
                             })
-                            appStyle.saveAppStyle({
-                                ...DefaultAppStyle,
-                            })
                             props.handleCloseModal()
                         }}
                         variant="warning"
-                        size="lg"/*  */
+                        size="lg"
                     >
                         Restore
                     </Button>

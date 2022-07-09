@@ -1,92 +1,80 @@
+using AmySurf.Helpers;
 using AmySurf.Models;
-using AmySurf.Models.Helpers;
 using AmySurf.Providers;
-using AmySurf.Providers.Helpers;
+using AmySurf.Providers.External;
+using AmySurf.Services;
 using CompressedStaticFiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
-namespace AmySurf.Service
+namespace AmySurf.Service;
+
+public sealed class Startup
 {
-    public class Startup
+    private readonly IConfiguration _configuration;
+
+    public Startup(IConfiguration configuration)
     {
-        private readonly IConfiguration _configuration;
+        _configuration = configuration;
+    }
 
-        public Startup(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-            services.AddHostedService<ForecastWorkerBackgroundService>(s =>
-            {
-                var p = s.GetRequiredService<OnlineForecastProvider>();
-                return ActivatorUtilities.CreateInstance<ForecastWorkerBackgroundService>(s, p);
-            });
-            services.Configure<ForecastWorkerBackgroundServiceOptions>(_configuration);
-            services.AddSingleton<SpotProvider>();
-            services.AddSingleton<HttpClientHelper>();
-            services.Configure<HttpClientHelperOptions>(_configuration);
-            services.AddSingleton<ForecastRWHelper>();
+    // This method gets called by the runtime. Use this method to add services to the container.
+    // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllers();
+        services.AddHostedService<ForecastBackgroundService>();
+        services.Configure<ForecastBackgroundServiceOptions>(_configuration);
+        services.AddSingleton<SpotProvider>();
+        services.AddSingleton<HttpClientHelper>();
+        services.Configure<HttpClientHelperOptions>(_configuration.GetSection("HttpClient"));
+        services.AddSingleton<IForecastStore, FileSystemForecastStore>();
 
-            services.AddCompressedStaticFiles();
+        services.AddCompressedStaticFiles();
 
-            services.AddCors(options => options.AddPolicy("no-cors", builder => builder
+        services.AddCors(options => options.AddPolicy("no-cors", builder => builder
             .AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod()));
 
-            services.Configure<ForecastRWOptions>(_configuration);
+        services.Configure<FileSystemForecastStoreOptions>(_configuration);
 
-            //services.Configure<ForecastRWOptions>(
-            //    o => o.BaseDataDirectory = Environment.GetEnvironmentVariable("BASEDATADIRECTORY") ?? "Default Home");
+        services.AddSingleton<OnlineForecastProvider>();
 
-            services.AddSingleton<OnlineForecastProvider>();
-            services.AddSingleton<OfflineForecastProvider>();
-            services.AddSingleton<CacheForecastProvider>();
-
-            //services.AddSingleton<IForecastsProvider>(services =>
-            //{
-            //    OfflineForecastProvider p1 = services.GetRequiredService<OfflineForecastProvider>();
-            //    //OnlineForecastProvider p2 = services.GetRequiredService<OnlineForecastProvider>();
-            //    return new MultiForecastProvider(services.GetRequiredService<SpotProvider>(), p1);
-            //});
-
-            services.AddSingleton<IForecastsProvider>(services =>
-            {
-                OfflineForecastProvider p1 = services.GetRequiredService<OfflineForecastProvider>();
-                return new CacheForecastProvider(services.GetRequiredService<SpotProvider>(), new MultiForecastProvider(services.GetRequiredService<SpotProvider>(), p1));
-            });
-
-            services.AddSingleton<ISurfForecastProvider, SurflineProvider>();
-            services.AddSingleton<IWeatherForecastsProvider, OpenWeatherMapProvider>();
-            services.AddSingleton<IEnergyForecastsProvider, SurfForecastDotComProvider>();
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        services.AddSingleton<IForecastProvider>(services =>
         {
-            if (env.IsDevelopment())
-                app.UseDeveloperExceptionPage();
-            else
-                app.UseExceptionHandler("/error");
+            var store = services.GetRequiredService<IForecastStore>();
+            var provider = new CachedForecastProvider(new LockedForecastProvider(store));
+            return provider;
+        });
 
-            app.UseCors("no-cors");
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapFallbackToFile("/index.html");
-            });
-            app.UseDefaultFiles();
-            app.UseCompressedStaticFiles();
-        }
+        services.AddSingleton<ISurfForecastProvider, SurflineProvider>();
+        services.AddSingleton<IWeatherForecastsProvider, OpenWeatherMapProvider>();
+        services.AddSingleton<IEnergyForecastsProvider, SurfForecastDotComProvider>();
+
+        // services.AddTelemetryExporter(_configuration);
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
+        else
+            app.UseExceptionHandler("/error");
+
+        app.UseCors("no-cors");
+        app.UseRouting();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapFallbackToFile("/index.html");
+        });
+        app.UseDefaultFiles();
+        app.UseCompressedStaticFiles();
+        // app.UseWalletServiceTelemetry();
     }
 }

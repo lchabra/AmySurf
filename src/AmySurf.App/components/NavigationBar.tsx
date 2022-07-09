@@ -1,26 +1,27 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router'
 import { Navbar, Nav } from '../core-ui/ui'
 import { HomeIcon, SearchIcon, SettingsIcon } from '../core-ui/icons'
-import { RoutePath } from '../models/modelsApp';
-import { getBorderFaded, getThemeContrastIconColor, getNavBackgroundClassName, ThemeColor } from '../styles/theme';
-import { darkOrangeColor, navBarHeightEm, navBarIconHeightRem, orangeColor, useAppStyle } from '../contexts/useStyle';
+import { AppStyle, RoutePath } from '../models/modelsApp';
+import { navBarHeightEm, navBarIconHeightRem, useAppStyle } from '../contexts/useStyle';
 
 export default function NavigationBar() {
     const location = useLocation();
     const appStyle = useAppStyle()
-    const bgColor = getNavBackgroundClassName(appStyle.theme)
 
     return (
         <Navbar
             style={{ height: navBarHeightEm + 'rem', minHeight: navBarHeightEm + 'rem' }}
-            className={`
-            fixed-bottom 
-            text-nowrap
-            p-0
-            ${bgColor} 
-            border-top 
-            ${getBorderFaded(appStyle.theme)}`}
+            className=
+            {`
+                text-bg-${appStyle.classNames.mainColor}
+                bg-gradient
+                fixed-bottom 
+                text-nowrap
+                p-0
+                border-top 
+                border-${appStyle.classNames.toneColor}
+            `}
         >
             <Nav className='w-100 d-flex justify-content-evenly'>
                 <NavItem
@@ -30,9 +31,9 @@ export default function NavigationBar() {
                         <HomeIcon
                             height={navBarIconHeightRem + 'rem'}
                             width={navBarIconHeightRem + 'rem'}
-                            fill={getNavIconColors(appStyle.theme, location.pathname === '/forecasts')}
+                            fill={getColor(appStyle, location.pathname === '/forecasts')}
                         />}
-                    textColor={location.pathname === '/forecasts' ? darkOrangeColor : getThemeContrastIconColor(appStyle.theme)}
+                    textColor={getTextColor(appStyle, location.pathname === '/forecasts')}
                 />
                 <NavItem
                     title='Spots'
@@ -41,9 +42,9 @@ export default function NavigationBar() {
                         <SearchIcon
                             height={navBarIconHeightRem + 'rem'}
                             width={navBarIconHeightRem + 'rem'}
-                            fill={getNavIconColors(appStyle.theme, location.pathname === '/spots')}
+                            fill={getColor(appStyle, location.pathname === '/spots')}
                         />}
-                    textColor={location.pathname === '/spots' ? darkOrangeColor : getThemeContrastIconColor(appStyle.theme)}
+                    textColor={getTextColor(appStyle, location.pathname === '/spots')}
                 />
                 <NavItem
                     title='Settings'
@@ -52,20 +53,20 @@ export default function NavigationBar() {
                         <SettingsIcon
                             height={navBarIconHeightRem + 'rem'}
                             width={navBarIconHeightRem + 'rem'}
-                            fill={getNavIconColors(appStyle.theme, location.pathname === '/settings')}
+                            fill={getColor(appStyle, location.pathname === '/settings')}
                         />}
-                    textColor={location.pathname === '/settings' ? darkOrangeColor : getThemeContrastIconColor(appStyle.theme)}
+                    textColor={getTextColor(appStyle, location.pathname === '/settings')}
                 />
             </Nav>
         </Navbar >
     )
 }
-// ${getTextColorClassName(appStyle.theme)}
+
 export function NavItem(props: {
     title: string
     navLinkClassName?: string
     linkContainerName: string
-    icon: JSX.Element
+    icon: React.JSX.Element
     disabled?: boolean
     textColor?: string
 }) {
@@ -73,21 +74,23 @@ export function NavItem(props: {
     return (
         <Nav.Link
             as={Link}
-            to={props.linkContainerName}
+            to={".." + props.linkContainerName}
             disabled={props.disabled}
             className={`${props.disabled ? 'opacity-50' : ''} ${props.navLinkClassName}`}
         >
             <div className="d-flex justify-content-center">
                 {props.icon}
             </div>
-            <div style={{ color: props.textColor }} className={`text-center`}>
-                {props.title}
-            </div>
+
+            <span className={`text-${props.textColor} text-center`}>{props.title}</span>
         </Nav.Link>
     )
 }
 
-function getNavIconColors(themeColor: ThemeColor, isSelected: boolean): string {
-    if (isSelected) return themeColor === ThemeColor.light ? darkOrangeColor : orangeColor
-    else return getThemeContrastIconColor(themeColor)
+function getTextColor(appStyle: AppStyle, isSelected: boolean) {
+    return isSelected ? appStyle.classNames.toneColor : appStyle.classNames.mainContrastColor
+}
+
+function getColor(appStyle: AppStyle, isSelected: boolean) {
+    return isSelected ? appStyle.colorValues.themeTone : appStyle.colorValues.themeConstrast
 }

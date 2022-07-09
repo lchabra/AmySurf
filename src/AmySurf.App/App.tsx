@@ -1,24 +1,24 @@
 import React from "react"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router"
+import { PageData } from "./components/AppPageWrapper"
 import NavigationBar from "./components/NavigationBar"
+import { ForecastSummaryProvider } from "./contexts/useForecastSummary"
+import { ForecastApiProvider } from "./contexts/useForecasts"
+import { NostrProvider } from "./contexts/useNostr"
+import { AppStyleProvider } from "./contexts/useStyle"
 import { UserProvider } from "./contexts/useUser"
 import { RoutePath } from "./models/modelsApp"
 import ForecastPage from "./pages/ForecastPage"
 import SettingsPage from "./pages/SettingsPage"
-import { ForecastSummaryProvider } from "./contexts/useForecastSummary"
-import { ForecastApiProvider } from "./contexts/useForecasts"
 import SpotsPage from "./pages/SpotsPage"
-import { LimitedWidthContainer } from "./components/LimitedWidthContainer"
-import { AppStyleProvider } from "./contexts/useStyle"
-import { PageData } from "./components/AppPageWrapper"
-import { PwaProvider } from "./hooks/usePwa"
 
 // For PWA use this script "dev": "parcel index.html --no-hmr" (in package.json)
 export default function App() {
     return (
-        <React.StrictMode>
-            <PwaProvider>
+        <NostrProvider>
+            <React.StrictMode>
                 <UserProvider>
+                    {/* <PwaProvider> */}
                     <ForecastApiProvider>
                         <ForecastSummaryProvider>
                             <BrowserRouter>
@@ -28,9 +28,10 @@ export default function App() {
                             </BrowserRouter>
                         </ForecastSummaryProvider>
                     </ForecastApiProvider>
+                    {/* </PwaProvider> */}
                 </UserProvider>
-            </PwaProvider>
-        </React.StrictMode>
+            </React.StrictMode>
+        </NostrProvider>
     )
 }
 
@@ -43,29 +44,27 @@ function AmySurfApp() {
     )
 }
 
-function AppRoutes(): JSX.Element {
+function AppRoutes(): React.JSX.Element {
     return (
         <Routes>
-            <Route
-                path={RoutePath["/"]}
-                element={<Navigate to={RoutePath.Forecasts} />} />
-            <Route
-                path={RoutePath.Forecasts}
-                element={<ForecastPage />} />
-            <Route
-                path={RoutePath.Settings}
-                element={<SettingsPage />}
-            />
-            <Route
-                path={RoutePath.Spots}
-                element={<SpotsPage />}
-            />
-            <Route path={RoutePath["*"]} element={<Navigate to={RoutePath["/"]} />} />
+            <Route path={RoutePath["/"]} element={<ForecastPage />} />
+
+            <Route path={RoutePath.Forecasts}>
+                <Route path={RoutePath["Forecasts"]} element={<ForecastPage />} />
+            </Route>
+
+            <Route path={RoutePath.Settings}>
+                <Route path={RoutePath["Settings"]} element={<SettingsPage />} />
+            </Route>
+
+            <Route path={RoutePath.Spots}>
+                <Route path={RoutePath["Spots"]} element={<SpotsPage />} />
+            </Route>
+
+            <Route path={RoutePath["*"]}>
+                <Route path={RoutePath["*"]} element={<Navigate to={RoutePath["/"]} />} />
+            </Route>
+
         </Routes>
     )
 }
-
-// function getAppForecast(): SpotForecasts {
-//     let forecast = getMockForecast()
-//     return forecast
-// }

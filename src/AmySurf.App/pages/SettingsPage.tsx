@@ -1,18 +1,18 @@
 import React from "react"
-import { Container, Stack } from "../core-ui/ui"
-import { ForecastPrecisionCheck } from "../components/ForecastPrecisionCheck"
-import ForecastVisibilityCheck from "../components/ForecastVisibilityCheck"
-import VisibilityMapCheck from "../components/MapSizeSelect"
-import { ForecastsHoursRange } from "../components/ForecastsHoursRange"
-import ThemeChangerCheck from "../components/ThemeChangerCheck"
-import { ForecastDurationCheck } from "../components/ForecastDurationCheck"
 import AdvancedSettings from "../components/AdvancedSettings"
 import ExpandableStack from "../components/ExpandableStack"
-import PageTitle from "../components/PagesTitles"
-import FontSizeSetting from "../components/FontSizeSetting"
+import { ForecastDurationCheck } from "../components/ForecastDurationCheck"
+import { ForecastPrecisionCheck } from "../components/ForecastPrecisionCheck"
+import { ForecastsHoursRange } from "../components/ForecastsHoursRange"
+import { ForecastVisibilityCheck } from "../components/ForecastVisibilityCheck"
 import { LimitedWidthContainer } from "../components/LimitedWidthContainer"
+import VisibilityMapCheck from "../components/MapSizeSelect"
+import PageTitle from "../components/PageTitle"
+import StyleSettings from "../components/StyleSettings"
+import { WavesSizePreference } from "../components/WavesSizePreference"
+import { Container, Stack } from "../core-ui/ui"
 
-export default function SettingsPage(): JSX.Element {
+export default function SettingsPage(): React.JSX.Element {
 
     return (
         <Stack direction='vertical'>
@@ -21,11 +21,7 @@ export default function SettingsPage(): JSX.Element {
                 <Container fluid className='h-100'>
 
                     <ExpandableStack title="Style" uniqueLocalStorageKey="StyleSetting"  >
-                        <ThemeChangerCheck />
-                    </ExpandableStack>
-
-                    <ExpandableStack title="Font" uniqueLocalStorageKey="FontSetting"  >
-                        <FontSizeSetting />
+                        <StyleSettings />
                     </ExpandableStack>
 
                     <ExpandableStack title="Map" uniqueLocalStorageKey="MapSetting">
@@ -34,6 +30,7 @@ export default function SettingsPage(): JSX.Element {
 
                     <ExpandableStack title="Details" uniqueLocalStorageKey="DetailsSetting">
                         <div>
+                            <WavesSizePreference />
                             <ForecastPrecisionCheck />
                             <ForecastsHoursRange />
                             <ForecastDurationCheck />
@@ -50,5 +47,19 @@ export default function SettingsPage(): JSX.Element {
                 </Container>
             </LimitedWidthContainer>
         </Stack>
+    )
+}
+
+export function SubSettingWrapper(props: { title: string, settings: React.JSX.Element }): React.JSX.Element {
+
+    return (
+        <Container>
+            <span className='fs-6 fw-semibold'>
+                {props.title}
+            </span>
+            <div className='ms-2'>
+                {props.settings}
+            </div>
+        </Container>
     )
 }

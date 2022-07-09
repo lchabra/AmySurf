@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import { useForecastsApi } from '../contexts/useForecasts'
 import { useUser } from '../contexts/useUser'
 import { Container, Stack } from '../core-ui/ui'
@@ -10,21 +10,23 @@ import { LimitedWidthContainer } from './LimitedWidthContainer'
 import { LoadingSpinner } from './LoadingSpinner'
 import { SpotSelectContainer } from './SpotSelectContainer'
 
-export default function ForecastDetailAdaptiveView(): JSX.Element {
+export default function ForecastDetailAdaptiveView(): React.JSX.Element {
     const user = useUser()
     const forecastsApi = useForecastsApi()
 
     const spotsAvailables = forecastsApi.data?.spots !== undefined
     const hasErrors = forecastsApi.data?.errors !== undefined && forecastsApi.data.errors.length > 0
-    const hasForecastData = forecastsApi.data?.spotForecasts !== undefined && forecastsApi.data?.spotForecasts?.data?.length > 0
+    const hasForecastData = forecastsApi.data?.spotForecast !== undefined && forecastsApi.data?.spotForecast?.data?.length > 0
 
     const hasForecasts = hasForecastData
     const mustSelectSpot = spotsAvailables && user.userSettings.spotName === ''
     const isSpotsLoading = !hasErrors && !hasForecasts || forecastsApi.isSpotsLoading
 
+    const isVisibilityCorrect = !user.userSettings.rowVisibility.every(r => r.isVisible === false)
+
     // Forecast Details
     if (hasForecasts) {
-        if (user.userSettings.visiblesForecastsTypes.length > 1)
+        if (isVisibilityCorrect)
             return <ForecastsDetails />
         else
             return <VisibilityOptionsIncorrect className='h-100 d-flex justify-content-center' />
@@ -58,7 +60,7 @@ export default function ForecastDetailAdaptiveView(): JSX.Element {
     )
 }
 
-function VisibilityOptionsIncorrect(props: { className?: string }): JSX.Element {
+function VisibilityOptionsIncorrect(props: { className?: string }): React.JSX.Element {
     const navigate = useNavigate();
 
     return (

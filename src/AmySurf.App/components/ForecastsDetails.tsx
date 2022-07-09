@@ -1,67 +1,26 @@
-import React, { CSSProperties, useState } from 'react'
-import { Stack } from '../core-ui/ui'
-import LabelCollection from './LabelCollections'
-import { ForecastsPagesCollection } from './ForecastPagesCollections'
-import { useUser } from '../contexts/useUser'
+import React from 'react'
 import { useForecastsApi } from '../contexts/useForecasts'
-import { ErrorsModal } from './ErrorsComponents'
-import { formatTimeLong, formatToPattern, isToday } from '../helpers/dt'
-import { ForecastStatusIcons } from './ForecastStatusIcons'
-import { forecastLabelDenseWitdhEm, forecastLabelWitdhEm } from '../contexts/useStyle'
+import { Grid } from './Grid'
+import { useHourlyRatingGroupMap } from '../contexts/useNostr'
+import { useForecastSummary } from '../contexts/useForecastSummary'
+import { useForecastGridOptions } from '../models/forecast-grid'
 
-export function ForecastsDetails(): JSX.Element {
-    const [showErrors, setShowErrors] = useState(false)
+export function ForecastsDetails(): React.JSX.Element {
+    const forecastsApi = useForecastsApi()
+    const forecast = forecastsApi.data?.spotForecast!
 
-    const handleCloseErrors = () => setShowErrors(false);
-    const handleShowErrors = () => setShowErrors(true);
+    // Dirty hack to append ratings information to forecast
+    const ratings = useHourlyRatingGroupMap()
+    const data = React.useMemo(() => {
+        return {
+            ...forecast,
+            data: forecast.data.map(d => ({ ...d, ratings: ratings.get(d.dateTime.valueOf()) }))
+        }
+    }, [forecast, ratings])
 
-    const user = useUser()
-    const styles = getForecastsDetailsStyles(user.userSettings.denseLabel)
+    const selectionService = useForecastSummary();
+    const options = useForecastGridOptions();
+    const selectedKey = selectionService.selectedForecast && selectionService.selectedForecast.dateTime.valueOf()
 
-    return (
-        <Stack direction='horizontal' className="h-100 d-flex justify-content-center">
-
-            <Stack style={styles.verticalInfo} className='h-100'>
-                <ForecastStatusIcons handleShowErrors={handleShowErrors} />
-                <LabelCollection />
-            </Stack>
-
-            <div className='h-100' style={{ overflowX: 'scroll' }}>
-                <ForecastsPagesCollection />
-            </div>
-
-            {showErrors && <ErrorsModal title={<ForecastErrorModalTitle />} handleCloseModal={handleCloseErrors} />}
-        </Stack>
-    )
-}
-
-function ForecastErrorModalTitle(): JSX.Element {
-    return (
-        <Stack direction='vertical'>
-            <h3>
-                Oops !
-            </h3>
-            <span className='fs-6'>
-                {GetLastUpdateTimeString()}
-            </span>
-        </Stack>
-    )
-}
-
-function GetLastUpdateTimeString(): string {
-    const forecastApi = useForecastsApi()
-    const updateTime = forecastApi.data?.date
-    if (updateTime === undefined) return ''
-    return isToday(updateTime) ? `Last forecasts update: today ${formatTimeLong(updateTime)}` : `Last forecasts update: ${formatToPattern(updateTime, 'Pp')}`
-}
-
-function getForecastsDetailsStyles(isDenseLabel: boolean): Record<string, CSSProperties> {
-    return {
-        verticalInfo: {
-            minWidth: isDenseLabel ? forecastLabelDenseWitdhEm + 'rem' : forecastLabelWitdhEm + 'rem',
-            maxWidth: isDenseLabel ? forecastLabelDenseWitdhEm + 'rem' : forecastLabelWitdhEm + 'rem',
-            overflowX: 'scroll',
-            overflowY: 'hidden'
-        },
-    }
+    return <Grid data={data} options={options} selectedKey={selectedKey} />
 }

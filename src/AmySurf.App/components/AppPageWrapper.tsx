@@ -1,19 +1,15 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { navBarHeightEm, useAppStyle } from '../contexts/useStyle'
 import { Container } from '../core-ui/ui'
-import { getGradiantBackgroundClassName, getTextColorClassName } from '../styles/theme'
 
-export function PageData(props: { className?: string, children: React.PropsWithChildren<ReactNode> }): JSX.Element {
+export function PageData(props: { className?: string, children: React.PropsWithChildren<ReactNode> }): React.JSX.Element {
     const appStyle = useAppStyle()
-
     const style = getPageDataStyles()
-    const textColor = getTextColorClassName(appStyle.theme)
-    const dataBgColor = getGradiantBackgroundClassName(appStyle.theme)
 
     return (
         <Container
             fluid
-            className={`${props.className} ${textColor} ${dataBgColor}`}
+            className={`${props.className} text-bg-${appStyle.classNames.mainColor} bg-gradient`}
             style={style}
         >
             <>

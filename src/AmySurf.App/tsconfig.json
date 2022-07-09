@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "module": "ES2022",
     "moduleResolution": "Node",
     "experimentalDecorators": true,
@@ -12,11 +13,7 @@
     "jsx": "react",
     "target": "es2021",
     "strict": true,
-    "lib": [
-      "ES2021",
-      "DOM",
-      "WebWorker"
-    ],
+    "lib": ["ES2021", "DOM", "WebWorker"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "plugins": [

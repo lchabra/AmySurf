@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { containerWidthLimitEm } from '../contexts/useStyle';
 import { Container } from '../core-ui/ui';
 
-export function LimitedWidthContainer(props: { children: React.PropsWithChildren<ReactNode>, className?: string }): JSX.Element {
+export function LimitedWidthContainer(props: { children: React.PropsWithChildren<ReactNode>, className?: string }): React.JSX.Element {
 
     return (
         <Container

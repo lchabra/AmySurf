@@ -1,10 +1,11 @@
 import React from "react"
+import { getNextTheme } from "../contexts/useStyle"
+import { useUser } from "../contexts/useUser"
 import { Container, Form } from "../core-ui/ui"
 import { CapitalizeString } from "../helpers/forecastHelper"
-import { getNextTheme, ThemeColor } from "../styles/theme"
-import { useAppStyle } from "../contexts/useStyle"
+import { ThemeColor } from "../models/modelsApp"
 
-export default function ThemeChangerCheck(): JSX.Element {
+export default function ThemeChangerCheck(): React.JSX.Element {
     return (
         <Container>
             {Object.values(ThemeColor).map(themeColor => {
@@ -14,18 +15,18 @@ export default function ThemeChangerCheck(): JSX.Element {
     )
 }
 
-function ThemeCheck(props: { themeColor: ThemeColor }): JSX.Element {
-    const appStyle = useAppStyle()
+function ThemeCheck(props: { themeColor: ThemeColor }): React.JSX.Element {
+    const user = useUser()
 
     return (
         <Form.Check
             type='checkbox'
             id={"visibility-check-" + props.themeColor}
             label={CapitalizeString(props.themeColor)}
-            checked={appStyle.theme === props.themeColor}
+            checked={user.userSettings.themeColor === props.themeColor}
             onChange={(e: any) => {
                 if (!e.target.checked) return
-                return appStyle.saveAppStyle({ ...appStyle, theme: getNextTheme(appStyle.theme) })
+                return user.saveAppSettings({ ...user.userSettings, themeColor: getNextTheme(user.userSettings.themeColor) })
             }}
         />
     )
