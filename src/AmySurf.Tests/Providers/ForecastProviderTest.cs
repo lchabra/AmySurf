@@ -18,7 +18,7 @@ public sealed class ForecastProviderTest
     [Fact]
     public async Task TestLockOnRWHelper()
     {
-        var startupArgs = new string[] { "BackgroundPullingInterval=0.001" };
+        var startupArgs = new string[] { "PollingInterval=0.001" };
         var localHost = CreateHostBuilderTest(startupArgs).Build();
         await localHost.StartAsync();
 
@@ -117,8 +117,8 @@ public sealed class ForecastProviderTest
     {
         HttpClientHelperOptions httpOptions = new()
         {
-            TimeBeforeRetryUriSec = 60,
-            TimeOutHttpRequestSec = 10,
+            RetryInterval = TimeSpan.FromSeconds(60),
+            Timeout = TimeSpan.FromSeconds(10),
             WebProxyAddress = string.Empty
         };
         HttpClientHelper httpClientHelper = new(Options.Create(httpOptions));

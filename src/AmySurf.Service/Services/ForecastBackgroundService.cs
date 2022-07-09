@@ -1,5 +1,4 @@
 ﻿using AmySurf.Models;
-using AmySurf.Providers;
 using AmySurf.Service.Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -11,32 +10,29 @@ internal sealed class ForecastBackgroundService : BackgroundService
 {
     private readonly ILogger _logger;
     private readonly IForecastStore _forecastStore;
-    private readonly SpotProvider _spotProvider;
     private readonly IForecastProvider _forecastProvider;
-    private readonly IOptions<ForecastWorkerBackgroundServiceOptions> _forecastWorkerBackgroundServiceOptions;
+    private readonly ForecastBackgroundServiceOptions _options;
 
     public ForecastBackgroundService(
         ILogger<ForecastBackgroundService> logger,
-        SpotProvider spotProvider,
         IForecastStore forecastStore,
         IForecastProvider forecaseProvider,
-        IOptions<ForecastWorkerBackgroundServiceOptions> options)
+        IOptions<ForecastBackgroundServiceOptions> options)
     {
         _logger = logger;
-        _spotProvider = spotProvider;
         _forecastStore = forecastStore;
         _forecastProvider = forecaseProvider;
-        _forecastWorkerBackgroundServiceOptions = options;
+        _options = options.Value;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-
+        var interval = _options.PollingInterval;
         while (!stoppingToken.IsCancellationRequested)
         {
             Log.ForecastsUpdateStart(_logger);
 
-            foreach (Spot spot in _spotProvider.GetSpots())
+            foreach (Spot spot in await _forecastProvider.GetSpotsAsync())
             {
                 Log.SpotForecastsUpdateStart(_logger, spot.Name);
 
@@ -81,15 +77,13 @@ internal sealed class ForecastBackgroundService : BackgroundService
                 Log.SpotForecastsUpdateFinish(_logger, spot.Id);
             }
 
-            TimeSpan delaySec = TimeSpan.FromSeconds(_forecastWorkerBackgroundServiceOptions.Value.BackgroundPullingInterval);
-
             Log.ForecastsUpdateFinish(_logger);
-            await Task.Delay(delaySec, stoppingToken).ConfigureAwait(false);
+            await Task.Delay(interval, stoppingToken).ConfigureAwait(false);
         }
     }
 }
 
-public sealed class ForecastWorkerBackgroundServiceOptions
+public sealed class ForecastBackgroundServiceOptions
 {
-    public double BackgroundPullingInterval { get; set; }
+    public TimeSpan PollingInterval { get; set; } = TimeSpan.FromHours(1);
 }
