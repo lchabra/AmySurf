@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Options;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
+using Microsoft.Extensions.Options;
 
 namespace AmySurf.Models.Helpers;
 
@@ -8,36 +8,36 @@ internal sealed class HttpClientHelper
 {
     private readonly HttpClient _httpClient;
     private readonly HttpClient _httpClientProxy;
-    private readonly IOptions<HttpClientHelperOptions> _httpClientHelperOptions;
+    private readonly HttpClientHelperOptions _options;
     private readonly Dictionary<string, DateTime> _downUriTimeoutTracking = new Dictionary<string, DateTime>();
 
     public HttpClientHelper(IOptions<HttpClientHelperOptions> options)
     {
-        _httpClientHelperOptions = options;
-        _httpClient = GetHttpClient(options);
-        _httpClientProxy = GetHttpClientProxy(options);
+        _options = options.Value;
+        _httpClient = GetHttpClient(options.Value);
+        _httpClientProxy = GetHttpClientProxy(options.Value);
     }
 
-    private static HttpClient GetHttpClient(IOptions<HttpClientHelperOptions> options) =>
-        new HttpClient() { Timeout = TimeSpan.FromSeconds(options.Value.TimeOutHttpRequestSec) };
+    private static HttpClient GetHttpClient(HttpClientHelperOptions options) =>
+        new HttpClient() { Timeout = options.Timeout };
 
-    private static HttpClient GetHttpClientProxy(IOptions<HttpClientHelperOptions> options)
+    private static HttpClient GetHttpClientProxy(HttpClientHelperOptions options)
     {
-        return string.IsNullOrEmpty(options.Value.WebProxyAddress)
+        return string.IsNullOrEmpty(options.WebProxyAddress)
             ? GetHttpClient(options)
             : new HttpClient(new HttpClientHandler()
             {
-                Proxy = new WebProxy(options.Value.WebProxyAddress),
+                Proxy = new WebProxy(options.WebProxyAddress),
                 UseProxy = true
             })
             {
-                Timeout = TimeSpan.FromSeconds(options.Value.TimeOutHttpRequestSec)
+                Timeout = options.Timeout
             };
     }
 
     private async Task<HttpResponseMessage> GetResponseMessageAsyncCore(HttpClient httpClient, Uri uri)
     {
-        return await GetResponseAsync(httpClient, uri, TimeSpan.FromSeconds(_httpClientHelperOptions.Value.TimeOutHttpRequestSec)).ConfigureAwait(false);
+        return await GetResponseAsync(httpClient, uri, _options.Timeout).ConfigureAwait(false);
     }
 
     // TODO: Refactor?
@@ -52,13 +52,13 @@ internal sealed class HttpClientHelper
         // Test if proxy is know as down
         bool isProxyOff;
         string proxyUriKey = string.Empty;
-        if (_httpClientHelperOptions.Value.WebProxyAddress.Length == 0)
+        if (_options.WebProxyAddress.Length == 0)
         {
             isProxyOff = true;
         }
         else
         {
-            proxyUriKey = GetUriKey(_httpClientHelperOptions.Value.WebProxyAddress);
+            proxyUriKey = GetUriKey(_options.WebProxyAddress);
             isProxyOff = IsUriKeyInDownDictionary(proxyUriKey);
         }
 
@@ -189,7 +189,7 @@ internal sealed class HttpClientHelper
         }
 
         //Test if proxy is working
-        bool isProxyOFF = _httpClientHelperOptions.Value.WebProxyAddress.Length == 0 || !await IsUriHealthy(_httpClientHelperOptions.Value.WebProxyAddress).ConfigureAwait(false);
+        bool isProxyOFF = _options.WebProxyAddress.Length == 0 || !await IsUriHealthy(_options.WebProxyAddress).ConfigureAwait(false);
 
         if (!isProxyOFF)
         {
@@ -218,7 +218,7 @@ internal sealed class HttpClientHelper
         if (IsUriKeyInDownDictionary(uriKey))
             return false;
 
-        TimeSpan timeout = TimeSpan.FromSeconds(_httpClientHelperOptions.Value.TimeOutHttpRequestSec);
+        TimeSpan timeout = _options.Timeout;
         Task? timeoutTask = Task.Delay(timeout);
 
         string[]? address = uri.Split('/')[2].Split(':');
@@ -270,7 +270,7 @@ internal sealed class HttpClientHelper
                 return false;
 
             TimeSpan ageOfEntry = DateTime.UtcNow - uriDateTimeDown;
-            if (ageOfEntry >= new TimeSpan(0, 0, _httpClientHelperOptions.Value.TimeBeforeRetryUriSec))
+            if (ageOfEntry >= _options.RetryInterval)
             {
                 _downUriTimeoutTracking.Remove(uriKey);
                 return false;
@@ -303,6 +303,6 @@ public sealed class HttpClientHelperOptions
     // "http://127.0.0.1:9070/"
     // "http://10.0.2.2:9070/" for Android
     public string WebProxyAddress { get; set; } = string.Empty;
-    public int TimeOutHttpRequestSec { get; set; }
-    public int TimeBeforeRetryUriSec { get; set; }
+    public TimeSpan Timeout { get; set; }
+    public TimeSpan RetryInterval { get; set; }
 }

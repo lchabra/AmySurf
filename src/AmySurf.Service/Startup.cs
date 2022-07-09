@@ -31,10 +31,10 @@ public sealed class Startup
             var p = s.GetRequiredService<OnlineForecastProvider>();
             return ActivatorUtilities.CreateInstance<ForecastBackgroundService>(s, p);
         });
-        services.Configure<ForecastWorkerBackgroundServiceOptions>(_configuration);
+        services.Configure<ForecastBackgroundServiceOptions>(_configuration);
         services.AddSingleton<SpotProvider>();
         services.AddSingleton<HttpClientHelper>();
-        services.Configure<HttpClientHelperOptions>(_configuration);
+        services.Configure<HttpClientHelperOptions>(_configuration.GetSection("HttpClient"));
         services.AddSingleton<IForecastStore, FileSystemForecastStore>();
 
         services.AddCompressedStaticFiles();
