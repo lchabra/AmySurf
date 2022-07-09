@@ -10,7 +10,7 @@ public sealed class ErrorController : ControllerBase
 {
     private readonly ILogger _logger;
 
-    public ErrorController(ILogger logger)
+    public ErrorController(ILogger<ErrorController> logger)
     {
         _logger = logger;
     }

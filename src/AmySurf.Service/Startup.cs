@@ -26,11 +26,7 @@ public sealed class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddHostedService<ForecastBackgroundService>(s =>
-        {
-            var p = s.GetRequiredService<OnlineForecastProvider>();
-            return ActivatorUtilities.CreateInstance<ForecastBackgroundService>(s, p);
-        });
+        services.AddHostedService<ForecastBackgroundService>();
         services.Configure<ForecastBackgroundServiceOptions>(_configuration);
         services.AddSingleton<SpotProvider>();
         services.AddSingleton<HttpClientHelper>();
@@ -47,13 +43,12 @@ public sealed class Startup
         services.Configure<FileSystemForecastStoreOptions>(_configuration);
 
         services.AddSingleton<OnlineForecastProvider>();
-        services.AddSingleton<LockedForecastProvider>();
-        services.AddSingleton<CachedForecastProvider>();
 
         services.AddSingleton<IForecastProvider>(services =>
         {
-            LockedForecastProvider p1 = services.GetRequiredService<LockedForecastProvider>();
-            return new CachedForecastProvider(services.GetRequiredService<SpotProvider>(), new AggregateForecastProvider(services.GetRequiredService<SpotProvider>(), p1));
+            var store = services.GetRequiredService<IForecastStore>();
+            var provider = new CachedForecastProvider(new LockedForecastProvider(store));
+            return provider;
         });
 
         services.AddSingleton<ISurfForecastProvider, SurflineProvider>();

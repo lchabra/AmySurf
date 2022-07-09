@@ -13,23 +13,17 @@ internal sealed class CachedForecastProvider : IForecastProvider
     private int GetWeatherForecastRequestHashCache { get; set; }
     private int GetEnergyForecastRequestHashCache { get; set; }
 
-    private readonly SpotProvider _spotProvider;
     private readonly IForecastProvider _forecastProvider;
 
-    public CachedForecastProvider(SpotProvider spotProvider, IForecastProvider forecastsProvider)
+    public CachedForecastProvider(IForecastProvider forecastProvider)
     {
-        _spotProvider = spotProvider;
-        _forecastProvider = forecastsProvider;
+        _forecastProvider = forecastProvider;
         GetSurfForecastResponseCache = new GetSurfForecastResponse(SurfForecast.Empty, default);
         GetWeatherForecastResponseCache = new GetWeatherForecastResponse(WeatherForecast.Empty, default);
         GetEnergyForecastResponseCache = new GetEnergyForecastResponse(EnergyForecast.Empty, default);
     }
 
-    public async Task<Spot[]> GetSpotsAsync()
-    {
-        await Task.CompletedTask;
-        return _spotProvider.GetSpots();
-    }
+    public  Task<Spot[]> GetSpotsAsync() =>  _forecastProvider.GetSpotsAsync();
 
     public async Task<GetSurfForecastResponse> GetSurfForecastAsync(GetForecastRequest request)
     {

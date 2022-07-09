@@ -1,4 +1,5 @@
 ﻿using AmySurf.Models;
+using AmySurf.Providers;
 using AmySurf.Service.Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,7 @@ internal sealed class ForecastBackgroundService : BackgroundService
     public ForecastBackgroundService(
         ILogger<ForecastBackgroundService> logger,
         IForecastStore forecastStore,
-        IForecastProvider forecaseProvider,
+        OnlineForecastProvider forecaseProvider,
         IOptions<ForecastBackgroundServiceOptions> options)
     {
         _logger = logger;
