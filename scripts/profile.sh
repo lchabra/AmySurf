@@ -89,7 +89,17 @@ alias amysurf-run-docker-armv7='(cd $AMYSURF_HOME; \
   AMYSURF_DOCKER_NAME="amysurf" \
   AMYSURF_PORT="5009" \
   AMYSURF_TRAEFIK_RULE="Host(\`amysurf.${HOST_NAME}\`)" \
-  docker compose -f docker-compose.yml -f docker-compose.traefik.yml up)'
+  docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up)'
+
+alias amysurf-run-docker-armv7-d='(cd $AMYSURF_HOME; \
+  DOTNET_SDK_IMAGE="mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim-amd64" \
+  AMYSURF_RUNTIME_IMAGE="mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim-arm32v7" \
+  AMYSURF_RUNTIME="linux-arm" \
+  AMYSURF_IMAGE="louchano/amysurf:linux-arm32v7" \
+  AMYSURF_DOCKER_NAME="amysurf" \
+  AMYSURF_PORT="5009" \
+  AMYSURF_TRAEFIK_RULE="Host(\`amysurf.${HOST_NAME}\`)" \
+  docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up -d)'
 
 alias amysurf-run-docker-arm64='(cd $AMYSURF_HOME; \
   DOTNET_SDK_IMAGE="mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim-amd64" \
