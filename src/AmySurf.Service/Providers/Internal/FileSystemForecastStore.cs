@@ -1,11 +1,9 @@
+using AmySurf.Helpers;
 using AmySurf.Models;
-using AmySurf.Models.Helpers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
 namespace AmySurf.Providers;
-
-
 
 /// <summary>
 /// Store forecast.

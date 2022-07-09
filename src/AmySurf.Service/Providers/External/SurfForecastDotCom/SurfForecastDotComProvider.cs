@@ -1,5 +1,5 @@
-﻿using AmySurf.Models;
-using AmySurf.Models.Helpers;
+﻿using AmySurf.Helpers;
+using AmySurf.Models;
 using HtmlAgilityPack;
 using System.Globalization;
 
@@ -120,3 +120,5 @@ internal sealed class SurfForecastDotComProvider : IEnergyForecastsProvider
         return dateForecast + new TimeSpan(forecastHourTime, 0, 0) - new TimeSpan(locationUtcOffset, 0, 0);
     }
 }
+
+public sealed record SurfForecastDotComSpotOptions(string SpotId) : IDataProviderSpotOptions;

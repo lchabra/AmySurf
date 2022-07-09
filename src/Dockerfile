@@ -22,8 +22,6 @@ ARG RUNTIME="linux-arm"
 
 COPY Directory.Build.props /build/
 COPY AmySurf.Service/AmySurf.Service.csproj /build/AmySurf.Service/
-COPY AmySurf.Providers/ /build/AmySurf.Providers/
-COPY AmySurf.Models/ /build/AmySurf.Models/
 
 WORKDIR /build/AmySurf.Service
 RUN dotnet restore AmySurf.Service.csproj --runtime $RUNTIME

@@ -13,11 +13,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
         <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\AmySurf.Providers\AmySurf.Providers.csproj" />
-        <ProjectReference Include="..\AmySurf.Models\AmySurf.Models.csproj" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.42"/>
     </ItemGroup>
 
     <ItemGroup>

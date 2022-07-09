@@ -1,6 +1,5 @@
-﻿using AmySurf.Models;
-using AmySurf.Models.Helpers;
-using AmySurf.Providers;
+﻿using AmySurf.Helpers;
+using AmySurf.Models;
 
 namespace AmySurf.Providers.External;
 
@@ -96,7 +95,7 @@ internal static class OpenWeatherMapAdapter
         }
         //f.weather[0].description
         return futuresForecastsRaw.List.ConvertAll(f => new HourlyWeather(
-                                    DateTimeHelper.GetDateTimeUTCFromUnixTimeSeconds(f.Dt),
+                                    DateTimeHelper.GetUniversalDateTimeFromUnixTimeSeconds(f.Dt),
                                     f.Weather[0].Id,
                                     f.Rain?.RainMm ?? 0,
                                     f.Main.Temp,
@@ -109,7 +108,7 @@ internal static class OpenWeatherMapAdapter
         return pastForecastsRaw.Hourly is null
             ? new List<HourlyWeather>()
             : pastForecastsRaw.Hourly.ConvertAll(f => new HourlyWeather(
-                        DateTimeHelper.GetDateTimeUTCFromUnixTimeSeconds(f.Dt),
+                        DateTimeHelper.GetUniversalDateTimeFromUnixTimeSeconds(f.Dt),
                         f.Weather[0].Id,
                         f.Rain?.RainMm ?? 0,
                         f.Temp,

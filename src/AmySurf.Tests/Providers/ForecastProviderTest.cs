@@ -1,8 +1,8 @@
+using AmySurf.Helpers;
 using AmySurf.Models;
-using AmySurf.Models.Helpers;
 using AmySurf.Providers;
 using AmySurf.Service;
-using AmySurf.Service.Services;
+using AmySurf.Services;
 using AmySurf.Tests.Providers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;

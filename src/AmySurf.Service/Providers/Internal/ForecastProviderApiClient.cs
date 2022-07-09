@@ -1,5 +1,5 @@
-﻿using AmySurf.Models;
-using AmySurf.Models.Helpers;
+﻿using AmySurf.Helpers;
+using AmySurf.Models;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Globalization;

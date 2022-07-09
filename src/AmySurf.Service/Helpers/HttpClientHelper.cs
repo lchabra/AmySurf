@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using Microsoft.Extensions.Options;
 
-namespace AmySurf.Models.Helpers;
+namespace AmySurf.Helpers;
 
 internal sealed class HttpClientHelper
 {

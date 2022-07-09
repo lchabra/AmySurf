@@ -1,5 +1,5 @@
-﻿using AmySurf.Models;
-using AmySurf.Models.Helpers;
+﻿using AmySurf.Helpers;
+using AmySurf.Models;
 using Newtonsoft.Json;
 using System.Globalization;
 
@@ -86,6 +86,8 @@ internal sealed class OpenWeatherMapProvider : IWeatherForecastsProvider
         return forecastsRaw;
     }
 }
+
+public sealed record OpenWeatherProviderSpotOptions(string SpotId, double Latitude,double Longitude) : IDataProviderSpotOptions;
 
 public sealed class OpenWeatherMapForecastPastRaw
 {

@@ -22,8 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AmySurf.Providers\AmySurf.Providers.csproj"/>
-    <ProjectReference Include="..\AmySurf.Models\AmySurf.Models.csproj"/>
     <ProjectReference Include="..\AmySurf.Service\AmySurf.Service.csproj"/>
   </ItemGroup>
 

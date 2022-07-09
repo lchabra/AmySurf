@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace AmySurf.Service.Logging;
+namespace AmySurf.Logging;
 
 public static partial class Log
 {

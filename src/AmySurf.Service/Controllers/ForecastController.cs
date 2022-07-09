@@ -1,5 +1,5 @@
 ﻿using AmySurf.Models;
-using AmySurf.Service.Logging;
+using AmySurf.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

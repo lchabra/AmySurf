@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
+using AmySurf.Helpers;
 using AmySurf.Models;
-using AmySurf.Models.Helpers;
 using Newtonsoft.Json;
 
 namespace AmySurf.Providers.External;
@@ -49,6 +49,8 @@ internal sealed class SurflineProvider : ISurfForecastProvider
         return forecastsRaw;
     }
 }
+
+public sealed record SurflineSpotOptions(string SpotId) : IDataProviderSpotOptions;
 
 public sealed class SurflineRaw
 {

@@ -11,6 +11,7 @@ public interface IForecastProvider
     Task<GetEnergyForecastResponse> GetEnergyForecastAsync(GetForecastRequest request);
 }
 
+// TODO: make these async
 public interface IForecastStore : IForecastProvider
 {
     void WriteForecast(GetSurfForecastResponse response);

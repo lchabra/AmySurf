@@ -1,11 +1,11 @@
 ﻿using AmySurf.Models;
 using AmySurf.Providers;
-using AmySurf.Service.Logging;
+using AmySurf.Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AmySurf.Service.Services;
+namespace AmySurf.Services;
 
 internal sealed class ForecastBackgroundService : BackgroundService
 {

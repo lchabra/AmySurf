@@ -1,4 +1,4 @@
-﻿namespace AmySurf.Models.Helpers;
+﻿namespace AmySurf.Helpers;
 
 internal static class SystemUnitHelper
 {

@@ -1,4 +1,4 @@
-﻿using AmySurf.Models.Helpers;
+﻿using AmySurf.Helpers;
 
 namespace AmySurf.Models;
 

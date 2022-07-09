@@ -1,8 +1,8 @@
+using AmySurf.Helpers;
 using AmySurf.Models;
-using AmySurf.Models.Helpers;
 using AmySurf.Providers;
 using AmySurf.Providers.External;
-using AmySurf.Service.Services;
+using AmySurf.Services;
 using CompressedStaticFiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

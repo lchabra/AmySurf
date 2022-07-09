@@ -1,6 +1,5 @@
-﻿using AmySurf.Models;
-using AmySurf.Models.Helpers;
-using AmySurf.Providers;
+﻿using AmySurf.Helpers;
+using AmySurf.Models;
 
 namespace AmySurf.Providers.External;
 
@@ -31,7 +30,7 @@ internal static class SurflineAdapter
 
             HourlySurf? hourlyForecastData = new HourlySurf()
             {
-                DateTime = DateTimeHelper.GetDateTimeUTCFromUnixTimeSeconds(singleForecastRaw.Timestamp - tideTsCorrection),
+                DateTime = DateTimeHelper.GetUniversalDateTimeFromUnixTimeSeconds(singleForecastRaw.Timestamp - tideTsCorrection),
 
                 WavesSizeMin = singleForecastRaw.Surf.Min,
                 WavesSizeMax = singleForecastRaw.Surf.Max,
@@ -58,8 +57,8 @@ internal static class SurflineAdapter
         IList<SunriseSunsetTimeRaw>? ssRawList = forecastsRaw.Data.SunriseSunsetTimes;
         for (int i = 0; i < ssRawList.Count; i++)
         {
-            surfForecasts.SunriseTimes.Add(DateTimeHelper.GetDateTimeUTCFromUnixTimeSeconds(ssRawList[i].Sunrise));
-            surfForecasts.SunsetTimes.Add(DateTimeHelper.GetDateTimeUTCFromUnixTimeSeconds(ssRawList[i].Sunset));
+            surfForecasts.SunriseTimes.Add(DateTimeHelper.GetUniversalDateTimeFromUnixTimeSeconds(ssRawList[i].Sunrise));
+            surfForecasts.SunsetTimes.Add(DateTimeHelper.GetUniversalDateTimeFromUnixTimeSeconds(ssRawList[i].Sunset));
         }
 
         return surfForecasts;

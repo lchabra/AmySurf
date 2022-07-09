@@ -1,10 +1,10 @@
-﻿namespace AmySurf.Models.Helpers;
+﻿namespace AmySurf.Helpers;
 
 internal static class DateTimeHelper
 {
     public static DateTime EpochDateTime { get; } = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
-    public static DateTime GetDateTimeUTCFromUnixTimeSeconds(long timestamp) => EpochDateTime.AddTicks(TimeSpan.FromSeconds(timestamp).Ticks);
+    public static DateTime GetUniversalDateTimeFromUnixTimeSeconds(long timestamp) => EpochDateTime.AddTicks(TimeSpan.FromSeconds(timestamp).Ticks);
 
     public static DateTime GetGenericRequestStartTime(int utcOffset) =>
         (DateTime.UtcNow + TimeSpan.FromHours(utcOffset)).Date - TimeSpan.FromHours(utcOffset) + TimeSpan.FromHours(6);
