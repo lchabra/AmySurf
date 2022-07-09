@@ -5,31 +5,30 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTests.Providers
+namespace UnitTests.Providers;
+
+public sealed class ForecastProviderTests
 {
-    public class ForecastProviderTests
+    [Fact]
+    public async Task GetForecastTest()
     {
-        [Fact]
-        public async Task GetForecastTest()
-        {
-            #region Variables in use
+        #region Variables in use
 
-            // Lenght of the Desired forecast
-            // TODO: Try with somes Minutes and seconds
-            TimeSpan forecastsDuration = new TimeSpan(24, 0, 0);
+        // Lenght of the Desired forecast
+        // TODO: Try with somes Minutes and seconds
+        TimeSpan forecastsDuration = new TimeSpan(24, 0, 0);
 
-            // StartDate: Midnight on UTC day
-            DateTime startDatetime = DateTime.UtcNow.Date;
-            DateTime endDatetime = DateTime.UtcNow.Date + forecastsDuration;
+        // StartDate: Midnight on UTC day
+        DateTime startDatetime = DateTime.UtcNow.Date;
+        DateTime endDatetime = DateTime.UtcNow.Date + forecastsDuration;
 
-            #endregion
+        #endregion
 
-            // Test Core
-            // TODO: ASYNC
-            ForecastProvider forecastProvider = new ForecastProvider();
-            var forecasts = await forecastProvider.GetForecast(startDatetime, endDatetime);
+        // Test Core
+        // TODO: ASYNC
+        ForecastProvider forecastProvider = new ForecastProvider();
+        var forecasts = await forecastProvider.GetForecast(startDatetime, endDatetime);
 
-            //Assert.AreEqual();
-        }
+        //Assert.AreEqual();
     }
 }

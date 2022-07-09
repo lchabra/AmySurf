@@ -1,37 +1,10 @@
-﻿namespace AmySurf.Models
-{
-    // SurfLine
-    public sealed class SurflineSpotOptions : IDataProviderSpotOptions
-    {
-        public string SpotId { get; }
-        public SurflineSpotOptions(string spotId)
-        {
-            SpotId = spotId;
-        }
-    }
+﻿namespace AmySurf.Models;
 
-    // OpenWeather
-    public sealed class OpenWeatherProviderSpotOptions : IDataProviderSpotOptions
-    {
-        public string SpotId { get; }
-        public double Latitude { get; }
-        public double Longitude { get; }
+// SurfLine
+public sealed record SurflineSpotOptions(string SpotId) : IDataProviderSpotOptions;
 
-        public OpenWeatherProviderSpotOptions(string spotId, double latitude, double longitude)
-        {
-            SpotId = spotId;
-            Latitude = latitude;
-            Longitude = longitude;
-        }
-    }
+// OpenWeather
+public sealed record OpenWeatherProviderSpotOptions(string SpotId, double Latitude,double Longitude) : IDataProviderSpotOptions;
 
-    // SurfForecastDotCom
-    public sealed class SurfForecastDotComSpotOptions : IDataProviderSpotOptions
-    {
-        public string SpotId { get; }
-        public SurfForecastDotComSpotOptions(string spotId)
-        {
-            SpotId = spotId;
-        }
-    }
-}
+// SurfForecastDotCom
+public sealed record SurfForecastDotComSpotOptions(string SpotId) : IDataProviderSpotOptions;

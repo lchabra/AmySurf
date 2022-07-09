@@ -8,7 +8,7 @@ using System.Linq;
 namespace AmySurf.Adapter.OpenWeather.Tests
 {
     //[TestClass()]
-    //public class UtilsTests
+    //public sealed class UtilsTests
     //{
     //    [TestMethod()]
     //    public void DeletePastForecastTest()
