@@ -25,7 +25,7 @@ export function SpotContainer(props: { data: Spot; hideRemoveIcon?: boolean }) {
                 variant="outline-warning border-0"
                 onClick={() => {
                     user.saveAppSettings({ ...user.userSettings, spotName: props.data.name });
-                    navigate(RoutePath.Forecasts);
+                    navigate(RoutePath.Forecasts)
                 }}
             >
                 <ExploreIcon
@@ -37,7 +37,13 @@ export function SpotContainer(props: { data: Spot; hideRemoveIcon?: boolean }) {
 
             <Stack direction='horizontal' className='d-flex align-self-center h-100'>
                 <FavoriteStarSpot data={props.data} />
-                <span className='ps-2 fs-5'>
+                <span
+                    onClick={() => {
+                        user.saveAppSettings({ ...user.userSettings, spotName: props.data.name });
+                        navigate(RoutePath.Forecasts)
+                    }}
+                    className='ps-2 fs-5'
+                >
                     {props.data.name}
                 </span>
             </Stack>

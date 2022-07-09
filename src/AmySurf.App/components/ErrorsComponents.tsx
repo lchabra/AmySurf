@@ -1,11 +1,9 @@
 import React from 'react'
 import { useForecastsApi } from '../contexts/useForecasts'
 import { useAppStyle } from '../contexts/useStyle'
-import { useUser } from '../contexts/useUser'
 import { Container, Modal, Stack } from '../core-ui/ui'
 import { getBorderFaded, getGradiantBackgroundClassName, getTextColorClassName } from '../styles/theme'
 
-// TODO: Make Errors better
 export default function ErrorsPage(props: { title: string, subTitle: string, className?: string }): JSX.Element {
     const forecastsApi = useForecastsApi()
     const errors = forecastsApi.data?.errors ?? []
@@ -20,24 +18,11 @@ export default function ErrorsPage(props: { title: string, subTitle: string, cla
                     {props.subTitle}
                 </h4>
                 <div className='mt-3'>
-                    {errors.map((e, i) => <div key={'error-details-' + i}>{e}</div>)}
+                    {process.env.AMYSURF_SHOW_ERRORS_DETAILS && errors.map((e, i) => <div key={'error-details-' + i}>{e}</div>)}
+                    {!process.env.AMYSURF_SHOW_ERRORS_DETAILS && <>...</>}
                 </div>
             </Stack>
         </Container>
-    )
-
-    return (
-        <Stack className={`${props.className} bg-dark text-center`}>
-            <h2 className='mt-2'>
-                {props.title}
-            </h2>
-            <h4 className='mt-2'>
-                {props.subTitle}
-            </h4>
-            <div className='mt-3'>
-                {errors.map((e, i) => <div key={'error-details-' + i}>{e}</div>)}
-            </div>
-        </Stack>
     )
 }
 
@@ -65,7 +50,8 @@ export function ErrorsModal(props: { title: JSX.Element, handleCloseModal: () =>
                 </Modal.Header>
 
                 <Modal.Body >
-                    {errors.map((e, i) => <div key={'error-modal-text' + i}>{e}</div>)}
+                    {process.env.AMYSURF_SHOW_ERRORS_DETAILS && errors.map((e, i) => <div key={'error-modal-text' + i}>{e}</div>)}
+                    {!process.env.AMYSURF_SHOW_ERRORS_DETAILS && <>...</>}
                 </Modal.Body>
 
                 <Modal.Footer onClick={props.handleCloseModal} className={`${getBorderFaded(appStyle.theme)} d-flex justify-content-center`}>

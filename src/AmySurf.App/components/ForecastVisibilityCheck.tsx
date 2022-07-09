@@ -68,14 +68,14 @@ function getUpdatedForecastTypeVisibility(actualForecastTypes: ForecastType[], f
     if (forecastTypeRequested) {
         if (actualForecastTypes.includes(forecastType))
             return [...actualForecastTypes]
-        else
-            return newForecastsTypes.concat(forecastType).sort()
+        else {
+            return newForecastsTypes.concat(forecastType).sort((a: any, b: any) => a - b)
+        }
 
     } else {
         if (actualForecastTypes.includes(forecastType))
-            return newForecastsTypes.filter(ft => ft !== forecastType).sort()
+            return newForecastsTypes.filter(ft => ft !== forecastType).sort((a: any, b: any) => a - b)
         else
             return newForecastsTypes
     }
 }
-

@@ -7,13 +7,13 @@ export default function ForecastTypeLabel(props: { data: ForecastType }): JSX.El
         case ForecastType.Hours:
             return <LabelComp label={'Hours'} unit={'(h)'} />
         case ForecastType.WaveSize:
-            return <LabelComp label={'Waves Size'} unit={'(ft)'} />
+            return <LabelComp label={'Waves'} unit={'(ft)'} />
         case ForecastType.SwellEnergy:
             return <LabelComp label={'Energy'} unit={'(Kj)'} />
         case ForecastType.SwellPeriodDirectionPrimary:
-            return <LabelComp label={'Swell 1'} unit={'(s/Deg)'} />
+            return <LabelComp label={'S1'} unit={'(s/Deg)'} />
         case ForecastType.SwellPeriodDirectionSecondary:
-            return <LabelComp label={'Swell 2'} unit={'(s/Deg)'} />
+            return <LabelComp label={'S2'} unit={'(s/Deg)'} />
         case ForecastType.TideChart:
             return <LabelComp label={'Tide'} unit={'(m)'} />
         case ForecastType.WindSpeedDirection:
@@ -31,9 +31,8 @@ export default function ForecastTypeLabel(props: { data: ForecastType }): JSX.El
 
 function LabelComp(props: { label: string, unit: string }): JSX.Element {
     return (
-        <>
-            <span className='fs-6'>{props.label}&nbsp;</span>
-            <span>{props.unit}</span>
-        </>
+        <div className="text-wrap text-center">
+            {props.label} {props.unit}
+        </div>
     )
 }

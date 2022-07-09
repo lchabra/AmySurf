@@ -6,7 +6,6 @@ import { getGradiantBackgroundClassName, getTextColorClassName, getBorderFaded }
 import { useAppStyle } from "../contexts/useStyle"
 
 export default function AdvancedSettings(): JSX.Element {
-    const user = useUser()
     const [showResetModal, setShowResetModal] = useState(false)
 
     const handleCloseErrors = () => setShowResetModal(false);
@@ -15,15 +14,10 @@ export default function AdvancedSettings(): JSX.Element {
     return (
         <Container>
             <Stack direction='vertical'>
-                <Form.Label>Server address (blank for default)</Form.Label>
-                <Form.Control
-                    placeholder={DefaultUserSettings.serverUrl}
-                    value={user.userSettings.serverUrl}
-                    onChange={(e) => {
-                        if (e.target.value === '') return user.saveAppSettings({ ...user.userSettings, serverUrl: DefaultUserSettings.serverUrl })
-                        else user.saveAppSettings({ ...user.userSettings, serverUrl: e.target.value })
-                    }}
-                />
+                {
+                    process.env.AMYSURF_SHOW_SERVER_SETTING &&
+                    <ServerAddressForm />
+                }
 
                 <Form.Label className="mt-2">Restore all default settings</Form.Label>
                 <Button variant="warning" onClick={handleShowErrors}>Restore default</Button>
@@ -31,6 +25,23 @@ export default function AdvancedSettings(): JSX.Element {
 
             </Stack>
         </Container>
+    )
+}
+
+function ServerAddressForm(): JSX.Element {
+    const user = useUser()
+    return (
+        <>
+            <Form.Label>Server address (blank for default)</Form.Label>
+            <Form.Control
+                placeholder={DefaultUserSettings.serverUrl}
+                value={user.userSettings.serverUrl}
+                onChange={(e) => {
+                    if (e.target.value === '') return user.saveAppSettings({ ...user.userSettings, serverUrl: DefaultUserSettings.serverUrl })
+                    else user.saveAppSettings({ ...user.userSettings, serverUrl: e.target.value })
+                }}
+            />
+        </>
     )
 }
 

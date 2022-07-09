@@ -8,6 +8,7 @@ import { ErrorsModal } from './ErrorsComponents'
 import { formatTimeLong, formatToPattern, isToday } from '../helpers/dt'
 import { ForecastStatusIcons } from './ForecastStatusIcons'
 import { forecastLabelDenseWitdhEm, forecastLabelWitdhEm } from '../contexts/useStyle'
+import { LabelsStyleChanger } from './LabelStyleChanger'
 
 export function ForecastsDetails(): JSX.Element {
     const [showErrors, setShowErrors] = useState(false)
@@ -16,13 +17,17 @@ export function ForecastsDetails(): JSX.Element {
     const handleShowErrors = () => setShowErrors(true);
 
     const user = useUser()
+    const forecastsApi = useForecastsApi()
+
     const styles = getForecastsDetailsStyles(user.userSettings.denseLabel)
+    const hasError = forecastsApi.data?.errors !== undefined && forecastsApi.data.errors.length > 0
 
     return (
         <Stack direction='horizontal' className="h-100 d-flex justify-content-center">
 
             <Stack style={styles.verticalInfo} className='h-100'>
-                <ForecastStatusIcons handleShowErrors={handleShowErrors} />
+                {hasError && <ForecastStatusIcons handleShowErrors={handleShowErrors} />}
+                {!hasError && <LabelsStyleChanger />}
                 <LabelCollection />
             </Stack>
 

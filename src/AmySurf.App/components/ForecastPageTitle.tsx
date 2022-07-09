@@ -64,7 +64,7 @@ export default function ForecastPageTitle(props: { spot: Spot }): JSX.Element {
             <div className='text-nowrap'>
                 {wavesSize != undefined && <> / {wavesSize}ft</>}
 
-                {period != undefined && !isNaN(period) && <> / {period}s</>}
+                {period != undefined && !isNaN(period) && <> / {period.toFixed(1)}s</>}
 
                 {tideHeight != undefined && <> / {tideHeight.toFixed(2)}m</>}
             </div>

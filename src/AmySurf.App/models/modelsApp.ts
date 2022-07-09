@@ -97,7 +97,7 @@ export const DefaultUserSettings: UserSettings = {
     startHours: 5,
     endHours: 20,
     refreshIntervalMinutes: 180,
-    denseLabel: true,
+    denseLabel: false,
     spotName: '',
     favoriteSpots: [],
     mapSize: MapSize.Small,
@@ -112,8 +112,6 @@ export const DefaultUserSettings: UserSettings = {
             ForecastType.TideChart,
             ForecastType.WindSpeedDirection,
             ForecastType.WeatherConditionTemperature,
-            ForecastType.RainMm,
-            ForecastType.CloudCoverage
         ],
 }
 

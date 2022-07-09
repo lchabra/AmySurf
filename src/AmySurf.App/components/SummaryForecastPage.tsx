@@ -35,20 +35,20 @@ export default function SummaryForecastPage(props: { data: SummaryForecastPageDa
 
 function SummaryLong(props: { data: SummaryForecastPageData }): JSX.Element {
     return (
-        <Container fluid className='p-0 d-flex justify-content-center'>
+        <Container fluid className='ps-2 d-flex justify-content-start'>
             {getDatesTitleLong(props.data.dates)}
 
-            <SunsetIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
+            <SunriseIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
             {getSunSetRiseTime(props.data.sunriseTimes)}
 
-            <SunriseIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
+            <SunsetIcon height={sunSetRiseIconHeightRem + 'rem'} width={sunSetRiseIconHeightRem + 'rem'} marginLeft='1rem' />
             {getSunSetRiseTime(props.data.sunsetTimes)}
         </Container>
     )
 }
 
 function SummaryMedium(props: { data: SummaryForecastPageData }): JSX.Element {
-    return <h6 className='m-0'>
+    return <h6 className='w-100 m-0 ps-2 d-flex justify-content-start'>
         {getDatesTitleLong(props.data.dates)}
     </h6>
 }

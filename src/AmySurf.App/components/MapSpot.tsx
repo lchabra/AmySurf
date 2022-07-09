@@ -70,6 +70,7 @@ export function MapSpot(): JSX.Element {
 
             {
                 forecastSummary.selectedForecast &&
+                user.userSettings.mapSize !== MapSize.Fullscreen &&
                 <div style={{ opacity: '80%' }} className='pe-none position-absolute top-50 start-50 translate-middle'>
                     <WindSwellCompas data={forecastSummary.selectedForecast} />
                 </div>
@@ -108,7 +109,7 @@ function MapSizeDropdown(props: { onCenterMapClicked: () => void }): JSX.Element
                 size='sm'
                 onClick={props.onCenterMapClicked}
             >
-                Center
+                Re-Center
             </Button>
 
             <DropdownButton

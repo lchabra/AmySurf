@@ -21,6 +21,8 @@ services:
       Logging__LogLevel__Microsoft: Warning
       Logging__LogLevel__CompressedStaticFiles: Warning
       AMYSURF_SERVICE_URL: "https://amysurf.freejungle.net"
+      AMYSURF_SHOW_SERVER_SETTING: false
+      AMYSURF_SHOW_ERRORS_DETAILS: false
       # AMYSURF_BASEURL: "${AMYSURF_BASEURL:-http://0.0.0.0:5005}"
       PollingInterval: "01:00:00"
       HttpClient__TimeOutHttpRequestSec: "00:00:15"

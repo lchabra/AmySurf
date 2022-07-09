@@ -26,7 +26,7 @@ export default function LabelCollection() {
                         className={`h-100 ${borderTop} border-bottom d-flex align-items-center justify-content-center ${getBorderFaded(appStyle.theme)}`}
                         style={appStyle.getForecastTypeWrapperStyle(forecastType)}
                     >
-                        <ForecastTypeIconLabel forecastType={forecastType} isDense={user.userSettings.denseLabel} />
+                        <ForecastTypeInfos forecastType={forecastType} isDense={user.userSettings.denseLabel} />
                     </div>
                 )
             })}
@@ -34,7 +34,7 @@ export default function LabelCollection() {
     )
 }
 
-function ForecastTypeIconLabel(props: { forecastType: ForecastType, isDense: boolean }): JSX.Element {
+function ForecastTypeInfos(props: { forecastType: ForecastType, isDense: boolean }): JSX.Element {
     return (
         <div className='d-flex justify-content-center align-items-center'>
             {props.isDense && <ForecastTypeIcon data={props.forecastType} />}

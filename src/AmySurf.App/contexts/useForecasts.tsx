@@ -126,7 +126,6 @@ function _useForecastApi(): IForecastApi {
         const selectedSpot = spots?.find(spot => spot.name === user.userSettings.spotName)
         const appForecastData = getAppForecastsData(user.userSettings, errors ?? [], selectedSpot, spots, surfForecast, weatherForecast, energyForecast)
         setAppForecastData(appForecastData)
-
         //TODO: Fix: some settings triger change for nothing (theme...)
     }, [user.userSettings, errors, spots, surfForecast, weatherForecast, energyForecast]);
 

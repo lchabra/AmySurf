@@ -29,7 +29,6 @@ export function HourlyCollection(props: { data: HourlyForecast }): JSX.Element {
             {
                 user.userSettings.visiblesForecastsTypes.map((forecastType: ForecastType, index) => {
                     const borderTop = index === 0 ? 'border-top' : ''
-
                     return (
                         <div
                             key={'hourlyForecast-' + forecastType + '-' + index}

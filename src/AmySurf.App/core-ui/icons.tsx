@@ -7,6 +7,7 @@ import Search from '../assets/images/search.svg'
 import ExpandLess from '../assets/images/expand_less.svg'
 import ExpandMore from '../assets/images/expand_more.svg'
 import Remove from '../assets/images/remove.svg'
+import XCircle from '../assets/images/x-circle.svg'
 
 import Star from '../assets/images/star.svg'
 import StarFill from '../assets/images/star-fill.svg'
@@ -75,6 +76,7 @@ export const SearchIcon = (props: ImagesProps) => <Search style={props} />
 export const ExpandLessIcon = (props: ImagesProps) => <ExpandLess style={props} />
 export const ExpandMoreIcon = (props: ImagesProps) => <ExpandMore style={props} />
 export const RemoveIcon = (props: ImagesProps) => <Remove style={props} />
+export const XCircleIcon = (props: ImagesProps) => <XCircle style={props} />
 
 export const StarIcon = (props: ImagesProps) => <Star style={props} />
 export const StarFillIcon = (props: ImagesProps) => <StarFill style={props} />

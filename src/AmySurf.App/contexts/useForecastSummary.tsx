@@ -50,7 +50,10 @@ function _useForecastSummary(): IForecastsSummary {
 
     // selectedForecast is set to spotNow when the spot changed
     useMemo(() => {
-        if (forecastsApi.data?.spotForecasts !== undefined) {
+        if (forecastsApi.data?.spotForecasts === undefined) {
+            setSelectedForecast(undefined)
+        }
+        else {
             const spotNow = getDateSpotNow(forecastsApi.data?.spotForecasts?.spot.utcOffset)
             const nearestRoundHourSpotNow = roundToNearestMinutes(spotNow, 30)
             const nowHourly: HourlyForecast | undefined = forecastsApi.data?.spotForecasts?.data.find(f => isSameHour(f.dateTime, nearestRoundHourSpotNow))

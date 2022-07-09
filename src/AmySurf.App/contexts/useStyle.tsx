@@ -12,7 +12,7 @@ export const forecastDaySummaryHeightEm = 2.5
 export const heightEmPerForecastUnit = 1.5
 export const hourlyCollectionWidth = 3
 export const forecastLabelDenseWitdhEm = 2
-export const forecastLabelWitdhEm = 7
+export const forecastLabelWitdhEm = 4
 export const containerWidthLimitEm = 50
 
 // Icons
