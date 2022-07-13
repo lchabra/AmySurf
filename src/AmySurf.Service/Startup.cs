@@ -54,6 +54,8 @@ public sealed class Startup
         services.AddSingleton<ISurfForecastProvider, SurflineProvider>();
         services.AddSingleton<IWeatherForecastsProvider, OpenWeatherMapProvider>();
         services.AddSingleton<IEnergyForecastsProvider, SurfForecastDotComProvider>();
+
+        services.AddTelemetryExporter(_configuration);
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,5 +75,6 @@ public sealed class Startup
         });
         app.UseDefaultFiles();
         app.UseCompressedStaticFiles();
+        app.UseWalletServiceTelemetry();
     }
 }

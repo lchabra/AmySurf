@@ -11,6 +11,9 @@
 http://localhost:5001/api/forecast/surf?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
 http://localhost:5001/api/forecast/energy?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
 http://localhost:5001/api/forecast/weather?spotid=Canggu_Batu_Bolong&StartTime=2012-02-17T04:00:00Z&EndTime=2022-02-18T22:00:00Z
+http://localhost:5001/api/forecast/surf?spotid=Canggu_Batu_Bolong&StartTime=2022-07-14T04:00:00Z&EndTime=2022-07-14T22:00:00Z
+http://localhost:5001/api/forecast/surf?spotid=Bali_Canggu_Batu_Bolong&StartTime=2022-07-10T16:00:00.000Z&EndTime=2022-07-19T16:00:00.000Z
+
 http://localhost:5001/api/forecast/spots
 
 ### Run AmySurf.App and AmySurf.Service in docker container

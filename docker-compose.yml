@@ -27,6 +27,7 @@ services:
       PollingInterval: "01:00:00"
       HttpClient__TimeOut: "00:00:15"
       HttpClient__RetryInterval: "00:01:00"
+      MetricsPort: "19464"
       # BaseDataDirectory": "/home/amysurf",
       # WebProxyAddress": "http://localhost:9090",
 
