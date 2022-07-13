@@ -57,6 +57,8 @@ function getForecastTypeLabel(forecastType: ForecastType): string {
             return "Rain"
         case ForecastType.CloudCoverage:
             return "Cloud Coverage"
+        case ForecastType.Ratings:
+            return "Ratings"
         default:
             return "Unknown"
     }

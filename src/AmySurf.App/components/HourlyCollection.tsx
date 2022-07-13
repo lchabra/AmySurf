@@ -1,6 +1,6 @@
 import React from 'react'
 import Stack from 'react-bootstrap/esm/Stack'
-import { ForecastType, HourlyForecast } from '../models/modelsApp'
+import { ForecastType, HourlyForecast, SpotForecasts } from '../models/modelsApp'
 import { getHourlyView } from './hourlyForecastFactory'
 import { getBorderFaded, getSelectedColorClassName } from '../styles/theme'
 import { changeSelectedForecast, useForecastSummary } from '../contexts/useForecastSummary'
@@ -9,7 +9,7 @@ import { hourlyCollectionWidth, useAppStyle } from '../contexts/useStyle'
 import { isSameHour } from '../helpers/dt'
 
 // One Hourly Row, Contains Hourly Forecast Data, like : 6am/3ft/300kj
-export function HourlyCollection(props: { data: HourlyForecast }): JSX.Element {
+export function HourlyCollection(props: { data: HourlyForecast, spotForecast: SpotForecasts }): JSX.Element {
     const user = useUser()
     const appStyle = useAppStyle()
     const forecastSummary = useForecastSummary()
@@ -35,7 +35,7 @@ export function HourlyCollection(props: { data: HourlyForecast }): JSX.Element {
                             className={`h-100 ${borderTop} border-bottom ${getBorderFaded(appStyle.theme)} d-flex text-center align-items-center justify-content-center `}
                             style={appStyle.getForecastTypeWrapperStyle(forecastType)}
                         >
-                            {getHourlyView(forecastType, props.data)}
+                            {getHourlyView(forecastType, props.data, props.spotForecast)}
                         </div>
                     )
                 })

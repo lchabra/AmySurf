@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import Stack from 'react-bootstrap/esm/Stack'
+import { useHourlyRatingGroupMap } from '../contexts/useNostr'
 import { forecastDaySummaryHeightEm, useAppStyle } from '../contexts/useStyle'
 import { SpotForecasts, HourlyForecast } from '../models/modelsApp'
 import { getBorderFaded } from '../styles/theme'
@@ -9,7 +10,11 @@ import SummaryForecastPage, { SummaryForecastPageData } from './SummaryForecastP
 export default function ForecastsPageSingle(props: { forecasts: SpotForecasts }) {
     const appStyle = useAppStyle()
     const styles = getStyles()
+    const ratings = useHourlyRatingGroupMap()
 
+    const data = React.useMemo(() => {
+        return props.forecasts.data.map(d => ({ ...d, ratings: ratings.get(d.dateTime.valueOf()) }))
+    }, [props.forecasts, ratings])
     return (
         <Stack direction='vertical' className={`border-end border-3 ${getBorderFaded(appStyle.theme)}`}>
             <div style={styles.summary}>
@@ -17,8 +22,8 @@ export default function ForecastsPageSingle(props: { forecasts: SpotForecasts })
             </div>
 
             <Stack style={styles.data} direction='horizontal' className='h-100'>
-                {props.forecasts.data.map((hourlyForecast: HourlyForecast, _) =>
-                    <HourlyCollection key={`HourlyForecast-${hourlyForecast.dateTime}`} data={hourlyForecast} />
+                {data.map((hourlyForecast: HourlyForecast, _) =>
+                    <HourlyCollection key={`HourlyForecast-${hourlyForecast.dateTime}`} data={hourlyForecast} spotForecast={props.forecasts} />
                 )}
             </Stack>
         </Stack >

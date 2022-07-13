@@ -24,6 +24,8 @@ export default function ForecastTypeLabel(props: { data: ForecastType }): JSX.El
             return <LabelComp label={'Rain'} unit={'(mm)'} />
         case ForecastType.CloudCoverage:
             return <LabelComp label={'Cloud'} unit={'(%)'} />
+        case ForecastType.Ratings:
+            return <LabelComp label={'Ratings'} unit="⭐" />
         default:
             return <></>
     }

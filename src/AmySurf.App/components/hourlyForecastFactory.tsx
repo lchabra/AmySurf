@@ -1,11 +1,14 @@
 import React from "react"
 import Badge from "react-bootstrap/esm/Badge"
 import { AnyHourly } from "./AnyHourly"
-import { ForecastType, HourlyForecast } from "../models/modelsApp"
+import { ForecastType, HourlyForecast, SpotForecasts } from "../models/modelsApp"
 import { ThunderstormIcon, ShowerRainIcon, RainIcon, SnowIcon, SunriseIcon, MistIcon, ClearSkyIcon, FewCloudsIcon, ScatteredCloudsIcon, BrokenCloudsIcon } from "../core-ui/icons"
 import { Stack } from "../core-ui/ui"
+import { Ratings, Report } from "../contexts/useNostr"
+import { formatToIsoLocalTime } from "../helpers/dt"
 
-export function getHourlyView(forecastType: ForecastType, hourlyForecast: HourlyForecast): JSX.Element {
+
+export function getHourlyView(forecastType: ForecastType, hourlyForecast: HourlyForecast, spotForecast: SpotForecasts): JSX.Element {
 
     switch (forecastType) {
         case ForecastType.Hours:
@@ -29,9 +32,15 @@ export function getHourlyView(forecastType: ForecastType, hourlyForecast: Hourly
             return <SmallNumberOrDot data={hourlyForecast.rainMm} />
         case ForecastType.CloudCoverage:
             return <SmallNumberOrDot data={hourlyForecast.cloudCoverage} />
+        case ForecastType.Ratings:
+            return <Ratings ratings={hourlyForecast.ratings ?? []} reportFactory={createDefaultReport(spotForecast, hourlyForecast)} />
         default:
             return <></>
     }
+}
+
+function createDefaultReport(spotForecast: SpotForecasts, hourlyForecast: HourlyForecast): () => Report {
+    return () => ({ time: formatToIsoLocalTime(hourlyForecast.dateTime), comment: '', rating: 0, spotId: spotForecast.spot.id })
 }
 
 function SmallNumberOrDot(props: { data: number }): JSX.Element {

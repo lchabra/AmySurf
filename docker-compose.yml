@@ -30,6 +30,7 @@ services:
       MetricsPort: "19464"
       # BaseDataDirectory": "/home/amysurf",
       # WebProxyAddress": "http://localhost:9090",
+      NOSTR_RELAY_URL: wss://nostr.freejungle.net:443
 
     volumes:
       - ${AMYSURF_HOME:-amysurf}:/home/amysurf

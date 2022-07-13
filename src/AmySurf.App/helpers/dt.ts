@@ -30,6 +30,10 @@ export function formatEEEEd(dateTime: Date): string {
     return format(dateTime, 'EEEE d')
 }
 
+export function formatToIsoLocalTime(dateTime: Date): string {
+    return format(dateTime, 'yyyy-MM-dd\'T\'HH:mm:ss')
+}
+
 export function formatToPattern(dateTime: Date, pattern: string, language?: string): string {
     return format(dateTime, pattern, { locale: getLocale(language) })
 }

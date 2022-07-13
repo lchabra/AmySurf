@@ -1,3 +1,4 @@
+import { RatingGroup } from "../contexts/useNostr"
 import { getForecastsTypeStyle } from "../contexts/useStyle"
 import { ThemeColor } from "../styles/theme"
 import { Spot } from "./modelsForecasts"
@@ -48,6 +49,7 @@ export type HourlyForecast = {
     temperature: number
     cloudCoverage: number
     description: number
+    ratings?: RatingGroup[]
 }
 
 export enum ForecastType {
@@ -61,7 +63,8 @@ export enum ForecastType {
     WindSpeedDirection = '7',
     WeatherConditionTemperature = '8',
     RainMm = '9',
-    CloudCoverage = '10'
+    CloudCoverage = '10',
+    Ratings = '11',
 }
 
 export enum MapSize {

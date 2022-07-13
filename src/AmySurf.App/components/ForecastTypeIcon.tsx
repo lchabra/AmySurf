@@ -1,5 +1,5 @@
 import React from 'react'
-import { AirIcon, BoltIcon, ClockIcon, CloudyIcon, ExploreIcon, HeightIcon, HourglassIcon, ThermostatIcon, WaterIcon, WavesIcon } from '../core-ui/icons'
+import { AirIcon, BoltIcon, ClockIcon, CloudyIcon, ExploreIcon, HeightIcon, HourglassIcon, StarIcon, ThermostatIcon, WaterIcon, WavesIcon } from '../core-ui/icons'
 import { Stack } from '../core-ui/ui'
 import { ForecastType } from '../models/modelsApp'
 import { getThemeContrastIconColor } from '../styles/theme'
@@ -48,7 +48,11 @@ function getIcon(forecastType: ForecastType, fillColor?: string): JSX.Element {
 
         case ForecastType.CloudCoverage:
             return <CloudyIcon height={forecastTypeIconHeightRem + 'rem'} width={forecastTypeIconHeightRem + 'rem'} fill={fillColor} />
-        default:
+
+        case ForecastType.Ratings:
+            return <StarIcon height={forecastTypeIconHeightRem + 'rem'} width={forecastTypeIconHeightRem + 'rem'} fill={fillColor} />
+
+            default:
             return <></>
     }
 }

@@ -8,29 +8,31 @@ import SettingsPage from "./pages/SettingsPage"
 import { ForecastSummaryProvider } from "./contexts/useForecastSummary"
 import { ForecastApiProvider } from "./contexts/useForecasts"
 import SpotsPage from "./pages/SpotsPage"
-import { LimitedWidthContainer } from "./components/LimitedWidthContainer"
 import { AppStyleProvider } from "./contexts/useStyle"
 import { PageData } from "./components/AppPageWrapper"
 import { PwaProvider } from "./hooks/usePwa"
+import { NostrProvider } from "./contexts/useNostr"
 
 // For PWA use this script "dev": "parcel index.html --no-hmr" (in package.json)
 export default function App() {
     return (
-        <React.StrictMode>
-            <PwaProvider>
-                <UserProvider>
-                    <ForecastApiProvider>
-                        <ForecastSummaryProvider>
-                            <BrowserRouter>
-                                <AppStyleProvider>
-                                    <AmySurfApp />
-                                </AppStyleProvider>
-                            </BrowserRouter>
-                        </ForecastSummaryProvider>
-                    </ForecastApiProvider>
-                </UserProvider>
-            </PwaProvider>
-        </React.StrictMode>
+        <NostrProvider>
+            <React.StrictMode>
+                <PwaProvider>
+                    <UserProvider>
+                        <ForecastApiProvider>
+                            <ForecastSummaryProvider>
+                                <BrowserRouter>
+                                    <AppStyleProvider>
+                                        <AmySurfApp />
+                                    </AppStyleProvider>
+                                </BrowserRouter>
+                            </ForecastSummaryProvider>
+                        </ForecastApiProvider>
+                    </UserProvider>
+                </PwaProvider>
+            </React.StrictMode>
+        </NostrProvider>
     )
 }
 

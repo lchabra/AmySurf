@@ -98,6 +98,8 @@ function getMinEmHeight(forecastType: ForecastType): number {
             return HeightUnitForecastType.RainMm * heightEmPerForecastUnit
         case ForecastType.CloudCoverage:
             return HeightUnitForecastType.CloudCoverage * heightEmPerForecastUnit
+        case ForecastType.Ratings:
+            return HeightUnitForecastType.Ratings * heightEmPerForecastUnit
         default:
             return 0
     }
@@ -114,6 +116,7 @@ enum HeightUnitForecastType {
     WeatherConditionTemperature = 2,
     RainMm = 1,
     CloudCoverage = 1,
+    Ratings = 1,
 }
 
 
