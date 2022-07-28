@@ -26,7 +26,8 @@ public sealed class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddHostedService<ForecastBackgroundService>();
+        if (!_configuration.GetValue<bool>("DisableBackgroundService", false))
+            services.AddHostedService<ForecastBackgroundService>();
         services.Configure<ForecastBackgroundServiceOptions>(_configuration);
         services.AddSingleton<SpotProvider>();
         services.AddSingleton<HttpClientHelper>();
