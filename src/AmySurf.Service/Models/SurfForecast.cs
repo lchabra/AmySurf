@@ -49,6 +49,7 @@ public sealed class HourlySurf
         TideHeight = -1,
         TideHeightPercent = -1,
         TideType = TideType.NORMAL,
+        IsTideRising = false
     };
 
     public DateTime DateTime { get; set; }
@@ -64,6 +65,8 @@ public sealed class HourlySurf
     public double TideHeight { get; set; }
     public double TideHeightPercent { get; set; }
     public TideType TideType { get; set; }
+    public bool IsTideRising { get; set; }
+
 }
 
 public enum TideType

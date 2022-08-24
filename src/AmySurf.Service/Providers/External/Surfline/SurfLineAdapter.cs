@@ -21,12 +21,14 @@ internal static class SurflineAdapter
         for (int i = 0; i < hourlyForecastCount; i++)
         {
             ForecastRaw? singleForecastRaw = forecastsRaw.Data.Forecasts[i];
-
             TideRaw? hourlyTide = forecastsRaw.Data.Tides.FirstOrDefault(t => t?.Timestamp == singleForecastRaw.Timestamp, null);
 
             //Shift tide 1 hour earlier
-            const int tideTsCorrection = 60 * 60;
+            const int tideTsCorrection = 0;
+            // const int tideTsCorrection = 60 * 60;
 
+
+            var isTideRising = IsTideRising(forecastsRaw, hourlyForecastCount, i, hourlyTide);
 
             HourlySurf? hourlyForecastData = new HourlySurf()
             {
@@ -41,7 +43,8 @@ internal static class SurflineAdapter
                 WindDirection = singleForecastRaw.Wind.Direction,
                 WindSpeed = singleForecastRaw.Wind.Speed,
                 TideHeight = hourlyTide?.Height ?? -1,
-                TideType = GetTideType(hourlyTide?.Type)
+                TideType = GetTideType(hourlyTide?.Type),
+                IsTideRising = isTideRising
             };
             double tMin = forecastsRaw.Data.TideLocation.Min;
             double tMax = forecastsRaw.Data.TideLocation.Max;
@@ -62,6 +65,23 @@ internal static class SurflineAdapter
         }
 
         return surfForecasts;
+    }
+
+    private static bool IsTideRising(SurflineRaw forecastsRaw, int hourlyForecastCount, int i, TideRaw? hourlyTide)
+    {
+        bool isTideRising;
+        if (i == hourlyForecastCount - 1)
+        {
+            var prevHeight = forecastsRaw.Data.Tides.FirstOrDefault(t => t?.Timestamp == forecastsRaw.Data.Forecasts[i - 1].Timestamp, null)?.Height;
+            isTideRising = (hourlyTide?.Height - prevHeight) > 0;
+        }
+        else
+        {
+            var nextHeight = forecastsRaw.Data.Tides.FirstOrDefault(t => t?.Timestamp == forecastsRaw.Data.Forecasts[i + 1].Timestamp, null)?.Height;
+            isTideRising = (nextHeight - hourlyTide?.Height) > 0;
+        }
+
+        return isTideRising;
     }
 
     private static TideType GetTideType(string? type)
