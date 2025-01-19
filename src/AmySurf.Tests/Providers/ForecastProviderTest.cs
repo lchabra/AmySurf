@@ -34,7 +34,7 @@ public sealed class ForecastProviderTest
             count++;
             return offlineForecastProvider.GetSurfForecastAsync(getForecastRequest);
         }).ToArray();
-        _ = await Task.WhenAll(surfTasks).ConfigureAwait(false);
+        _ = await Task.WhenAll(surfTasks);
         foreach (var task in surfTasks)
         {
             Assert.True(task.IsCompletedSuccessfully);
@@ -49,7 +49,7 @@ public sealed class ForecastProviderTest
             countWeather++;
             return offlineForecastProvider.GetWeatherForecastAsync(getForecastRequest);
         }).ToArray();
-        _ = await Task.WhenAll(weatherTasks).ConfigureAwait(false);
+        _ = await Task.WhenAll(weatherTasks);
         foreach (var task in weatherTasks)
         {
             Assert.True(task.IsCompletedSuccessfully);
@@ -64,7 +64,7 @@ public sealed class ForecastProviderTest
              countEnergy++;
              return offlineForecastProvider.GetEnergyForecastAsync(getForecastRequest);
          }).ToArray();
-        _ = await Task.WhenAll(energyTasks).ConfigureAwait(false);
+        _ = await Task.WhenAll(energyTasks);
         foreach (var task in energyTasks)
         {
             Assert.True(task.IsCompletedSuccessfully);
@@ -92,7 +92,7 @@ public sealed class ForecastProviderTest
             return clientApiProvider.GetSurfForecastAsync(getForecastRequest);
         }).ToArray();
 
-        var responses = await Task.WhenAll(tasks).ConfigureAwait(false);
+        var responses = await Task.WhenAll(tasks);
 
         foreach (var task in tasks)
         {
