@@ -24,18 +24,18 @@ internal sealed class OpenWeatherMapProvider : IWeatherForecastsProvider
 
     public async Task<GetWeatherForecastResponse> GetForecastAsync(string spotId)
     {
-        long timeStampUtcNow = DateTimeHelper.TimestampUTCNow;
-        long timeStampUtcYersteday = timeStampUtcNow - 86400;
-        OpenWeatherMapForecastPastRaw? yerstedayForecastRaw;
-        OpenWeatherMapForecastPastRaw? todayForecastRaw;
+        // long timeStampUtcNow = DateTimeHelper.TimestampUTCNow;
+        // long timeStampUtcYersteday = timeStampUtcNow - 86400;
+        // OpenWeatherMapForecastPastRaw? yerstedayForecastRaw;
+        // OpenWeatherMapForecastPastRaw? todayForecastRaw;
         OpenWeatherMapForecastFutureRaw? futureForecastRaw;
 
-        yerstedayForecastRaw = await GetForecastRawPast(spotId, timeStampUtcYersteday).ConfigureAwait(false);
-        todayForecastRaw = await GetForecastRawPast(spotId, timeStampUtcNow).ConfigureAwait(false);
+        // yerstedayForecastRaw = await GetForecastRawPast(spotId, timeStampUtcYersteday).ConfigureAwait(false);
+        // todayForecastRaw = await GetForecastRawPast(spotId, timeStampUtcNow).ConfigureAwait(false);
         //var futureForecastRaw2 = await GetWeatherForecastFutureById(spot);
         futureForecastRaw = await GetWeatherForecastFutureByCoordinate(spotId).ConfigureAwait(false);
 
-        return OpenWeatherMapAdapter.NormalizeForecast(spotId, yerstedayForecastRaw, todayForecastRaw, futureForecastRaw);
+        return OpenWeatherMapAdapter.NormalizeForecast(spotId, null, null, futureForecastRaw);
     }
 
     private async Task<OpenWeatherMapForecastFutureRaw?> GetWeatherForecastFutureByCoordinate(string spotId)
@@ -62,6 +62,7 @@ internal sealed class OpenWeatherMapProvider : IWeatherForecastsProvider
         return forecastsRaw;
     }
 
+    // Api not free wotking anymore
     private async Task<OpenWeatherMapForecastPastRaw?> GetForecastRawPast(string spotId, long TimeStamp)
     {
         Spot? spot = _spotProvider.GetSpot(spotId);
@@ -87,7 +88,7 @@ internal sealed class OpenWeatherMapProvider : IWeatherForecastsProvider
     }
 }
 
-public sealed record OpenWeatherProviderSpotOptions(string SpotId, double Latitude,double Longitude) : IDataProviderSpotOptions;
+public sealed record OpenWeatherProviderSpotOptions(string SpotId, double Latitude, double Longitude) : IDataProviderSpotOptions;
 
 public sealed class OpenWeatherMapForecastPastRaw
 {
