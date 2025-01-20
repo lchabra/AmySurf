@@ -4,6 +4,7 @@ import { hourlyCollectionWidth, sunSetRiseIconHeightRem } from '../contexts/useS
 import { SunriseIcon, SunsetIcon } from '../core-ui/icons'
 import { Container, OverlayTrigger, Tooltip } from '../core-ui/ui'
 import { formatEEEEd, formatTimeLong } from '../helpers/dt'
+import { config } from 'process'
 
 export type SummaryForecastPageData = {
     dates: Date[],
@@ -98,9 +99,19 @@ function getDatesTitleLong(dates: Date[]): string {
 function getSunSetRiseTime(sunSetRiseTime: Date[]): string {
     if (sunSetRiseTime.length == 0) {
         return ''
-    } else if (sunSetRiseTime.length == 1) {
-        return formatTimeLong(new Date(sunSetRiseTime[0]))
+    }
+
+    const utcSpotOffset = 8
+    const localTimezoneOffset = sunSetRiseTime[0].getTimezoneOffset() / 60
+    const hoursToAdd = utcSpotOffset + localTimezoneOffset
+
+    const correctedSunSetRiseTime = sunSetRiseTime.map((date) => {
+        return new Date(date.getTime() + hoursToAdd * 60 * 60 * 1000)
+    })
+
+    if (correctedSunSetRiseTime.length == 1) {
+        return formatTimeLong(new Date(correctedSunSetRiseTime[0]))
     } else {
-        return `${formatTimeLong(new Date(sunSetRiseTime[0]))} / ${formatTimeLong(new Date(sunSetRiseTime[sunSetRiseTime.length - 1]))}`
+        return `${formatTimeLong(new Date(correctedSunSetRiseTime[0]))} / ${formatTimeLong(new Date(correctedSunSetRiseTime[correctedSunSetRiseTime.length - 1]))}`
     }
 }
