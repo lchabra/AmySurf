@@ -1,10 +1,10 @@
 # TODO: dotnet publish ... --self-contained -p:PublishTrimmed=true ??
 
 # https://hub.docker.com/_/microsoft-dotnet-sdk
-ARG DOTNET_SDK_IMAGE="mcr.microsoft.com/dotnet/sdk:6.0"
+ARG DOTNET_SDK_IMAGE="mcr.microsoft.com/dotnet/sdk:8.0"
 
 # https://hub.docker.com/_/microsoft-dotnet-aspnet/
-ARG RUNTIME_IMAGE="mcr.microsoft.com/dotnet/aspnet:6.0"
+ARG RUNTIME_IMAGE="mcr.microsoft.com/dotnet/aspnet:8.0"
 
 # https://hub.docker.com/_/node
 # TODO: use slim? try alpine?
