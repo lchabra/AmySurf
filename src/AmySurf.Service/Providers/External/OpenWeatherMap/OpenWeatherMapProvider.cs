@@ -13,8 +13,9 @@ internal sealed class OpenWeatherMapProvider : IWeatherForecastsProvider
         _httpClientHelper = httpClientHelper;
     }
 
-    //TODO: Come from EnvVars
-    private const string ApiKey = "929452d64e8910c426c40b268e9fc365";
+    private static readonly string ApiKey = Environment.GetEnvironmentVariable("OPENWEATHERMAP_API_KEY") ??
+    throw new ArgumentNullException("Api Key for OpenWeatherMap is not set");
+
     private const string ApiUrlPast = "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat={0}&lon={1}&dt={2}&appid={3}";
     //private const string ApiUrlFutureById = "https://api.openweathermap.org/data/2.5/forecast?id={0}&appid={1}";
     private const string ApiUrlFutureByCoordinate = "https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}";
