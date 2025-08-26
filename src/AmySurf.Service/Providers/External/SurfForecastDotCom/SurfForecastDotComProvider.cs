@@ -49,7 +49,8 @@ internal sealed class SurfForecastDotComProvider : IEnergyForecastsProvider
         HtmlDocument? htmlDoc = new HtmlDocument();
         htmlDoc.LoadHtml(responseString);
 
-        HtmlNodeCollection energiesNodes = htmlDoc.DocumentNode.SelectNodes("//tr[@data-row-name = 'energy']/td");
+        // HtmlNodeCollection energiesNodes = htmlDoc.DocumentNode.SelectNodes("//tr[@data-row-name = 'energy']/td");
+        HtmlNodeCollection energiesNodes = htmlDoc.DocumentNode.SelectNodes("//tr[contains(@data-row-name, 'energy')]/td");
         HtmlNodeCollection timeNodes = htmlDoc.DocumentNode.SelectNodes("//tr[@data-row-name = 'time']/td");
 
         // Debug energy
